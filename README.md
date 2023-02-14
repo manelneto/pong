@@ -1,10 +1,10 @@
 # LCOM Project
 
-LCOM Project for group T&lt;m&gt;&lt;n&gt;G&lt;p&gt;&lt;q&gt;.
+LCOM Project for group T08G03.
 
 Group members:
 
-1. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-2. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-3. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-4. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
+1. André Rodrigues (up202108721@fe.up.pt)
+2. Ian Beltrão (up202102360@fe.up.pt)
+3. Lucas Nakajima (up202001337@fe.up.pt)
+4. Manuel Neto (up202108744@fe.up.pt)
