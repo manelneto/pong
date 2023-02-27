@@ -46,7 +46,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 		return 1;
 	}
 	
-	if (util_sys_inb(TIMER_0 + timer, st)) {
+	if (util_sys_inb(TIMER_PORT(timer), st)) {
 		printf("%s: util_sys_inb error\n", __func__);
 		return 1;
 	}
@@ -72,12 +72,12 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
 			val.byte = st;
 			break;
 		case tsf_initial:
-			val.in_mode = (st & (BIT(5) | BIT(4))) >> 4;
+			val.in_mode = (st & TIMER_IN_MODE) >> 4;
 			break;
 		case tsf_mode:
-			val.count_mode = (st & (BIT(3) | BIT(2) | BIT(1))) >> 1;
+			val.count_mode = (st & TIMER_COUNT_MODE) >> 1;
 			if (val.count_mode > 5)
-				val.count_mode &= (BIT (1) | BIT(0));
+				val.count_mode &= TIMER_COUNT_MODE_DONT_CARE;
 			break;
 		case tsf_base:
 			val.bcd = st & TIMER_BCD;
