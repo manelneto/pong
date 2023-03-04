@@ -11,6 +11,7 @@
 
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER0_IRQ 0 /**< @brief Timer 0 IRQ line */
+#define TIMER_MIN_FREQ 19
 
 /* I/O port addresses */
 
@@ -31,6 +32,8 @@
 #define TIMER_SEL1   BIT(6)            /**< @brief Control Word for Timer 1 */
 #define TIMER_SEL2   BIT(7)            /**< @brief Control Word for Timer 2 */
 #define TIMER_RB_CMD (BIT(7) | BIT(6)) /**< @brief Read Back Command */
+
+#define TIMER_SEL(timer) (timer << 6)
 
 /* Register selection: bits 5 and 4 */
 

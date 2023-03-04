@@ -6,10 +6,55 @@
 #include "i8254.h"
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
+	if (freq < TIMER_MIN_FREQ) {
+		printf("%s: freq < TIMER_MIN_FREQ\n", __func__);
+		return 1;
+	}
+	
+	if (freq > TIMER_FREQ) {
+		printf("%s: freq > TIMER_FREQ\n", __func__);
+		return 1;
+	}
+
 	uint8_t st;
 
 	if (timer_get_conf(timer, &st)) {
 		printf("%s: timer_get_conf error\n", __func__);
+		return 1;
+	}
+
+	uint8_t control_word = st;
+	control_word &= (TIMER_COUNT_MODE | TIMER_BCD);
+
+	control_word |= TIMER_LSB_MSB;
+	control_word |= TIMER_SEL(timer);
+
+	if (sys_outb(TIMER_CTRL, control_word)) {
+		printf("%s: sys_outb error\n", __func__);
+		return 1;
+	}
+
+	uint16_t value = TIMER_FREQ / freq;
+
+	uint8_t lsb;
+	if (util_get_LSB(value, &lsb)) {
+		printf("%s: util_get_LSB\n", __func__);
+		return 1;
+	}
+
+	uint8_t msb;
+	if (util_get_MSB(value, &msb)) {
+		printf("%s: util_get_MSB\n", __func__);
+		return 1;
+	}
+
+	if (sys_outb(TIMER_PORT(timer), lsb)) {
+		printf("%s: sys_outb error\n", __func__);
+		return 1;
+	}
+
+	if (sys_outb(TIMER_PORT(timer), msb)) {
+		printf("%s: sys_outb error\n", __func__);
 		return 1;
 	}
 
