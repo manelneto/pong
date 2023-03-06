@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+extern uint32_t cnt;
+
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("PT-PT");
@@ -32,7 +34,9 @@ int main(int argc, char *argv[]) {
 int(kbd_test_scan)() {
   /* To be completed by the students */
   printf("%s is not yet implemented!\n", __func__);
-
+  // subcribes, handles and unsubscribes
+  // calls kbd_print_scancode(make, size, bytes) in loop
+  // calls kbd_print_no_sysinb(cnt) before returning (and unsubscribes)
   return 1;
 }
 
