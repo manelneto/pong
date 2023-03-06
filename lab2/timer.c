@@ -65,8 +65,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-	*bit_no = BIT(hook_id);
-
+	*bit_no = hook_id;
 	if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id)) {
 		printf("%s: sys_irqsetpolicy error\n", __func__);
 		return 1;
