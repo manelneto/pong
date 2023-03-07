@@ -9,9 +9,9 @@
  * Constants for programming the i8254 Timer.
  */
 
-#define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
-#define TIMER0_IRQ 0       /**< @brief Timer 0 IRQ line */
-#define TIMER_MIN_FREQ 19  /**< @brief Timer lowest possible frequency */
+#define TIMER_FREQ     1193182 /**< @brief clock frequency for timer in PC and AT */
+#define TIMER0_IRQ     0       /**< @brief Timer 0 IRQ line */
+#define TIMER_MIN_FREQ 19      /**< @brief Timer lowest possible frequency */
 
 /* I/O port addresses */
 
@@ -59,9 +59,9 @@
 
 /* OTHER */
 
-#define TIMER_IN_MODE (BIT(5) | BIT(4))               /**< @brief Bitmask for timer counter inicialization */
-#define TIMER_COUNT_MODE (BIT(3) | BIT(2) | BIT(1))   /**< @brief Bitmask for timer counting mode */
-#define TIMER_COUNT_MODE_DONT_CARE (BIT (1) | BIT(0)) /**< @brief Bitmask to reset timer counting mode don't care bit */
+#define TIMER_IN_MODE              (BIT(5) | BIT(4))          /**< @brief Bitmask for timer counter inicialization */
+#define TIMER_COUNT_MODE           (BIT(3) | BIT(2) | BIT(1)) /**< @brief Bitmask for timer counting mode */
+#define TIMER_COUNT_MODE_DONT_CARE (BIT (1) | BIT(0))         /**< @brief Bitmask to reset timer counting mode don't care bit */
 
 /**@}*/
 
