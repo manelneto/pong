@@ -57,7 +57,7 @@
 #define TIMER_RB_STATUS_ BIT(4)       /**< @brief Read-back timer counter value */
 #define TIMER_RB_SEL(n)  BIT((n) + 1) /**< @brief Select timer to read-back */
 
-/** OTHER */
+/* OTHER */
 
 #define TIMER_IN_MODE (BIT(5) | BIT(4))               /**< @brief Bitmask for timer counter inicialization */
 #define TIMER_COUNT_MODE (BIT(3) | BIT(2) | BIT(1))   /**< @brief Bitmask for timer counting mode */
