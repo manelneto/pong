@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "lcf.h": "c",
+        "timer.h": "c",
+        "lab2.h": "c",
+        "kbc.h": "c"
+    }
+}

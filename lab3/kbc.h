@@ -6,7 +6,7 @@
 /** @defgroup kbc kbc
  * @{
  *
- * Functions for using the KBC
+ * Functions for using the i8042 KBC
  */
 
 /**
