@@ -11,8 +11,9 @@
 
 #define ESC 0x81
 
-extern uint32_t cnt;
 extern struct scancode code;
+extern uint32_t cnt;
+extern uint32_t counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -127,8 +128,67 @@ int(kbd_test_poll)() {
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  uint8_t keyboard_irq_set;
+	if (keyboard_subscribe_int(&keyboard_irq_set)) {
+		printf("%s: keyboard_subscribe_int error\n", __func__);
+		return 1;
+	}
 
-  return 1;
+  uint8_t timer_irq_set;
+  if (timer_subscribe_int(&timer_irq_set)) {
+    printf("%s: timer_subscribe_int error\n", __func__);
+		return 1;
+  }
+
+	int ipc_status, r;
+	message msg;
+  bool esc = false;
+
+	while (!esc && counter < n * 60) {
+		/* Get a request message. */
+		if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+			printf("driver_receive failed with: %d", r);
+			continue;
+		}
+		if (is_ipc_notify(ipc_status)) { /* received notification */
+			switch (_ENDPOINT_P(msg.m_source)) {
+				case HARDWARE:
+          if (msg.m_notify.interrupts & BIT(timer_irq_set)) { /* Timer0 int? */
+            /* process Timer0 interrupt request */
+            timer_int_handler();
+          }
+					if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) { /* KBD int? */
+						/* process KBD interrupt request */
+            kbc_ih();
+            if (code.size > 0) {
+              kbd_print_scancode(code.makecode, code.size, code.bytes);
+              if (code.bytes[0] == ESC)
+                esc = true;
+              if (keyboard_restore()) {
+                printf("%s: keyboard_restore error\n");
+                return 1;
+              }
+            }
+            counter = 0;
+          }
+					break;
+				default:
+					break; /* no other notifications expected: do nothing */
+			}
+		} else { /* received a standard message, not a notification */
+			/* no standard messages expected: do nothing */
+		}
+	}
+
+	if (keyboard_unsubscribe_int()) {
+		printf("%s: keyboard_unsubscribe_int error\n", __func__);
+		return 1;
+  }
+
+  if (timer_unsubscribe_int()) {
+    printf("%s: timer_unsubscribe_int error\n", __func__);
+		return 1;
+  }
+
+  return 0;
 }
