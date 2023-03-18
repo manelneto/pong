@@ -29,8 +29,16 @@ int (kbc_read_output)(uint8_t *output);
  * @brief Writes command to KBC
  * 
  * @param command Command to be written to KBC
- * @return Return 0 upon success and non-zero otherwise
+ * @return Return 0 upon success and non-zero otherwise (-1 if invalid data)
 */
 int (kbc_write_command)(uint8_t command);
+
+/**
+ * @brief Writes argument to KBC
+ * 
+ * @param argument Argument to be written to KBC
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int (kbc_write_argument)(uint8_t argument);
 
 #endif /* __KBC_H */

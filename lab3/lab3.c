@@ -6,6 +6,8 @@
 #include <stdint.h>
 
 #include "keyboard.h"
+#include "kbc.h"
+#include "i8042.h"
 
 #define ESC 0x81
 
@@ -93,10 +95,47 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  /*
+  uint8_t command = KBC_READ_CMD;
+  if (kbc_write_command(command, 0)) {
+    printf("%s: kbc_write_command error\n", __func__);
+    return 1;
+  }
 
-  return 1;
+  uint8_t byte;
+  if (kbc_read_output(&byte)) {
+    printf("%s: kbc_read_output error\n", __func__);
+    return 1;
+  }
+
+  bool esc = false;
+
+  while (!esc) {
+    keyboard_read_scancode();
+    if (code.size > 0) {
+      kbd_print_scancode(code.makecode, code.size, code.bytes);
+      if (code.bytes[0] == ESC)
+        esc = true;
+      if (keyboard_restore()) {
+        printf("%s: keyboard_restore error\n");
+        return 1;
+      }
+    }
+  }
+
+  printf("byte: %x\n", byte);
+
+  if (kbc_write_command(KBC_WRITE_CMD, byte | BIT(0))) {
+    printf("%s: kbc_write_command error\n", __func__);
+    return 1;
+  }
+
+  if (kbd_print_no_sysinb(cnt)) {
+    printf("%s: kbd_print_no_sysinb error\n", __func__);
+		return 1;
+  }
+*/
+  return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {

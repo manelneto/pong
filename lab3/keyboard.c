@@ -29,13 +29,8 @@ int (keyboard_unsubscribe_int)() {
 }
 
 void (kbc_ih)() {
-	uint8_t status;
-	kbc_read_status(&status);
-
 	uint8_t output;
-	kbc_read_output(&output);
-
-	if (status & (KBC_PARITY_ERROR | KBC_TIMEOUT_ERROR)) {
+	if (kbc_read_output(&output)) {
 		code.size = 0;
 		return;
 	}
@@ -43,12 +38,10 @@ void (kbc_ih)() {
 	if (output == KBD_FIRST_OF_TWO_BYTES) {
 		code.size = 0;
 		code.bytes[0] = output;
-	}
-	else if (code.bytes[0] != KBD_FIRST_OF_TWO_BYTES) {
+	} else if (code.bytes[0] != KBD_FIRST_OF_TWO_BYTES) {
 		code.size = 1;
 		code.bytes[0] = output;
-	}
-	else {
+	} else {
 		code.size = 2;
 		code.bytes[1] = output;
 	}

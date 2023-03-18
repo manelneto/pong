@@ -11,6 +11,7 @@
     "stdbool.h": "c",
     "keyboard.h": "c",
     "i8254.h": "c",
-    "timer.h": "c"
+    "timer.h": "c",
+    "kbc.h": "c"
   },
 }
