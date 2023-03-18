@@ -13,7 +13,8 @@ int (kbc_read_status)(uint8_t *status) {
 
 int (kbc_read_output)(uint8_t *output) {
 	uint8_t status;
-	while (1) {
+	int i = 0;
+	while (i++ < KBC_MAX_ATTEMPTS) {
 		if (kbc_read_status(&status)) {
 			printf("%s: kbc_read_status error\n", __func__);
 			return 1;
@@ -34,11 +35,13 @@ int (kbc_read_output)(uint8_t *output) {
 		}
 		tickdelay(micros_to_ticks(KBD_DELAY_US));
 	}
+	return 2;
 }
 
 int (kbc_write_command)(uint8_t command) {
 	uint8_t status;
-	while (1) {
+	int i = 0;
+	while (i++ < KBC_MAX_ATTEMPTS) {
 		if (kbc_read_status(&status)) {
 			printf("%s: kbc_read_status error\n", __func__);
 			return 1;
@@ -56,11 +59,13 @@ int (kbc_write_command)(uint8_t command) {
 
 		tickdelay(micros_to_ticks(KBD_DELAY_US));
 	}
+	return 2;
 }
 
 int (kbc_write_argument)(uint8_t argument) {
 	uint8_t status;
-	while (1) {
+	int i = 0;
+	while (i++ < KBC_MAX_ATTEMPTS) {
 		if (kbc_read_status(&status)) {
 			printf("%s: kbc_read_status error\n", __func__);
 			return 1;
@@ -78,4 +83,5 @@ int (kbc_write_argument)(uint8_t argument) {
 
 		tickdelay(micros_to_ticks(KBD_DELAY_US));
 	}
+	return 2;
 }

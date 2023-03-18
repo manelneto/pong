@@ -34,10 +34,16 @@ int(keyboard_subscribe_int)(uint8_t *bit_no);
 int(keyboard_unsubscribe_int)();
 
 /**
+ * @brief Reads the scancode byte from the output buffer
+ * 
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int(keyboard_read_scancode());
+
+/**
  * @brief Keyboard interrupt handler
  *
- * First, reads the status register and checks if there was some communications error.
- * Second, reads the scancode byte from the output buffer.
+ * Calls keyboard_read_scancode().
  */
 void(kbc_ih)();
 
@@ -47,5 +53,12 @@ void(kbc_ih)();
  * @return Return 0 upon success and non-zero otherwise
  */
 int(keyboard_restore)();
+
+/**
+ * @brief Enables keyboard interrupts, by writing an appropriate KBC command byte
+ * 
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int (keyboard_enable_interrupts)();
 
 #endif /* __KEYBOARD_H */
