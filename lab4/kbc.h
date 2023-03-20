@@ -26,6 +26,14 @@ int (kbc_read_status)(uint8_t *status);
 int (kbc_read_output)(uint8_t *output);
 
 /**
+ * @brief Reads the KBC acknowledgment byte from the output buffer
+ * 
+ * @param acknowledgment_byte Address of memory position to be filled with the KBC acknowledgment byte
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int (kbc_read_acknowledgment_byte)(uint8_t *acknowledgment_byte);
+
+/**
  * @brief Writes command to KBC
  * 
  * @param command Command to be written to KBC

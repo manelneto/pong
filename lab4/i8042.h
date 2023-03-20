@@ -10,8 +10,9 @@
  */
 
 #define KEYBOARD_IRQ     1     /**< @brief Keyboard IRQ line */
+#define MOUSE_IRQ        12    /**< @brief Mouse IRQ line */
 #define KBD_DELAY_US     20000 /**< @brief to be used with tickdelay(micros_to_ticks(DELAY_US)) */
-#define KBC_MAX_ATTEMPTS 2000 /**< @brief maximum number of attempts */
+#define KBC_MAX_ATTEMPTS 20    /**< @brief maximum number of attempts */
 
 /* I/O port addresses */
 
@@ -35,19 +36,19 @@
 
 /* KBC arguments */
 
-#define KBC_RESET           0xFF /**< @brief KBC mouse reset */
-#define KBC_RESEND          0xFE /**< @brief KBC for serial communications errors */
-#define KBC_SET_DEFAULTS    0xF6 /**< @brief KBC set default values */
-#define KBC_DISABLE         0xF5 /**< @brief KBC disable data reporting (in stream mode, should be sent before any other command) */
-#define KBC_ENABLE          0xF4 /**< @brief KBC enable data reporting (in stream mode only) */
-#define KBC_SET_SAMPLE_RATE 0xF3 /**< @brief KBC set state sampling rate */
-#define KBC_SET_REMOTE_MODE 0xF0 /**< @brief KBC send data on request only */
-#define KBC_READ_DATA       0xEB /**< @brief KBC send data packet request */
-#define KBC_SET_STREAM_MODE 0xEA /**< @brief KBC send data on events */
-#define KBC_STATUS_REQUEST  0xE9 /**< @brief KBC get mouse configuration (3 bytes) */
-#define KBC_SET_RESOLUTION  0xE8 /**< @brief KBC set resolution */
-#define KBC_SET_SCALING_2   0xE7 /**< @brief KBC acceleration mode */
-#define KBC_SET_SCALING_1   0xE6 /**< @brief KBC linear mode */
+#define KBC_RESET                  0xFF /**< @brief KBC mouse reset */
+#define KBC_RESEND                 0xFE /**< @brief KBC for serial communications errors */
+#define KBC_SET_DEFAULTS           0xF6 /**< @brief KBC set default values */
+#define KBC_DISABLE_DATA_REPORTING 0xF5 /**< @brief KBC disable data reporting (in stream mode, should be sent before any other command) */
+#define KBC_ENABLE_DATA_REPORTING  0xF4 /**< @brief KBC enable data reporting (in stream mode only) */
+#define KBC_SET_SAMPLE_RATE        0xF3 /**< @brief KBC set state sampling rate */
+#define KBC_SET_REMOTE_MODE        0xF0 /**< @brief KBC send data on request only */
+#define KBC_READ_DATA              0xEB /**< @brief KBC send data packet request */
+#define KBC_SET_STREAM_MODE        0xEA /**< @brief KBC send data on events */
+#define KBC_STATUS_REQUEST         0xE9 /**< @brief KBC get mouse configuration (3 bytes) */
+#define KBC_SET_RESOLUTION         0xE8 /**< @brief KBC set resolution */
+#define KBC_SET_SCALING_2          0xE7 /**< @brief KBC acceleration mode */
+#define KBC_SET_SCALING_1          0xE6 /**< @brief KBC linear mode */
 
 /* KBC command byte */
 
@@ -89,6 +90,7 @@
 #define MOUSE_MSB_Y_DELTA BIT(5) /**< @brief MSB Y delta */
 #define MOUSE_X_OVFL      BIT(6) /**< @brief X overflow */
 #define MOUSE_Y_OVFL      BIT(7) /**< @brief Y overflow */
+#define MOUSE_SET_MSB     0xFF00 /**< @brief to set the most significant byte as 11111111 (complement-to-two)*/
 
 /**@}*/
 

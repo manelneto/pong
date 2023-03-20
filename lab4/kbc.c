@@ -13,8 +13,7 @@ int (kbc_read_status)(uint8_t *status) {
 
 int (kbc_read_output)(uint8_t *output) {
 	uint8_t status;
-	int i = 0;
-	while (i++ < KBC_MAX_ATTEMPTS) {
+	for (int i = 0; i < KBC_MAX_ATTEMPTS; i++) {
 		if (kbc_read_status(&status)) {
 			printf("%s: kbc_read_status error\n", __func__);
 			return 1;
@@ -38,10 +37,17 @@ int (kbc_read_output)(uint8_t *output) {
 	return 2;
 }
 
+int (kbc_read_acknowledgment_byte)(uint8_t *acknowledgment_byte) {
+	if (util_sys_inb(KBC_OUT_BUF, acknowledgment_byte)) {
+		printf("%s: util_sys_inb error\n", __func__);
+		return 1;
+	}
+	return 0;
+}
+
 int (kbc_write_command)(uint8_t command) {
 	uint8_t status;
-	int i = 0;
-	while (i++ < KBC_MAX_ATTEMPTS) {
+	for (int i = 0; i < KBC_MAX_ATTEMPTS; i++) {
 		if (kbc_read_status(&status)) {
 			printf("%s: kbc_read_status error\n", __func__);
 			return 1;
@@ -64,8 +70,7 @@ int (kbc_write_command)(uint8_t command) {
 
 int (kbc_write_argument)(uint8_t argument) {
 	uint8_t status;
-	int i = 0;
-	while (i++ < KBC_MAX_ATTEMPTS) {
+	for (int i = 0; i < KBC_MAX_ATTEMPTS; i++) {
 		if (kbc_read_status(&status)) {
 			printf("%s: kbc_read_status error\n", __func__);
 			return 1;
