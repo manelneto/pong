@@ -38,7 +38,7 @@ int(keyboard_unsubscribe_int)();
  * 
  * @return Return 0 upon success and non-zero otherwise
 */
-int(keyboard_read_scancode());
+int(keyboard_read_scancode_byte());
 
 /**
  * @brief Keyboard interrupt handler

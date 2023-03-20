@@ -28,7 +28,7 @@ int (keyboard_unsubscribe_int)() {
 	return 0;
 }
 
-int (keyboard_read_scancode()) {
+int (keyboard_read_scancode_byte()) {
 	uint8_t output;
 	int r = kbc_read_output(&output);
 	if (r == -1) {

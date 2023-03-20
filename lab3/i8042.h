@@ -11,7 +11,7 @@
 
 #define KEYBOARD_IRQ     1     /**< @brief Keyboard IRQ line */
 #define KBD_DELAY_US     20000 /**< @brief to be used with tickdelay(micros_to_ticks(DELAY_US)) */
-#define KBC_MAX_ATTEMPTS 2000 /**< @brief maximum number of attempts */
+#define KBC_MAX_ATTEMPTS 20    /**< @brief maximum number of attempts */
 
 /* I/O port addresses */
 
