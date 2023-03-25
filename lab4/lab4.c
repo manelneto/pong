@@ -166,9 +166,65 @@ int (mouse_test_async)(uint8_t idle_time) {
 }
 
 int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
-    /* To be completed */
-    printf("%s: under construction\n", __func__);
-    return 1;
+  if (mouse_data_reporting(true)) {
+    printf("%s: mouse_data_reporting error\n", __func__);
+		return 1;
+  }
+
+  uint8_t irq_set;
+	if (mouse_subscribe_int(&irq_set)) {
+		printf("%s: mouse_subscribe_int error\n", __func__);
+		return 1;
+	}
+
+  int ipc_status, r;
+	message msg;
+  bool exit = false;
+  struct mouse_ev* event;
+
+  while (!exit) {
+    /* Get a request message. */
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if (msg.m_notify.interrupts & BIT(irq_set)) { /* subscribed interrupt */
+            /* process it */
+            mouse_ih();
+            if (packet_index == 3) {
+              event = mouse_detect_event_our(&mouse_packet);
+              exit = mouse_check_logical_and(event, x_len, tolerance);
+              mouse_print_packet(&mouse_packet);
+              if (mouse_restore()) {
+                printf("%s: mouse_restore error\n", __func__);
+                return 1;
+              }
+            }
+          }
+          break;
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    }
+    else { /* received a standard message, not a notification */
+      /* no standard messages expected: do nothing */
+    }
+  }
+
+  if (mouse_unsubscribe_int()) {
+		printf("%s: mouse_unsubscribe_int error\n", __func__);
+		return 1;
+  }
+
+  if (mouse_data_reporting(false)) {
+    printf("%s: mouse_data_reporting error\n", __func__);
+		return 1;
+  }
+
+  return 0;
 }
 
 int (mouse_test_remote)(uint16_t period, uint8_t cnt) {
