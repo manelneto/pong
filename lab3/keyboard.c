@@ -57,7 +57,7 @@ int (keyboard_read_scancode_byte()) {
 }
 
 void (kbc_ih)() {
-	keyboard_read_scancode();
+	keyboard_read_scancode_byte();
 }
 
 int (keyboard_restore()) {

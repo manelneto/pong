@@ -99,7 +99,7 @@ int(kbd_test_poll)() {
   bool esc = false;
 
   while (!esc) {
-    if (keyboard_read_scancode()) {
+    if (keyboard_read_scancode_byte()) {
       printf("%s: keyboard_read_scancode error\n", __func__);
       return 1;
     }
