@@ -1,9 +1,6 @@
 #include <lcom/lcf.h>
 #include <lcom/lab2.h>
 
-#include <stdbool.h>
-#include <stdint.h>
-
 extern uint32_t counter;
 
 int main(int argc, char *argv[]) {
@@ -34,12 +31,12 @@ int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
 	uint8_t st;
 
 	if (timer_get_conf(timer, &st)) {
-		printf("%s: timer_get_conf error\n", __func__);
+		printf("%s: timer_get_conf(timer: %d, st: 0x%x) error\n", __func__, timer, st);
 		return 1;
 	}
 
 	if (timer_display_conf(timer, st, field)) {
-		printf("%s: timer_display_conf error\n", __func__);
+		printf("%s: timer_display_conf(timer: %d, st: 0x%x, field) error\n", __func__, timer, st);
 		return 1;
 	}
 
@@ -48,7 +45,7 @@ int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
 
 int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 	if (timer_set_frequency(timer, freq)) {
-		printf("%s: timer_set_frequency error\n", __func__);
+		printf("%s: timer_set_frequency(timer: %d, freq: %d) error\n", __func__, timer, freq);
 		return 1;
 	}
 	return 0;
