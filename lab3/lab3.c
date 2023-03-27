@@ -1,13 +1,7 @@
 #include <lcom/lcf.h>
-
 #include <lcom/lab3.h>
 
-#include <stdbool.h>
-#include <stdint.h>
-
 #include "keyboard.h"
-#include "kbc.h"
-#include "i8042.h"
 
 #define ESC 0x81
 
@@ -64,11 +58,14 @@ int(kbd_test_scan)() {
 						/* process it */
             kbc_ih();
             if (code.size > 0) {
-              kbd_print_scancode(code.makecode, code.size, code.bytes);
+              if (kbd_print_scancode(code.makecode, code.size, code.bytes)) {
+                printf("%s: kbd_print_scancode(code.makecode: %d, code.size: %d, code.bytes) error\n", code.makecode, code.size);
+                return 1;
+              }
               if (code.bytes[0] == ESC)
                 esc = true;
               if (keyboard_restore()) {
-                printf("%s: keyboard_restore error\n");
+                printf("%s: keyboard_restore() error\n");
                 return 1;
               }
             }
@@ -88,7 +85,7 @@ int(kbd_test_scan)() {
   }
 	
   if (kbd_print_no_sysinb(cnt)) {
-    printf("%s: kbd_print_no_sysinb error\n", __func__);
+    printf("%s: kbd_print_no_sysinb(cnt: %d) error\n", __func__, cnt);
 		return 1;
   }
 
@@ -100,27 +97,30 @@ int(kbd_test_poll)() {
 
   while (!esc) {
     if (keyboard_read_scancode_byte()) {
-      printf("%s: keyboard_read_scancode error\n", __func__);
+      printf("%s: keyboard_read_scancode_byte() error\n", __func__);
       return 1;
     }
     if (code.size > 0) {
-      kbd_print_scancode(code.makecode, code.size, code.bytes);
+      if (kbd_print_scancode(code.makecode, code.size, code.bytes)) {
+        printf("%s: kbd_print_scancode(code.makecode: %d, code.size: %d, code.bytes) error\n", code.makecode, code.size);
+        return 1;
+      }
       if (code.bytes[0] == ESC)
         esc = true;
       if (keyboard_restore()) {
-        printf("%s: keyboard_restore error\n");
+        printf("%s: keyboard_restore() error\n");
         return 1;
       }
     }
   }
 
   if (kbd_print_no_sysinb(cnt)) {
-    printf("%s: kbd_print_no_sysinb error\n", __func__);
+    printf("%s: kbd_print_no_sysinb(cnt: %d) error\n", __func__, cnt);
 		return 1;
   }
 
   if (keyboard_enable_interrupts()) {
-    printf("%s: keyboard_enable_interrupts\n", __func__);
+    printf("%s: keyboard_enable_interrupts() error\n", __func__);
 		return 1;
   }
 
@@ -161,11 +161,14 @@ int(kbd_test_timed_scan)(uint8_t n) {
 						/* process KBD interrupt request */
             kbc_ih();
             if (code.size > 0) {
-              kbd_print_scancode(code.makecode, code.size, code.bytes);
+              if (kbd_print_scancode(code.makecode, code.size, code.bytes)) {
+                printf("%s: kbd_print_scancode(code.makecode: %d, code.size: %d, code.bytes) error\n", code.makecode, code.size);
+                return 1;
+              }
               if (code.bytes[0] == ESC)
                 esc = true;
               if (keyboard_restore()) {
-                printf("%s: keyboard_restore error\n");
+                printf("%s: keyboard_restore() error\n");
                 return 1;
               }
             }
