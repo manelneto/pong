@@ -35,11 +35,17 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
     printf("%s: vg_init error\n", __func__);
     return 1;
   }
-  sleep(delay);
+
+  if (sleep(delay)) {
+    printf("%s: sleep error\n", __func__);
+    return 1;
+  }
+
   if (vg_exit()) {
     printf("%s: vg_exit error\n", __func__);
     return 1;
   }
+
   return 0;
 }
 
