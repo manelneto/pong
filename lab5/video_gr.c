@@ -142,3 +142,13 @@ int (vg_draw_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint
   
   return 0;
 }
+
+int (vg_draw_pixmap)(uint16_t x, uint16_t y, uint8_t *pixmap, xpm_image_t *image) {
+  for (uint16_t row = 0; row < image->height; row++)
+    for (uint16_t col = 0; col < image->width; col++)
+      if (vg_draw_pixel(x + col, y + row, *(pixmap + col + row * image->width))) {
+        printf("%s: vg_draw_pixel error\n", __func__);
+        return 1;
+      }
+  return 0;
+}
