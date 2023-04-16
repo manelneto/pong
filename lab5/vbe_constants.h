@@ -30,21 +30,8 @@
 
 #define VBE_SET_LINEAR_MODE        BIT(14) /**< @brief set the linear frame buffer model */
 #define VBE_RETURN_TO_TEXT_MODE_AH 0x00    /**< @brief value to set the AH register to return to text mode */
-#define VBE_RETURN_TO_TEXT_MODE_AL 0x03    /**< @brief valeu to set the AL register to return to text mode */
-
-/* I/O port addresses */
-
-/* commands */
-
-/* arguments */
-
-/* command byte */
-
-/* acknowledgment byte */
-
-/** STATUS REGISTER FORMAT */
-
-/* OTHER */
+#define VBE_RETURN_TO_TEXT_MODE_AL 0x03    /**< @brief value to set the AL register to return to text mode */
+#define VBE_INDEXED_COLOR_MODE     0x105   /**< @brief indexed color mode */
 
 /**@}*/
 

@@ -8,6 +8,8 @@
 
 extern struct scancode code;
 
+int (vg_draw_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step);
+
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("PT-PT");
@@ -117,10 +119,68 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y, uint16_t width,
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  /* To be completed */
-  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__, mode, no_rectangles, first, step);
+  if (!vg_init(mode)) {
+    printf("%s: vg_init error\n", __func__);
+    return 1;
+  }
 
-  return 1;
+  if (vg_draw_pattern(mode, no_rectangles, first, step)) {
+    printf("%s: vg_draw_pattern error\n", __func__);
+    return 1;
+  }
+
+  uint8_t irq_set;
+
+	if (keyboard_subscribe_int(&irq_set)) {
+		printf("%s: keyboard_subscribe_int error\n", __func__);
+		return 1;
+	}
+
+	int ipc_status, r;
+	message msg;
+  bool esc = false;
+
+	while (!esc) {
+		/* Get a request message. */
+		if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+			printf("driver_receive failed with: %d", r);
+			continue;
+		}
+		if (is_ipc_notify(ipc_status)) { /* received notification */
+			switch (_ENDPOINT_P(msg.m_source)) {
+				case HARDWARE:
+					if (msg.m_notify.interrupts & BIT(irq_set)) { /* subscribed interrupt */
+						/* process it */
+            kbc_ih();
+            if (code.size > 0) {
+              if (code.bytes[0] == ESC)
+                esc = true;
+              if (keyboard_restore()) {
+                printf("%s: keyboard_restore() error\n");
+                return 1;
+              }
+            }
+          }
+					break;
+				default:
+					break; /* no other notifications expected: do nothing */
+			}
+		} else { /* received a standard message, not a notification */
+			/* no standard messages expected: do nothing */
+		}
+	}
+
+	if (keyboard_unsubscribe_int()) {
+		printf("%s: keyboard_unsubscribe_int error\n", __func__);
+		return 1;
+  }
+
+  if (vg_exit()) {
+    printf("%s: vg_exit error\n", __func__);
+    return 1;
+  }
+
+  return 0;
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
