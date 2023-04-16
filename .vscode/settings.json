@@ -3,6 +3,8 @@
         "lcf.h": "c",
         "timer.h": "c",
         "lab2.h": "c",
-        "kbc.h": "c"
+        "kbc.h": "c",
+        "vbe.h": "c",
+        "video_gr.h": "c"
     }
 }

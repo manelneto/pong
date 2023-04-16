@@ -11,13 +11,7 @@ static unsigned v_res;           /* Vertical resolution in pixels */
 static unsigned bits_per_pixel;  /* Number of VRAM bits per pixel */
 static unsigned bytes_per_pixel; /* Number of VRAM bytes per pixel*/
 
-static vbe_mode_info_t vmi_p;
-
-typedef struct {
-  uint8_t red;
-  uint8_t green;
-  uint8_t blue;
-} rgb_8_8_8_t;
+vbe_mode_info_t vmi_p;
 
 void* (vg_init)(uint16_t mode) {
   /* 1. Initialize static global variables */
@@ -103,52 +97,3 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
   }
   return 0;
 } 
-
-rgb_8_8_8_t get_colors(uint32_t color) {
-  uint8_t r = color >> vmi_p.RedFieldPosition % BIT(vmi_p.RedMaskSize);
-  uint8_t g = color >> vmi_p.GreenFieldPosition % BIT(vmi_p.GreenMaskSize);
-  uint8_t b = color >> vmi_p.BlueFieldPosition % BIT(vmi_p.BlueMaskSize);
-  rgb_8_8_8_t colors = {r, g, b};
-  return colors;
-}
-
-uint32_t get_color(rgb_8_8_8_t colors) {
-  uint32_t color = (colors.red << vmi_p.RedFieldPosition) | (colors.green << vmi_p.GreenFieldPosition) | (colors.blue << vmi_p.BlueFieldPosition);
-  return color;
-}
-
-int (vg_draw_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  uint16_t width = h_res/no_rectangles;
-  uint16_t height = v_res/no_rectangles;
-  uint32_t color;
-  rgb_8_8_8_t first_colors = get_colors(first);
-
-  for (uint8_t row = 0; row < no_rectangles; row++)
-    for (uint8_t col = 0; col < no_rectangles; col++) {
-      if (mode == VBE_INDEXED_COLOR_MODE)
-        color = (first + (row * no_rectangles + col) * step) % (1 << bits_per_pixel);
-      else {
-        uint8_t r = (first_colors.red + col * step) % (1 << vmi_p.RedMaskSize);
-        uint8_t g = (first_colors.green + row * step) % (1 << vmi_p.GreenMaskSize);
-        uint8_t b = (first_colors.blue + (col + row) * step) % (1 << vmi_p.BlueMaskSize);
-        rgb_8_8_8_t colors = {r, g, b};
-        color = get_color(colors);
-      }
-      if (vg_draw_rectangle(col * width, row * height, width, height, color)) {
-        printf("%s: vg_draw_rectangle error\n", __func__);
-        return 1;
-      }
-    }
-  
-  return 0;
-}
-
-int (vg_draw_pixmap)(uint16_t x, uint16_t y, uint8_t *pixmap, xpm_image_t *image) {
-  for (uint16_t row = 0; row < image->height; row++)
-    for (uint16_t col = 0; col < image->width; col++)
-      if (vg_draw_pixel(x + col, y + row, *(pixmap + col + row * image->width))) {
-        printf("%s: vg_draw_pixel error\n", __func__);
-        return 1;
-      }
-  return 0;
-}

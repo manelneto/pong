@@ -12,11 +12,11 @@
 /**
  * @brief Struct for scancodes
 */
-struct scancode {
-  bool makecode; /*!< indicates whether this is a make or a break code */
-  uint8_t size; /*!< size of the scancode in bytes */
+typedef struct {
+  bool makecode;    /*!< indicates whether this is a make or a break code */
+  uint8_t size;     /*!< size of the scancode in bytes */
   uint8_t bytes[2]; /*!< array with the bytes of the scancode, in order */
-};
+} scancode;
 
 /**
  * @brief Subscribes and enables Keyboard interrupts

@@ -4,7 +4,7 @@
 
 #include "i8042.h"
 
-struct scancode code;
+scancode code;
 int32_t keyboard_hook_id = KEYBOARD_IRQ;
 
 int (keyboard_subscribe_int)(uint8_t *bit_no) {
