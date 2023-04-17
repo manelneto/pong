@@ -51,3 +51,13 @@ int (vc_draw_pixmap)(uint16_t x, uint16_t y, xpm_image_t *image) {
       }
   return 0;
 }
+
+int (vc_clean)(uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf) {
+  for (uint16_t y = yi; y < yf; y++)
+    for (uint16_t x = xi; x < xf; x++)
+      if (vg_draw_pixel(x, y, 0)) {
+        printf("%s: vg_draw_pixel error\n", __func__);
+        return 1;
+      }
+  return 0;
+}

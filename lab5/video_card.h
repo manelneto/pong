@@ -67,4 +67,15 @@ int (vc_draw_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint
 */
 int (vc_draw_pixmap)(uint16_t x, uint16_t y, xpm_image_t *image);
 
+/**
+ * @brief Resets the color of the screen pixels inside the specified area
+ * 
+ * @param xi x-coordinates of the upper-left corner
+ * @param yi y-coordinates of the upper-left corner
+ * @param xf x-coordinates of the bottom-right corner
+ * @param yf y-coordinates of the bottom-right corner
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int (vc_clean)(uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf);
+
 #endif /* __VIDEO_CARD_H */
