@@ -109,7 +109,7 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y, uint16_t width,
     return 1;
   }
 
-  if (vg_draw_rectangle(x, y, width, height, color)) {
+  if (vg_draw_rectangle(x, y, width, height, vc_normalize_color(color))) {
     printf("%s: vg_draw_rectangle error\n", __func__);
     if (vg_exit()) {
       printf("%s: vg_exit error\n", __func__);
@@ -137,7 +137,7 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
     return 1;
   }
 
-  if (vc_draw_pattern(mode, no_rectangles, first, step)) {
+  if (vc_draw_pattern(mode, no_rectangles, vc_normalize_color(first), step)) {
     printf("%s: vc_draw_pattern error\n", __func__);
     if (vg_exit()) {
       printf("%s: vg_exit error\n", __func__);

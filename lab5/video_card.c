@@ -3,6 +3,12 @@
 
 #include "vbe_constants.h"
 
+uint32_t (vc_normalize_color)(uint32_t color) {
+  if (vmi_p.BitsPerPixel == 32)
+    return color;
+  return color & (BIT(vmi_p.BitsPerPixel) - 1);
+}
+
 rgb_8_8_8_t (vc_get_colors)(uint32_t color) {
   uint8_t r = color >> vmi_p.RedFieldPosition % BIT(vmi_p.RedMaskSize);
   uint8_t g = color >> vmi_p.GreenFieldPosition % BIT(vmi_p.GreenMaskSize);

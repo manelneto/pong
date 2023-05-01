@@ -31,6 +31,14 @@ typedef struct {
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 
 /**
+ * @brief Normalizes the color (resets useless bits)
+ * 
+ * @param color color to normalize
+ * @return Return the color normalized (with useless bits set to 0)
+*/
+uint32_t (vc_normalize_color)(uint32_t color);
+
+/**
  * @brief Returns the RGB color components of a color
  * 
  * @param color color to convert to RGB
