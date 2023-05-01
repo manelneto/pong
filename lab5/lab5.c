@@ -111,6 +111,10 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y, uint16_t width,
 
   if (vg_draw_rectangle(x, y, width, height, color)) {
     printf("%s: vg_draw_rectangle error\n", __func__);
+    if (vg_exit()) {
+      printf("%s: vg_exit error\n", __func__);
+      return 1;
+    }
     return 1;
   }
 
@@ -135,6 +139,10 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
 
   if (vc_draw_pattern(mode, no_rectangles, first, step)) {
     printf("%s: vc_draw_pattern error\n", __func__);
+    if (vg_exit()) {
+      printf("%s: vg_exit error\n", __func__);
+      return 1;
+    }
     return 1;
   }
 
@@ -166,6 +174,10 @@ int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
 
   if (vc_draw_pixmap(x, y, &image)) {
     printf("%s: vc_draw_pixmap error\n", __func__);
+    if (vg_exit()) {
+      printf("%s: vg_exit error\n", __func__);
+      return 1;
+    }
     return 1;
   }
 
@@ -202,6 +214,10 @@ int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint1
 
   if (vc_draw_pixmap(x, y, &image)) {
     printf("%s: vc_draw_pixmap error\n", __func__);
+    if (vg_exit()) {
+      printf("%s: vg_exit error\n", __func__);
+      return 1;
+    }
     return 1;
   }
 
@@ -248,8 +264,12 @@ int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint1
                   y = yf;
                 }
                 if (vc_draw_pixmap(x, y, &image)) {
-                    printf("%s: vc_draw_pixmap error\n", __func__);
-                    return 1;
+                  printf("%s: vc_draw_pixmap error\n", __func__);
+                    if (vg_exit()) {
+                      printf("%s: vg_exit error\n", __func__);
+                      return 1;
+                    }
+                  return 1;
                 }
               }
             }

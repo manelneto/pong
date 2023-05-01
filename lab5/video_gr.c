@@ -64,9 +64,9 @@ void* (vg_init)(uint16_t mode) {
 }
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-  if (x < 0 || x > h_res || y < 0 || y > v_res) {
-    printf("%s: pixel (%d, %d) error\n", x, y);
-    return 1;
+  if (x < 0 || x >= h_res || y < 0 || y >= v_res) {
+    printf("%s: pixel (%d, %d) error\n", __func__, x, y);
+    return 0;
   }
 
   uint8_t *byte = video_mem;
