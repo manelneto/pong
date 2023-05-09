@@ -3,7 +3,7 @@
 #include "wall.h"
 
 Wall* construct_wall(uint16_t x, uint16_t yi, uint16_t yf) {
-    wall* wall = (wall*) malloc(sizeof(wall));
+    Wall* wall = (Wall*) malloc(sizeof(Wall));
 
     if (!wall) {
         printf("%s: malloc() error\n", __func__);
@@ -17,7 +17,7 @@ Wall* construct_wall(uint16_t x, uint16_t yi, uint16_t yf) {
     return wall;
 }
 
-void destroy_wall(wall *wall) {
+void destroy_wall(Wall *wall) {
     if (wall)
         free(wall);
 }

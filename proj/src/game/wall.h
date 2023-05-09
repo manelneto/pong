@@ -16,7 +16,7 @@ typedef struct {
     uint16_t x;  /*!< horizontal coordinate of the wall */
     uint16_t yi; /*!< initial vertical coordinate of the wall */
     uint16_t yf; /*!< final vertical coordinate of the wall */
-} wall;
+} Wall;
 
 /**
  * @brief wall constructor
@@ -26,14 +26,14 @@ typedef struct {
  * @param yf final vertical coordinate of the wall
  * @return Constructed wall
 */
-wall* construct_wall(uint16_t x, uint16_t yi, uint16_t yf);
+Wall* construct_wall(uint16_t x, uint16_t yi, uint16_t yf);
 
 /**
  * @brief wall destructor
  * 
  * @param wall pointer to the wall to be destroyed
 */
-void destroy_wall(wall *wall);
+void destroy_wall(Wall *wall);
 
 /**@}*/
 
