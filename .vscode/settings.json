@@ -5,6 +5,7 @@
         "lab2.h": "c",
         "kbc.h": "c",
         "vbe.h": "c",
-        "video_gr.h": "c"
+        "video_gr.h": "c",
+        "ball.h": "c"
     }
 }
