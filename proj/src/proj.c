@@ -1,5 +1,7 @@
 #include <lcom/lcf.h>
 
+#include "game/game.h"
+
 int main(int argc, char *argv[]) {
   lcf_set_language("PT-PT");
 
@@ -16,5 +18,23 @@ int main(int argc, char *argv[]) {
 }
 
 int(proj_main_loop)(int argc, char *argv[]) {
+  uint16_t mode = 0x105; // <-- ?
+
+  if (start(mode)) {
+    printf("%s: start(mode: 0x%x) error\n", __func__, mode);
+    if (end()) {
+      printf("%s: end() error\n", __func__);
+      return 1;
+    }
+    return 1;
+  }
+
+  sleep(5); // TEST ONLY
+
+  if (end()) {
+    printf("%s: end() error\n", __func__);
+    return 1;
+  }
+
   return 0;
 }
