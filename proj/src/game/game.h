@@ -18,6 +18,7 @@ typedef enum {
 
 /**
  * @brief Starts the game
+ * 
  * Subscribes interrupts and configures the devices as needed.
  * 
  * @param mode graphics mode to be set
@@ -26,7 +27,15 @@ typedef enum {
 int start(uint16_t mode);
 
 /**
+ * @brief Game loop
+ * 
+ * Handles interrupts from devices
+*/
+void loop();
+
+/**
  * @brief Ends the game
+ * 
  * Unsubscribes interrupts and resets the devices.
  * 
  * @return Return 0 upon success and non-zero otherwise

@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 }
 
 int(proj_main_loop)(int argc, char *argv[]) {
-  uint16_t mode = 0x105; // <-- ?
+  uint16_t mode = 0x105;
 
   if (start(mode)) {
     printf("%s: start(mode: 0x%x) error\n", __func__, mode);
@@ -29,7 +29,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
-  sleep(5); // TEST ONLY
+  loop();
 
   if (end()) {
     printf("%s: end() error\n", __func__);

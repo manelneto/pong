@@ -6,6 +6,8 @@
         "kbc.h": "c",
         "vbe.h": "c",
         "video_gr.h": "c",
-        "ball.h": "c"
+        "ball.h": "c",
+        "keyboard.h": "c",
+        "mouse.h": "c"
     }
 }
