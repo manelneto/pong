@@ -3,6 +3,44 @@
 
 #include <stdint.h>
 
+static xpm_row_t const pic[] = {
+  "32 13 4",
+  "  0",
+  "x * #FFFFFF",
+"          ****          ",
+"      **********      ",
+"    **************    ",
+"  ********************  ",
+" *********************** ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" ************************* ",
+" *********************** ",
+"    **************    ",
+"      **********      ",
+"          ****          ",
+};
+
 /** @defgroup ball ball
  * @{
  * 
@@ -15,7 +53,6 @@
 typedef struct {
     uint16_t x; /*!< horizontal coordinate of the ball */
     uint16_t y; /*!< vertical coordinate of the ball */
-    uint16_t r; /*!< radius of the ball */
 } Ball;
 
 /**
@@ -23,10 +60,9 @@ typedef struct {
  * 
  * @param x horizontal coordinate of the ball
  * @param y vertical coordinate of the ball
- * @param r radius of the ball
  * @return Constructed ball
 */
-Ball* construct_ball(uint16_t x, uint16_t y, uint16_t r);
+Ball* construct_ball(uint16_t x, uint16_t y);
 
 /**
  * @brief Ball destructor
@@ -34,6 +70,8 @@ Ball* construct_ball(uint16_t x, uint16_t y, uint16_t r);
  * @param ball pointer to the ball to be destroyed
 */
 void destroy_ball(Ball *ball);
+
+int draw_ball(uint16_t x, uint16_t y);
 
 /**@}*/
 

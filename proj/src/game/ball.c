@@ -2,7 +2,8 @@
 
 #include "ball.h"
 
-Ball* construct_ball(uint16_t x, uint16_t y, uint16_t r) {
+
+Ball* construct_ball(uint16_t x, uint16_t y) {
     Ball* ball = (Ball*) malloc(sizeof(Ball));
 
     if (!ball) {
@@ -12,9 +13,27 @@ Ball* construct_ball(uint16_t x, uint16_t y, uint16_t r) {
 
     ball->x = x;
     ball->y = y;
-    ball->r = r;
 
     return ball;
+}
+
+int draw_ball(uint16_t x, uint16_t y){
+    xpm_map_t xpm = &pic;
+    xpm_image_t image;
+
+  if (!xpm_load(xpm, XPM_INDEXED, &image)) {
+    printf("%s: xpm_load error\n", __func__);
+    return 1;
+  }
+
+  if (vc_draw_pixmap(x, y, &image)) {
+    printf("%s: vc_draw_pixmap error\n", __func__);
+    if (vg_exit()) {
+      printf("%s: vg_exit error\n", __func__);
+      return 1;
+    }
+    return 1;
+  }
 }
 
 void destroy_ball(Ball *ball) {
