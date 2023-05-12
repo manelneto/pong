@@ -45,7 +45,7 @@ int start(uint16_t mode) {
 }
 
 void loop() {
-  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2);
+  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 360);
 
   if (!ball) return;
   if (draw_ball(ball)) return;

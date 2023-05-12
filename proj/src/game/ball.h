@@ -53,6 +53,7 @@ static xpm_row_t const pic[] = {
 typedef struct {
     uint16_t x; /*!< horizontal coordinate of the ball */
     uint16_t y; /*!< vertical coordinate of the ball */
+    uint16_t a; /*!< angle of movement (with the horizontal, in the degrees) */
 } Ball;
 
 /**
@@ -60,9 +61,10 @@ typedef struct {
  * 
  * @param x horizontal coordinate of the ball
  * @param y vertical coordinate of the ball
+ * @param a angle of movement (with the horizontal, in the degrees)
  * @return Constructed ball on success, NULL otherwise
 */
-Ball* construct_ball(uint16_t x, uint16_t y);
+Ball* construct_ball(uint16_t x, uint16_t y, uint16_t a);
 
 /**
  * @breif Ball drawer
