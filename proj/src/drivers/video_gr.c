@@ -11,8 +11,6 @@ static unsigned v_res;           /* Vertical resolution in pixels */
 static unsigned bits_per_pixel;  /* Number of VRAM bits per pixel */
 static unsigned bytes_per_pixel; /* Number of VRAM bytes per pixel*/
 
-vbe_mode_info_t vmi_p;
-
 void* (vg_init)(uint16_t mode) {
   /* 1. Initialize static global variables */
   if (vbe_get_mode_info(mode, &vmi_p)) {

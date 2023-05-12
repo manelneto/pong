@@ -24,7 +24,7 @@ typedef struct {
  * @param x horizontal coordinate of the wall
  * @param yi initial vertical coordinate of the wall
  * @param yf final vertical coordinate of the wall
- * @return Constructed wall
+ * @return Constructed wall on success, NULL otherwise
 */
 Wall* construct_wall(uint16_t x, uint16_t yi, uint16_t yf);
 

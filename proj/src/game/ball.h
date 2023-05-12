@@ -60,9 +60,17 @@ typedef struct {
  * 
  * @param x horizontal coordinate of the ball
  * @param y vertical coordinate of the ball
- * @return Constructed ball
+ * @return Constructed ball on success, NULL otherwise
 */
 Ball* construct_ball(uint16_t x, uint16_t y);
+
+/**
+ * @breif Ball drawer
+ * 
+ * @param ball ball to be drawn
+ * 
+*/
+int draw_ball(Ball *ball);
 
 /**
  * @brief Ball destructor
@@ -70,8 +78,6 @@ Ball* construct_ball(uint16_t x, uint16_t y);
  * @param ball pointer to the ball to be destroyed
 */
 void destroy_ball(Ball *ball);
-
-int draw_ball(uint16_t x, uint16_t y);
 
 /**@}*/
 

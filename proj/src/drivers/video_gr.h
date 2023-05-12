@@ -12,6 +12,8 @@
  * Functions for using the video card in graphics mode
  */
 
+vbe_mode_info_t vmi_p;
+
 /**
  * @brief Struct for RGB color components
 */

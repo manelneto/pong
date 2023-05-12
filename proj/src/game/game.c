@@ -7,6 +7,8 @@
 #include "../drivers/mouse.h"
 #include "../drivers/video_gr.h"
 
+#include "ball.h"
+
 static uint8_t timer_irq_set;
 static uint8_t keyboard_irq_set;
 static uint8_t mouse_irq_set;
@@ -43,6 +45,11 @@ int start(uint16_t mode) {
 }
 
 void loop() {
+  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2);
+
+  if (!ball) return;
+  if (draw_ball(ball)) return;
+
   int ipc_status, r;
   message msg;
 
