@@ -28,10 +28,8 @@ int start(uint16_t mode);
 
 /**
  * @brief Game loop
- * 
- * Handles interrupts from devices
 */
-void loop();
+void play();
 
 /**
  * @brief Ends the game

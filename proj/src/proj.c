@@ -29,7 +29,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
-  loop();
+  play();
 
   if (end()) {
     printf("%s: end() error\n", __func__);

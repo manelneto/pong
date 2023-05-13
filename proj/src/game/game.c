@@ -44,16 +44,17 @@ int start(uint16_t mode) {
   return 0;
 }
 
-void loop() {
+void play() {
   Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 360);
 
   if (!ball) return;
-  if (draw_ball(ball)) return;
 
   int ipc_status, r;
   message msg;
 
   while (code.bytes[0] != 0x81) {
+    update_ball(ball);
+
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
       continue;
@@ -69,6 +70,8 @@ void loop() {
             mouse_ih();
       }
     }
+
+    draw_ball(ball);
   }
 }
 

@@ -4,7 +4,9 @@
 
 #include "../drivers/video_gr.h"
 
-Ball* construct_ball(uint16_t x, uint16_t y, uint16_t a) {
+#include "math.h"
+
+Ball* construct_ball(int16_t x, int16_t y, uint8_t a) {
     Ball* ball = (Ball*) malloc(sizeof(Ball));
 
     if (!ball) {
@@ -14,7 +16,8 @@ Ball* construct_ball(uint16_t x, uint16_t y, uint16_t a) {
 
     ball->x = x;
     ball->y = y;
-    ball->a = a;
+    ball->vx = 10 * cos(a * 3.14/180);
+    ball->vy = 10 * sin(a * 3.14/180);
 
     return ball;
 }
@@ -43,6 +46,19 @@ int draw_ball(Ball *ball) {
     }
     return 1;
   }*/
+}
+
+void update_ball(Ball *ball) {
+  ball->x += ball->vx;
+  ball->y += ball->vy;
+
+  if (ball->y <= 0 || ball->y >= vmi_p.YResolution) {
+    ball->vy = -ball->vy;
+  }
+
+  if (ball->x <= 0 || ball->x >= vmi_p.XResolution) {
+    ball->vx = -ball->vx;
+  }
 }
 
 void destroy_ball(Ball *ball) {
