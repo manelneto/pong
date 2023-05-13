@@ -46,7 +46,7 @@ int draw_ball(Ball *ball) {
   }*/
 }
 
-void update_ball(Ball *ball) {
+void move_ball(Ball *ball) {
   ball->x += ball->vx;
   ball->y += ball->vy;
 

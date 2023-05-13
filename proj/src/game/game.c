@@ -46,7 +46,7 @@ int start(uint16_t mode) {
 }
 
 void play() {
-  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 10 + 1, rand() % 10 + 1);
+  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 5 + 1, rand() % 5 + 1);
   Wall *wall = construct_wall(0, vmi_p.YResolution/2 - 25, 50);
 
   if (!ball) return;
@@ -57,7 +57,9 @@ void play() {
   bool esc = false;
 
   while (!esc) {
-    update_ball(ball);
+    move_ball(ball);
+
+    if (ball->x <= 0 && (ball->y < wall->y || ball->y > wall->y + wall->l)) return;
 
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
@@ -79,21 +81,12 @@ void play() {
                 move_wall_down(wall);
               keyboard_restore();
             }
-            //move_wall_up(wall);
-            /*if (code.size > 0) {
-              if (code.bytes[0] == KBD_ARROW_UP_MAKECODE_LSB ||  code.bytes[0] == KBD_W_MAKECODE) {
-                move_wall_up(wall);
-                keyboard_restore();
-              }
-              else if ((code.size == 2 && code.bytes[0] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE)) {
-                move_wall_down(wall);
-                keyboard_restore();
-              }*/
           }
           if (msg.m_notify.interrupts & BIT(mouse_irq_set))
             mouse_ih();
       }
     }
+    vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
 
     draw_ball(ball);
     draw_wall(wall);

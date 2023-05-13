@@ -31,18 +31,22 @@ Wall* construct_wall(int16_t x, int16_t y, uint16_t l);
 /**
  * @brief Wall drawer
  * 
- * @param wall wall to be drawn
+ * @param wall pointer to the wall to be drawn
  * 
 */
 int draw_wall(Wall *wall);
 
 /**
  * @brief Moves wall up
+ * 
+ * @param wall pointer to the wall to be moved up
 */
 void move_wall_up(Wall *wall);
 
 /**
  * @brief Moves wall down
+ * 
+ * @param wall pointer to the wall to be moved up
 */
 void move_wall_down(Wall *wall);
 

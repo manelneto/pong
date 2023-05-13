@@ -30,11 +30,11 @@ int draw_wall(Wall *wall) {
 }
 
 void move_wall_up(Wall *wall) {
-  wall->y -= 1;
+  wall->y -= 10;
 }
 
 void move_wall_down(Wall *wall) {
-  wall->y += 1;
+  wall->y += 10;
 }
 
 void destroy_wall(Wall *wall) {

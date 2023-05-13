@@ -71,15 +71,16 @@ Ball* construct_ball(int16_t x, int16_t y, int16_t vx, int16_t vy);
 /**
  * @brief Ball drawer
  * 
- * @param ball ball to be drawn
- * 
+ * @param ball pointer to the ball to be drawn
 */
 int draw_ball(Ball *ball);
 
 /**
  * @brief Updates ball position and velocity
+ * 
+ * @param ball pointer to the ball to be updated/moved
 */
-void update_ball(Ball *ball);
+void move_ball(Ball *ball);
 
 /**
  * @brief Ball destructor
