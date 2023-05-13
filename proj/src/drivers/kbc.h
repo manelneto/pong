@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "i8042.h"
+
 /** @defgroup kbc kbc
  * @{
  *

@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "kbc.h"
+
 /** @defgroup mouse mouse
  * @{
  *

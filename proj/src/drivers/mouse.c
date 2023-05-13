@@ -2,10 +2,6 @@
 
 #include "mouse.h"
 
-#include "kbc.h"
-
-#include "i8042.h"
-
 struct packet mouse_packet;
 int32_t mouse_hook_id = MOUSE_IRQ;
 uint8_t packet_index = 0;

@@ -2,10 +2,6 @@
 
 #include "keyboard.h"
 
-#include "kbc.h"
-
-#include "i8042.h"
-
 scancode code;
 int32_t keyboard_hook_id = KEYBOARD_IRQ;
 
@@ -32,10 +28,7 @@ int (keyboard_read_scancode_byte()) {
 	uint8_t output;
 	int r = kbc_read_output(&output);
 	if (r == -1) {
-		if (keyboard_restore()) {
-			printf("%s: keyboard_restore() error\n");
-			return 1;
-		}
+		keyboard_restore();
 		printf("%s: kbc_read_output(output: 0x%x) error (returned %d)\n", __func__, output, r);
 		return 1;
 	} else if (r == 2) {
@@ -67,10 +60,9 @@ void (kbc_ih)() {
 		printf("%s: keyboard_read_scancode_byte() error\n", __func__);
 }
 
-int (keyboard_restore()) {
+void (keyboard_restore()) {
 	code.size = 0;
 	code.bytes[0] = 0;
-	return 0;
 }
 
 int (keyboard_enable_interrupts)() {

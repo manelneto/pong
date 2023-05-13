@@ -4,9 +4,7 @@
 
 #include "../drivers/video_gr.h"
 
-#include "math.h"
-
-Ball* construct_ball(int16_t x, int16_t y, uint8_t a) {
+Ball* construct_ball(int16_t x, int16_t y, int16_t vx, int16_t vy) {
     Ball* ball = (Ball*) malloc(sizeof(Ball));
 
     if (!ball) {
@@ -16,8 +14,8 @@ Ball* construct_ball(int16_t x, int16_t y, uint8_t a) {
 
     ball->x = x;
     ball->y = y;
-    ball->vx = 10 * cos(a * 3.14/180);
-    ball->vy = 10 * sin(a * 3.14/180);
+    ball->vx = vx;
+    ball->vy = vy;
 
     return ball;
 }

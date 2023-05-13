@@ -78,7 +78,25 @@
 #define KBD_FIRST_OF_TWO_BYTES 0xE0   /**< @brief First byte of two bytes scancode */
 #define KBD_ESC_BREAKCODE      0x81   /**< @brief ESC breakcode */
 
-/* OTHER - Mouse */
+#define KBD_ARROW_UP_MAKECODE_LSB     0x48
+#define KBD_ARROW_DOWN_MAKECODE_LSB   0x50
+#define KBD_ARROW_LEFT_MAKECODE_LSB   0x4B
+#define KBD_ARROW_RIGHT_MAKECODE_LSB  0x4D
+#define KBD_ARROW_UP_BREAKCODE_LSB    0xC8
+#define KBD_ARROW_DOWN_BREAKCODE_LSB  0xD0
+#define KBD_ARROW_LEFT_BREAKCODE_LSB  0xCB
+#define KBD_ARROW_RIGHT_BREAKCODE_LSB 0xCD
+
+#define KBD_W_MAKECODE  0x11
+#define KBD_A_MAKECODE  0x1E
+#define KBD_S_MAKECODE  0x1F
+#define KBD_D_MAKECODE  0x20
+#define KBD_W_BREAKCODE 0x91
+#define KBD_A_BREAKCODE 0x9E
+#define KBD_S_BREAKCODE 0x9F
+#define KBD_D_BREAKCODE 0xA0
+
+/* Other - Mouse */
 
 #define MOUSE_LB          BIT(0) /**< @brief Left Button */
 #define MOUSE_RB          BIT(1) /**< @brief Right Button */

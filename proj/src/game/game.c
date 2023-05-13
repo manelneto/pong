@@ -46,7 +46,7 @@ int start(uint16_t mode) {
 }
 
 void play() {
-  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 360);
+  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 10 + 1, rand() % 10 + 1);
   Wall *wall = construct_wall(0, vmi_p.YResolution/2 - 25, 50);
 
   if (!ball) return;
@@ -54,7 +54,9 @@ void play() {
   int ipc_status, r;
   message msg;
 
-  while (code.bytes[0] != 0x81) {
+  bool esc = false;
+
+  while (!esc) {
     update_ball(ball);
 
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
@@ -66,8 +68,28 @@ void play() {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(timer_irq_set))
             timer_int_handler();
-          if (msg.m_notify.interrupts & BIT(keyboard_irq_set))
+          if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {
             kbc_ih();
+            if (code.size > 0) {
+              if (code.bytes[0] == KBD_ESC_BREAKCODE)
+                esc = true;
+              else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
+                move_wall_up(wall);
+              else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE))
+                move_wall_down(wall);
+              keyboard_restore();
+            }
+            //move_wall_up(wall);
+            /*if (code.size > 0) {
+              if (code.bytes[0] == KBD_ARROW_UP_MAKECODE_LSB ||  code.bytes[0] == KBD_W_MAKECODE) {
+                move_wall_up(wall);
+                keyboard_restore();
+              }
+              else if ((code.size == 2 && code.bytes[0] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE)) {
+                move_wall_down(wall);
+                keyboard_restore();
+              }*/
+          }
           if (msg.m_notify.interrupts & BIT(mouse_irq_set))
             mouse_ih();
       }

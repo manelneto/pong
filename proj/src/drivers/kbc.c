@@ -2,8 +2,6 @@
 
 #include "kbc.h"
 
-#include "i8042.h"
-
 int (kbc_read_status)(uint8_t *status) {
 	if (util_sys_inb(KBC_STATUS_REG, status)) {
 		printf("%s: util_sys_inb(KBC_STATUS_REG, status: 0x%x) error\n", __func__, status);

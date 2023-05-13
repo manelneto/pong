@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "kbc.h"
+
 /** @defgroup keyboard keyboard
  * @{
  *
@@ -50,10 +52,8 @@ void(kbc_ih)();
 
 /**
  * @brief Restores keyboard (resets scancode)
- *
- * @return Return 0 upon success and non-zero otherwise
  */
-int(keyboard_restore)();
+void(keyboard_restore)();
 
 /**
  * @brief Enables keyboard interrupts, by writing an appropriate KBC command byte
