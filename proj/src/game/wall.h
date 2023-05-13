@@ -13,20 +13,20 @@
  * @brief Struct for the wall
 */
 typedef struct {
-    int16_t x;  /*!< horizontal coordinate of the wall */
-    int16_t yi; /*!< initial vertical coordinate of the wall */
-    int16_t yf; /*!< final vertical coordinate of the wall */
+    int16_t x; /*!< horizontal coordinate of the wall */
+    int16_t y; /*!< initial vertical coordinate of the wall */
+    int16_t l; /*!< length of the wall */
 } Wall;
 
 /**
  * @brief wall constructor
  * 
  * @param x horizontal coordinate of the wall
- * @param yi initial vertical coordinate of the wall
- * @param yf final vertical coordinate of the wall
+ * @param y initial vertical coordinate of the wall
+ * @param l length of the wall
  * @return Constructed wall on success, NULL otherwise
 */
-Wall* construct_wall(int16_t x, int16_t yi, int16_t yf);
+Wall* construct_wall(int16_t x, int16_t y, uint16_t l);
 
 /**
  * @brief Wall drawer
@@ -37,9 +37,14 @@ Wall* construct_wall(int16_t x, int16_t yi, int16_t yf);
 int draw_wall(Wall *wall);
 
 /**
- * @brief Updates wall position
+ * @brief Moves wall up
 */
-void update_wall(Wall *wall);
+void move_wall_up(Wall *wall);
+
+/**
+ * @brief Moves wall down
+*/
+void move_wall_down(Wall *wall);
 
 /**
  * @brief wall destructor

@@ -47,7 +47,7 @@ int start(uint16_t mode) {
 
 void play() {
   Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 360);
-  Wall *wall = construct_wall(0, vmi_p.YResolution/2 - 25, vmi_p.YResolution/2 + 25);
+  Wall *wall = construct_wall(0, vmi_p.YResolution/2 - 25, 50);
 
   if (!ball) return;
 
@@ -56,7 +56,6 @@ void play() {
 
   while (code.bytes[0] != 0x81) {
     update_ball(ball);
-    update_wall(wall);
 
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
