@@ -2,10 +2,10 @@
 
 #include "game.h"
 
-#include <lcom/timer.h>
 #include "../drivers/keyboard.h"
 #include "../drivers/mouse.h"
 #include "../drivers/video_gr.h"
+#include <lcom/timer.h>
 
 #include "ball.h"
 #include "wall.h"
@@ -14,7 +14,13 @@ static uint8_t timer_irq_set;
 static uint8_t keyboard_irq_set;
 static uint8_t mouse_irq_set;
 
+extern uint32_t counter;
 extern scancode code;
+extern struct packet mouse_packet;
+
+static Ball *ball;
+static Wall *wall;
+static Direction direction;
 
 int start(uint16_t mode) {
   if (timer_subscribe_int(&timer_irq_set)) {
@@ -42,29 +48,47 @@ int start(uint16_t mode) {
     return 1;
   }
 
+  ball = construct_ball(vmi_p.XResolution / 2, vmi_p.YResolution / 2, rand() % 5 + 1, rand() % 5 + 1);
+  wall = construct_wall(0, vmi_p.YResolution / 2 - 25, 50);
+  direction = STOP;
+
   return 0;
 }
 
-void play() {
-  Ball *ball = construct_ball(vmi_p.XResolution/2, vmi_p.YResolution/2, rand() % 5 + 1, rand() % 5 + 1);
-  Wall *wall = construct_wall(0, vmi_p.YResolution/2 - 25, 50);
+int update_game() {
+  move_ball(ball);
+  move_wall(wall, direction);
 
-  if (!ball) return;
+  if (ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l))
+    return 1;
+
+  direction = STOP;
+
+  return 0;
+}
+
+void draw_game() {
+    vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
+    draw_ball(ball);
+    draw_wall(wall);
+}
+
+void play() {
+  if (!ball || !wall) return;
 
   int ipc_status, r;
   message msg;
 
-  bool esc = false;
+  bool quit = false;
 
-  while (!esc) {
-    move_ball(ball);
-
-    if (ball->x <= 0 && (ball->y < wall->y || ball->y > wall->y + wall->l)) return;
+  while (!quit) {
+    draw_game();
 
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
       continue;
     }
+
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
@@ -74,11 +98,11 @@ void play() {
             kbc_ih();
             if (code.size > 0) {
               if (code.bytes[0] == KBD_ESC_BREAKCODE)
-                esc = true;
-              else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
-                move_wall_up(wall);
-              else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE))
-                move_wall_down(wall);
+                quit = true;
+              else if (((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE)))
+                direction = UP;
+              else if (((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE)))
+                direction = DOWN;
               keyboard_restore();
             }
           }
@@ -86,14 +110,15 @@ void play() {
             mouse_ih();
       }
     }
-    vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
 
-    draw_ball(ball);
-    draw_wall(wall);
+    if (update_game()) return;
   }
 }
 
 int end() {
+  destroy_wall(wall);
+  destroy_ball(ball);
+
   if (vg_exit()) {
     printf("%s: vg_exit() error\n", __func__);
     return 1;

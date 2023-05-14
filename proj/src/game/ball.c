@@ -4,20 +4,20 @@
 
 #include "../drivers/video_gr.h"
 
-Ball* construct_ball(int16_t x, int16_t y, int16_t vx, int16_t vy) {
-    Ball* ball = (Ball*) malloc(sizeof(Ball));
+Ball *construct_ball(int16_t x, int16_t y, int16_t vx, int16_t vy) {
+  Ball *ball = (Ball *) malloc(sizeof(Ball));
 
-    if (!ball) {
-        printf("%s: malloc() error\n", __func__);
-        return NULL;
-    }
+  if (!ball) {
+    printf("%s: malloc() error\n", __func__);
+    return NULL;
+  }
 
-    ball->x = x;
-    ball->y = y;
-    ball->vx = vx;
-    ball->vy = vy;
+  ball->x = x;
+  ball->y = y;
+  ball->vx = vx;
+  ball->vy = vy;
 
-    return ball;
+  return ball;
 }
 
 int draw_ball(Ball *ball) {
@@ -60,6 +60,6 @@ void move_ball(Ball *ball) {
 }
 
 void destroy_ball(Ball *ball) {
-    if (ball)
-        free(ball);
+  if (ball)
+    free(ball);
 }
