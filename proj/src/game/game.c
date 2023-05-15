@@ -82,8 +82,6 @@ void play() {
   bool quit = false;
 
   while (!quit) {
-    draw_game();
-
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
       continue;
@@ -92,8 +90,11 @@ void play() {
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
-          if (msg.m_notify.interrupts & BIT(timer_irq_set))
+          if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
             timer_int_handler();
+            if (counter % 2)
+              draw_game();
+          }
           if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {
             kbc_ih();
             if (code.size > 0) {
