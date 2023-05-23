@@ -7,38 +7,44 @@
  * Functions related to the game
 */
 
-/**
- * @brief Enum for the game states
-*/
 typedef enum {
-    MENU,         /*!< main menu */
-    SINGLEPLAYER, /*!< single player mode */
-    QUIT          /*!< quit */
-} GameState;
+    ARROW_UP,
+    ARROW_DOWN
+} Key;
 
 /**
  * @brief Starts the game
  * 
- * Subscribes interrupts and configures the devices as needed.
+ * Constroys the ball and the wall.
  * 
- * @param mode graphics mode to be set
+ * @param xResolution horizontal resolution of the screen in pixels
+ * @param yResolution vertical resolution of the screen in pixels
  * @return Return 0 upon success and non-zero otherwise
 */
-int start(uint16_t mode);
+int game_start(uint16_t xResolution, uint16_t yResolution);
 
 /**
- * @brief Game loop
+ * 
+ * 
 */
-void play();
+int game_timer_ih(uint32_t counter);
+
+/**
+ * 
+*/
+void game_keyboard_ih(Key key);
+
+/**
+ * 
+*/
+void game_mouse_ih();
 
 /**
  * @brief Ends the game
  * 
- * Unsubscribes interrupts and resets the devices.
- * 
- * @return Return 0 upon success and non-zero otherwise
+ * Destroys the ball and the wall.
 */
-int end();
+void game_end();
 
 /**@}*/
 

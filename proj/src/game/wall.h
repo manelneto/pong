@@ -54,7 +54,7 @@ int draw_wall(Wall *wall);
 void move_wall(Wall *wall, Direction direction);
 
 /**
- * @brief wall destructor
+ * @brief Wall destructor
  * 
  * @param wall pointer to the wall to be destroyed
 */

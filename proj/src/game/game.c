@@ -2,60 +2,32 @@
 
 #include "game.h"
 
-#include "../drivers/keyboard.h"
-#include "../drivers/mouse.h"
-#include "../drivers/video_gr.h"
-#include <lcom/timer.h>
-
 #include "ball.h"
 #include "wall.h"
-
-static uint8_t timer_irq_set;
-static uint8_t keyboard_irq_set;
-static uint8_t mouse_irq_set;
-
-extern uint32_t counter;
-extern scancode code;
-extern struct packet mouse_packet;
 
 static Ball *ball;
 static Wall *wall;
 static Direction direction;
 
-int start(uint16_t mode) {
-  if (timer_subscribe_int(&timer_irq_set)) {
-    printf("%s: timer_subscribe_int() error\n", __func__);
+int game_start(uint16_t xResolution, uint16_t yResolution) {
+  ball = construct_ball(xResolution / 2, yResolution / 2, 1, 1);
+  if (!ball) {
+    printf("%s: construct_ball(%d, %d, %d, %d) error\n", __func__, xResolution / 2, yResolution / 2, 1, 1);
     return 1;
   }
 
-  if (keyboard_subscribe_int(&keyboard_irq_set)) {
-    printf("%s: keyboard_subscribe_int() error\n", __func__);
+  wall = construct_wall(0, yResolution / 2 - 25, 50);
+  if (!wall) {
+    printf("%s: construct_wall(%d, %d, %d) error\n", __func__, 0, yResolution / 2 - 25, 50);
     return 1;
   }
 
-  if (mouse_data_reporting(true)) {
-    printf("%s: mouse_data_reporting(true) error\n", __func__);
-    return 1;
-  }
-
-  if (mouse_subscribe_int(&mouse_irq_set)) {
-    printf("%s: mouse_subscribe_int() error\n", __func__);
-    return 1;
-  }
-
-  if (!vg_init(mode)) {
-    printf("%s: vg_init(mode: 0x%x) error\n", __func__, mode);
-    return 1;
-  }
-
-  ball = construct_ball(vmi_p.XResolution / 2, vmi_p.YResolution / 2, rand() % 5 + 1, rand() % 5 + 1);
-  wall = construct_wall(0, vmi_p.YResolution / 2 - 25, 50);
   direction = STOP;
 
   return 0;
 }
 
-int update_game() {
+int game_timer_ih(uint32_t counter) {
   move_ball(ball);
   move_wall(wall, direction);
 
@@ -63,87 +35,28 @@ int update_game() {
     return 1;
 
   direction = STOP;
-
-  return 0;
-}
-
-void draw_game() {
-    vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
+  
+  if (counter % 2) {
     draw_ball(ball);
     draw_wall(wall);
-}
-
-void play() {
-  if (!ball || !wall) return;
-
-  int ipc_status, r;
-  message msg;
-
-  bool quit = false;
-
-  while (!quit) {
-    if ((r = driver_receive(ANY, &msg, &ipc_status))) {
-      printf("%s: driver_receive failed with: %d\n", __func__, r);
-      continue;
-    }
-
-    if (is_ipc_notify(ipc_status)) {
-      switch (_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE:
-          if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
-            timer_int_handler();
-            if (counter % 2)
-              draw_game();
-          }
-          if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {
-            kbc_ih();
-            if (code.size > 0) {
-              if (code.bytes[0] == KBD_ESC_BREAKCODE)
-                quit = true;
-              else if (((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE)))
-                direction = UP;
-              else if (((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE)))
-                direction = DOWN;
-              keyboard_restore();
-            }
-          }
-          if (msg.m_notify.interrupts & BIT(mouse_irq_set))
-            mouse_ih();
-      }
-    }
-
-    if (update_game()) return;
-  }
-}
-
-int end() {
-  destroy_wall(wall);
-  destroy_ball(ball);
-
-  if (vg_exit()) {
-    printf("%s: vg_exit() error\n", __func__);
-    return 1;
-  }
-
-  if (mouse_unsubscribe_int()) {
-    printf("%s: mouse_unsubscribe_int() error\n", __func__);
-    return 1;
-  }
-
-  if (mouse_data_reporting(false)) {
-    printf("%s: mouse_data_reporting(false) error\n", __func__);
-    return 1;
-  }
-
-  if (keyboard_unsubscribe_int()) {
-    printf("%s: keyboard_unsubscribe_int() error\n", __func__);
-    return 1;
-  }
-
-  if (timer_unsubscribe_int()) {
-    printf("%s: timer_unsubscribe_int() error\n", __func__);
-    return 1;
   }
 
   return 0;
+}
+
+void game_keyboard_ih(Key key) {
+  if (key == ARROW_UP)
+    direction = UP;
+  else if (key == ARROW_DOWN)
+    direction = DOWN;
+}
+
+void game_mouse_ih() {
+  ball->vx *= 2;
+  ball->vy *= 2;
+}
+
+void game_end() {
+  destroy_ball(ball);
+  destroy_wall(wall);
 }
