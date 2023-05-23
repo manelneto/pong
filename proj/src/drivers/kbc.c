@@ -31,10 +31,10 @@ int (kbc_read_output)(uint8_t *output) {
 			
 			return -1;
 		}
-		if (tickdelay(micros_to_ticks(KBD_DELAY))) {
+		/*if (tickdelay(micros_to_ticks(KBD_DELAY))) {
 			printf("%s: tickdelay(micros_to_ticks(KBD_DELAY)) error\n", __func__);
 			return 1;
-		}
+		}*/
 	}
 	return 2;
 }

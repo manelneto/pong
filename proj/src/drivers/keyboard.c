@@ -63,6 +63,7 @@ void (kbc_ih)() {
 void (keyboard_restore()) {
 	code.size = 0;
 	code.bytes[0] = 0;
+	code.bytes[1] = 0;
 }
 
 int (keyboard_enable_interrupts)() {

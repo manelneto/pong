@@ -25,7 +25,6 @@ int game_start(uint16_t xResolution, uint16_t yResolution);
 
 /**
  * 
- * 
 */
 int game_timer_ih(uint32_t counter);
 

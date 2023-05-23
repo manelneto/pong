@@ -5,8 +5,8 @@
 #include "ball.h"
 #include "wall.h"
 
-static Ball *ball;
-static Wall *wall;
+static Ball *ball = NULL;
+static Wall *wall = NULL;
 static Direction direction;
 
 int game_start(uint16_t xResolution, uint16_t yResolution) {

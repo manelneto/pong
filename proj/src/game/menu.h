@@ -8,13 +8,30 @@
 */
 
 /**
- * @brief Enum for the menu states
+ * 
 */
-typedef enum {
-    START, /*!< start game */
-    GAME,  /*!< in game */
-    END    /*!< end game */
-} MenuState;
+void menu_start();
+
+/**
+ * 
+*/
+void menu_timer_ih();
+
+/**
+ * 
+*/
+void menu_keyboard_ih();
+
+/**
+ * 
+*/
+void menu_mouse_ih();
+
+/**
+ * 
+*/
+void menu_end();
+
 
 /**@}*/
 

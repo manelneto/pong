@@ -14,6 +14,7 @@ static uint8_t mouse_irq_set;
 extern uint32_t counter;
 extern scancode code;
 extern struct packet mouse_packet;
+extern uint8_t packet_index;
 extern vbe_mode_info_t vmi_p;
 
 /**
@@ -25,7 +26,7 @@ typedef enum {
   QUIT          /*!< quit */
 } State;
 
-State state = SINGLEPLAYER;
+State state = MENU;
 
 int main(int argc, char *argv[]) {
   lcf_set_language("PT-PT");
@@ -69,25 +70,14 @@ int start() {
     return 1;
   }
 
-  if (game_start(vmi_p.XResolution, vmi_p.YResolution)) {
-    printf("%s: game_start(vmi_p.XResolution: %d, vmi_p.YResolution: %d) error\n", __func__, vmi_p.XResolution, vmi_p.YResolution);
-    return 1;
-  }
-
   return 0;
 }
-
-// apontadores para funções !!!
-// separar lógica
-// double buffer
 
 void loop() {
   int ipc_status, r;
   message msg;
 
-  bool end = false;
-
-  while (!end) {
+  while (state != QUIT) {
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
       continue;
@@ -98,22 +88,25 @@ void loop() {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
             timer_int_handler();
-            if (counter % 2) {
-              if (vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution)) {
-                printf("%s: vg_clean(%d, %d, vmi_p.XResolution: %d, vmi_p.YResolution: %d) error\n", __func__, 0, 0, vmi_p.XResolution, vmi_p.YResolution);
-                end = true;
-              }
+            if (counter % 2)
+              vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
+            if (state == SINGLEPLAYER && game_timer_ih(counter)) {
+              game_end();
+              state = MENU;
             }
-            if (state == SINGLEPLAYER && game_timer_ih(counter))
-              end = true;
           }
           if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {
             kbc_ih();
             if (code.size > 0) {
-              if (code.bytes[0] == KBD_ESC_BREAKCODE)
-                end = true;
+              // code complete
+              if (state == MENU && code.bytes[0] == KBD_ESC_BREAKCODE)
+                state = QUIT;
               else if (state == SINGLEPLAYER) {
-                if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
+                if (code.bytes[0] == KBD_ESC_BREAKCODE) {
+                  game_end();
+                  state = MENU;
+                }
+                else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
                   game_keyboard_ih(ARROW_UP);
                 else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE))
                   game_keyboard_ih(ARROW_DOWN);
@@ -123,8 +116,16 @@ void loop() {
           }
           if (msg.m_notify.interrupts & BIT(mouse_irq_set)) {
             mouse_ih();
-            if (state == SINGLEPLAYER && mouse_packet.lb)
-              game_mouse_ih(true);
+            if (packet_index == 3) {
+              // packet complete
+              if (state == MENU && mouse_packet.lb) {
+                state = SINGLEPLAYER;
+                game_start(vmi_p.XResolution, vmi_p.YResolution);
+              }
+              else if (state == SINGLEPLAYER && mouse_packet.rb)
+                game_mouse_ih();
+              mouse_restore();
+            }
           }
       }
     }
@@ -132,8 +133,6 @@ void loop() {
 }
 
 int end() {
-  game_end();
-
   if (vg_exit()) {
     printf("%s: vg_exit() error\n", __func__);
     return 1;
