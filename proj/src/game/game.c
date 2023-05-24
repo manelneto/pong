@@ -27,6 +27,11 @@ int game_start(uint16_t xResolution, uint16_t yResolution) {
   return 0;
 }
 
+void game_draw() {
+  draw_ball(ball);
+  draw_wall(wall);
+}
+
 int game_timer_ih(uint32_t counter) {
   move_ball(ball);
   move_wall(wall, direction);

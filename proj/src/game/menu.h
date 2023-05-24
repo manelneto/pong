@@ -10,7 +10,12 @@
 /**
  * 
 */
-void menu_start();
+int menu_start(uint16_t xResolution, uint16_t yResolution);
+
+/**
+ * 
+*/
+void menu_draw();
 
 /**
  * 

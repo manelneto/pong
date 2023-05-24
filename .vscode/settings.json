@@ -8,6 +8,7 @@
         "video_gr.h": "c",
         "ball.h": "c",
         "keyboard.h": "c",
-        "mouse.h": "c"
+        "mouse.h": "c",
+        "*.xpm": "c"
     }
 }

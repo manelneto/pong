@@ -6,6 +6,7 @@
 #include <lcom/timer.h>
 
 #include "game/game.h"
+#include "game/menu.h"
 
 static uint8_t timer_irq_set;
 static uint8_t keyboard_irq_set;
@@ -70,6 +71,12 @@ int start() {
     return 1;
   }
 
+  if (menu_start(vmi_p.XResolution, vmi_p.YResolution)) {
+    printf("%s: menu_start(vmi_p.XResolution: %d, vmi_p.YResolution: %d) error\n", __func__, vmi_p.XResolution, vmi_p.YResolution);
+    return 1;
+  }
+  menu_draw();
+
   return 0;
 }
 
@@ -88,11 +95,13 @@ void loop() {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
             timer_int_handler();
-            if (counter % 2)
-              vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
-            if (state == SINGLEPLAYER && game_timer_ih(counter)) {
-              game_end();
-              state = MENU;
+            if (state == SINGLEPLAYER) {
+              if (counter % 2)
+                vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
+              if (state == SINGLEPLAYER && game_timer_ih(counter)) {
+                game_end();
+                state = MENU;
+              }
             }
           }
           if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {

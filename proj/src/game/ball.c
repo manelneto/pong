@@ -27,23 +27,6 @@ int draw_ball(Ball *ball) {
   }
 
   return 0;
-
-  /*xpm_map_t xpm = &pic;
-  xpm_image_t image;
-
-  if (!xpm_load(xpm, XPM_INDEXED, &image)) {
-    printf("%s: xpm_load error\n", __func__);
-    return 1;
-  }
-
-  if (vc_draw_pixmap(x, y, &image)) {
-    printf("%s: vc_draw_pixmap error\n", __func__);
-    if (vg_exit()) {
-      printf("%s: vg_exit error\n", __func__);
-      return 1;
-    }
-    return 1;
-  }*/
 }
 
 void move_ball(Ball *ball) {
