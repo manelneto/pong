@@ -3,9 +3,15 @@
 #include "menu.h"
 
 #include "button.h"
+#include "cursor.h"
+
+#include "model.h"
 
 static Button *play = NULL;
 static Button *quit = NULL;
+static Cursor *cursor = NULL;
+
+extern State state;
 
 int menu_start(uint16_t xResolution, uint16_t yResolution) {
   play = construct_button(xResolution/3, yResolution/5, xResolution/3, yResolution/5);
@@ -20,37 +26,66 @@ int menu_start(uint16_t xResolution, uint16_t yResolution) {
     return 1;
   }
 
+  cursor = construct_cursor(xResolution/2, yResolution/2);
+  if (!cursor) {
+    printf("%s: construct_cursor(%d, %d) error\n", __func__, xResolution/2, yResolution/2);
+    return 1;
+  }
+
   return 0;
 }
 
-void menu_draw() {
-  draw_button(play);
-  draw_button(quit);
+int menu_draw() {
+  if (draw_button(play)) {
+    printf("%s: draw_button(play) error\n", __func__);
+    return 1;
+  }
+
+  if (draw_button(quit)) {
+    printf("%s: draw_button(quit) error\n", __func__);
+    return 1;
+  }
+
+  return 0;
+}
+
+int menu_draw_cursor() {
+  if (draw_cursor(cursor)) {
+    printf("%s: draw_cursor(cursor) error\n", __func__);
+    return 1;
+  }
+
+  return 0;
+}
+
+void menu_timer_ih() {
+  // empty
+}
+
+void menu_keyboard_ih(MenuKey key) {
+  // useless
+  if (key == PLAY)
+    play->selected = true;
+  else if (key == QUIT)
+    quit->selected = true;
+  else if (key == ENTER) {
+    if (play->selected) menu_to_game();
+    if (quit->selected) state = EXIT;
+  }
+}
+
+void menu_mouse_ih(uint16_t x, uint16_t y, bool lb) {
+  move_cursor(cursor, x, y);
+  if (lb) {
+    update_button(play, x, y);
+    update_button(quit, x, y);
+    if (play->selected) menu_to_game();
+    if (quit->selected) state = EXIT;
+  }
 }
 
 void menu_end() {
   destroy_button(play);
   destroy_button(quit);
+  destroy_cursor(cursor);
 }
-
-/*Sprite *button;
-
-
-
-void construct_menu() {
-    button = construct_sprite((xpm_map_t) start_xpm);
-}
-
-int draw_menu() {
-    uint16_t height = button->height;
-    uint16_t width = button->width;
-    uint32_t current_color;
-    for (int h = 0 ; h < height ; h++) {
-      for (int w = 0 ; w < width ; w++) {
-        current_color = button->colors[w + h*width];
-        if (vg_draw_pixel(w, h, current_color) != 0) printf("bug");
-        printf("painted (%d, %d) with 0x%x\n", w, h, current_color);
-      }
-    }
-    return 0; 
-}*/
