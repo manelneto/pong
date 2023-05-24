@@ -7,7 +7,6 @@
 
 static Ball *ball = NULL;
 static Wall *wall = NULL;
-static Direction direction;
 
 int game_start(uint16_t xResolution, uint16_t yResolution) {
   ball = construct_ball(xResolution / 2, yResolution / 2, 1, 1);
@@ -22,38 +21,40 @@ int game_start(uint16_t xResolution, uint16_t yResolution) {
     return 1;
   }
 
-  direction = STOP;
+  wall->direction = STOP;
 
   return 0;
 }
 
-void game_draw() {
-  draw_ball(ball);
-  draw_wall(wall);
-}
-
-int game_timer_ih(uint32_t counter) {
-  move_ball(ball);
-  move_wall(wall, direction);
-
-  if (ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l))
+int game_draw() {
+  if (draw_ball(ball)) {
+    printf("%d: draw_ball(ball) error\n", __func__);
     return 1;
+  }
 
-  direction = STOP;
-  
-  if (counter % 2) {
-    draw_ball(ball);
-    draw_wall(wall);
+  if (draw_wall(wall)) {
+    printf("%d: draw_wall(wall) error\n", __func__);
+    return 1;
   }
 
   return 0;
 }
 
-void game_keyboard_ih(Key key) {
+int game_timer_ih() {
+  move_ball(ball);
+  move_wall(wall);
+
+  if (ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l))
+    return 1;
+
+  return 0;
+}
+
+void game_keyboard_ih(GameKey key) {
   if (key == ARROW_UP)
-    direction = UP;
+    wall->direction = UP;
   else if (key == ARROW_DOWN)
-    direction = DOWN;
+    wall->direction = DOWN;
 }
 
 void game_mouse_ih() {

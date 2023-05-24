@@ -10,7 +10,7 @@
 typedef enum {
     ARROW_UP,
     ARROW_DOWN
-} Key;
+} GameKey;
 
 /**
  * @brief Starts the game
@@ -24,17 +24,34 @@ typedef enum {
 int game_start(uint16_t xResolution, uint16_t yResolution);
 
 /**
+ * @brief Draws the game (in the current state)
  * 
+ * @return Return 0 upon success and non-zero otherwise
 */
-int game_timer_ih(uint32_t counter);
+int game_draw();
 
 /**
+ * @brief Handles a interrupt from the timer when in the game state
  * 
+ * Updates game state: moves the ball and the wall.
+ * 
+ * @return Return 0 upon success and non-zero otherwise
 */
-void game_keyboard_ih(Key key);
+int game_timer_ih();
 
 /**
+ * @brief Handles a interrupt from the keyboard when in the game state
  * 
+ * Updates wall direction.
+ * 
+ * @param key key pressed
+*/
+void game_keyboard_ih(GameKey key);
+
+/**
+ * @brief Handles a interrupt from the mouse when in the game state
+ * 
+ * Updates ball velocity.
 */
 void game_mouse_ih();
 
