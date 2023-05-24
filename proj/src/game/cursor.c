@@ -4,7 +4,7 @@
 
 #include "../drivers/video_gr.h"
 
-Cursor *construct_cursor(uint16_t x, uint16_t y) {
+Cursor *construct_cursor(int16_t x, int16_t y) {
   Cursor *cursor = (Cursor *) malloc(sizeof(Cursor));
 
   if (!cursor) {
@@ -32,7 +32,7 @@ int draw_cursor(Cursor *cursor) {
   return 0;
 }
 
-int move_cursor(Cursor *cursor, uint16_t x, uint16_t y) {
+int move_cursor(Cursor *cursor, int16_t x, int16_t y) {
   if (!cursor) {
     printf("%s: cursor is NULL\n", __func__);
     return 1;
@@ -40,6 +40,12 @@ int move_cursor(Cursor *cursor, uint16_t x, uint16_t y) {
 
   cursor->x = x;
   cursor->y = y;
+
+  if (cursor->x < 0) cursor->x = 0;
+  else if (cursor->x >= vmi_p.XResolution) cursor->x = vmi_p.XResolution - 1;
+
+  if (cursor->y < 0) cursor->y = 0;
+  else if (cursor->y >= vmi_p.YResolution) cursor->y = vmi_p.YResolution - 1;
 
   return 0;
 }

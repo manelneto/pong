@@ -65,7 +65,7 @@ void menu_keyboard_ih(MenuKey key);
  * @param y vertical coordinate of the cursor
  * @param lb left button of the cursor pressed
 */
-void menu_mouse_ih(uint16_t x, uint16_t y, bool lb);
+void menu_mouse_ih(int16_t x, int16_t y, bool lb);
 
 /**
  * @brief Ends the menu

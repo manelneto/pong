@@ -1,12 +1,12 @@
-#ifndef _MODEL_H_
-#define _MODEL_H_
+#ifndef _STATES_H_
+#define _STATES_H_
 
 #include <stdint.h>
 
-/** @defgroup game game
+/** @defgroup states states
  * @{
  * 
- * Functions related to the model
+ * Functions related to the states
 */
 
 /**
@@ -18,10 +18,16 @@ typedef enum {
   EXIT  /*!< exit */
 } State;
 
+/**
+ * 
+*/
 int menu_to_game();
 
+/**
+ * 
+*/
 int game_to_menu();
 
 /**@}*/
 
-#endif /* _MODEL_H_ */
+#endif /* _STATES_H_ */

@@ -7,7 +7,7 @@
 
 #include "game/game.h"
 #include "game/menu.h"
-#include "game/model.h"
+#include "game/states.h"
 
 static uint8_t timer_irq_set;
 static uint8_t keyboard_irq_set;
@@ -77,8 +77,8 @@ int start() {
 }
 
 void loop() {
-  uint16_t x = vmi_p.XResolution / 2;
-  uint16_t y = vmi_p.YResolution / 2;
+  int16_t x = vmi_p.XResolution / 2;
+  int16_t y = vmi_p.YResolution / 2;
 
   int ipc_status, r;
   message msg;

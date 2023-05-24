@@ -5,7 +5,7 @@
 #include "button.h"
 #include "cursor.h"
 
-#include "model.h"
+#include "states.h"
 
 static Button *play = NULL;
 static Button *quit = NULL;
@@ -74,7 +74,7 @@ void menu_keyboard_ih(MenuKey key) {
   }
 }
 
-void menu_mouse_ih(uint16_t x, uint16_t y, bool lb) {
+void menu_mouse_ih(int16_t x, int16_t y, bool lb) {
   move_cursor(cursor, x, y);
   if (lb) {
     update_button(play, x, y);

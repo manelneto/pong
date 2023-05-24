@@ -43,20 +43,20 @@ int move_ball(Ball *ball) {
   ball->x += ball->vx;
   ball->y += ball->vy;
 
-  if (ball->y < 0) {
-    ball->vy = -ball->vy;
-    ball->y = 0;
-  } else if (ball->y >= vmi_p.YResolution) {
-    ball->vy = -ball->vy;
-    ball->y = vmi_p.YResolution - 1;
-  }
-
   if (ball->x < 0) {
     ball->vx = -ball->vx;
     ball->x = 0;
   } else if (ball->x >= vmi_p.XResolution) {
     ball->vx = -ball->vx;
     ball->x = vmi_p.XResolution - 1;
+  }
+
+  if (ball->y < 0) {
+    ball->vy = -ball->vy;
+    ball->y = 0;
+  } else if (ball->y >= vmi_p.YResolution) {
+    ball->vy = -ball->vy;
+    ball->y = vmi_p.YResolution - 1;
   }
 
   return 0;

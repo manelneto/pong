@@ -9,6 +9,7 @@
         "ball.h": "c",
         "keyboard.h": "c",
         "mouse.h": "c",
-        "*.xpm": "c"
+        "*.xpm": "c",
+        "menu.h": "c"
     }
 }

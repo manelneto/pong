@@ -13,8 +13,8 @@
  * @brief Struct for the cursor
 */
 typedef struct {
-    uint16_t x; /*!< horizontal coordinate of the cursor */
-    uint16_t y; /*!< vertical coordinate of the cursor */
+    int16_t x; /*!< horizontal coordinate of the cursor */
+    int16_t y; /*!< vertical coordinate of the cursor */
 } Cursor;
 
 /**
@@ -24,7 +24,7 @@ typedef struct {
  * @param y vertical coordinate of the cursor
  * @return Constructed cursor on success, NULL otherwise
 */
-Cursor* construct_cursor(uint16_t x, uint16_t y);
+Cursor* construct_cursor(int16_t x, int16_t y);
 
 /**
  * @brief Cursor drawer
@@ -40,7 +40,7 @@ int draw_cursor(Cursor *cursor);
  * @param cursor pointer to the cursor to be updated/moved
  * @return Return 0 upon success and non-zero otherwise
 */
-int move_cursor(Cursor *cursor, uint16_t x, uint16_t y);
+int move_cursor(Cursor *cursor, int16_t x, int16_t y);
 
 /**
  * @brief Cursor destructor

@@ -5,7 +5,7 @@
 #include "ball.h"
 #include "wall.h"
 
-#include "model.h"
+#include "states.h"
 
 static Ball *ball = NULL;
 static Wall *wall = NULL;

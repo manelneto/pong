@@ -1,6 +1,6 @@
 #include <lcom/lcf.h>
 
-#include "model.h"
+#include "states.h"
 
 #include "menu.h"
 #include "game.h"
