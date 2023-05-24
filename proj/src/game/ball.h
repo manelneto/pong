@@ -13,8 +13,8 @@
  * @brief Struct for the ball
 */
 typedef struct {
-    uint16_t x; /*!< horizontal coordinate of the ball */
-    uint16_t y; /*!< vertical coordinate of the ball */
+    int16_t x; /*!< horizontal coordinate of the ball */
+    int16_t y; /*!< vertical coordinate of the ball */
     int8_t vx;  /*!< horizontal velocity of the ball */
     int8_t vy;  /*!< vertical velocity of the ball */
 } Ball;
@@ -28,7 +28,7 @@ typedef struct {
  * @param vy vertical velocity of the ball
  * @return Constructed ball on success, NULL otherwise
 */
-Ball* construct_ball(uint16_t x, uint16_t y, int8_t vx, int8_t vy);
+Ball* construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy);
 
 /**
  * @brief Ball drawer

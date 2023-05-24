@@ -4,7 +4,7 @@
 
 #include "../drivers/video_gr.h"
 
-Ball *construct_ball(uint16_t x, uint16_t y, int8_t vx, int8_t vy) {
+Ball *construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy) {
   Ball *ball = (Ball *) malloc(sizeof(Ball));
 
   if (!ball) {
