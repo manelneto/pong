@@ -1,4 +1,4 @@
-#include <lcom/lcf.h>
+/*#include <lcom/lcf.h>
 
 #include "sprite.h"
 
@@ -31,4 +31,4 @@ void destroy_sprite(Sprite *sprite) {
             free(sprite->colors);
         free(sprite);
     }
-}
+}*/
