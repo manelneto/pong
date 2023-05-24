@@ -32,6 +32,18 @@ int draw_cursor(Cursor *cursor) {
   return 0;
 }
 
+int move_cursor(Cursor *cursor, uint16_t x, uint16_t y) {
+  if (!cursor) {
+    printf("%s: cursor is NULL\n", __func__);
+    return 1;
+  }
+
+  cursor->x = x;
+  cursor->y = y;
+
+  return 0;
+}
+
 void destroy_cursor(Cursor *cursor) {
   if (cursor)
     free(cursor);

@@ -35,6 +35,14 @@ Cursor* construct_cursor(uint16_t x, uint16_t y);
 int draw_cursor(Cursor *cursor);
 
 /**
+ * @brief Updates cursor position
+ * 
+ * @param cursor pointer to the cursor to be updated/moved
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int move_cursor(Cursor *cursor, uint16_t x, uint16_t y);
+
+/**
  * @brief Cursor destructor
  * 
  * @param cursor pointer to the cursor to be destroyed
