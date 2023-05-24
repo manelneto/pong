@@ -7,6 +7,7 @@
 
 #include "game/game.h"
 #include "game/menu.h"
+#include "game/model.h"
 
 static uint8_t timer_irq_set;
 static uint8_t keyboard_irq_set;
@@ -18,16 +19,7 @@ extern struct packet mouse_packet;
 extern uint8_t packet_index;
 extern vbe_mode_info_t vmi_p;
 
-/**
- * @brief Enum for the states
- */
-typedef enum {
-  MENU,         /*!< main menu */
-  SINGLEPLAYER, /*!< single player mode */
-  QUIT          /*!< quit */
-} State;
-
-State state = MENU;
+extern State state;
 
 int main(int argc, char *argv[]) {
   lcf_set_language("PT-PT");
@@ -75,16 +67,23 @@ int start() {
     printf("%s: menu_start(vmi_p.XResolution: %d, vmi_p.YResolution: %d) error\n", __func__, vmi_p.XResolution, vmi_p.YResolution);
     return 1;
   }
-  menu_draw();
+
+  if (menu_draw()) {
+    printf("%s: menu_draw() error\n", __func__);
+    return 1;
+  }
 
   return 0;
 }
 
 void loop() {
+  uint16_t x = vmi_p.XResolution / 2;
+  uint16_t y = vmi_p.YResolution / 2;
+
   int ipc_status, r;
   message msg;
 
-  while (state != QUIT) {
+  while (state != EXIT) {
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
       continue;
@@ -95,44 +94,42 @@ void loop() {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
             timer_int_handler();
-            if (state == SINGLEPLAYER) {
-              if (counter % 2)
-                vg_clean(0, 0, vmi_p.XResolution, vmi_p.YResolution);
-              if (state == SINGLEPLAYER && game_timer_ih(counter)) {
-                game_end();
-                state = MENU;
+            if (state == MENU) {
+              menu_timer_ih();
+              if (counter % 2 && menu_draw_cursor()) {
+                printf("%s: menu_draw_cursor() error\n", __func__);
+                state = EXIT;
+              }
+            } else if (state == GAME) {
+              game_timer_ih();
+              if (counter % 2 && game_draw()) {
+                printf("%s: game_draw() error\n", __func__);
+                state = EXIT;
               }
             }
           }
           if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {
             kbc_ih();
-            if (code.size > 0) {
-              // code complete
-              if (state == MENU && code.bytes[0] == KBD_ESC_BREAKCODE)
-                state = QUIT;
-              else if (state == SINGLEPLAYER) {
-                if (code.bytes[0] == KBD_ESC_BREAKCODE) {
-                  game_end();
-                  state = MENU;
-                }
-                else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
-                  game_keyboard_ih(ARROW_UP);
-                else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE))
-                  game_keyboard_ih(ARROW_DOWN);
-              }
+            if (code.size > 0) { // code complete
+              if (state == MENU) {
+                //menu_keyboard_ih();
+              } else if (state == GAME) {
+                if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE)) game_keyboard_ih(ARROW_UP);
+                else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE)) game_keyboard_ih(ARROW_DOWN);
+              }             
               keyboard_restore();
             }
           }
           if (msg.m_notify.interrupts & BIT(mouse_irq_set)) {
             mouse_ih();
-            if (packet_index == 3) {
-              // packet complete
-              if (state == MENU && mouse_packet.lb) {
-                state = SINGLEPLAYER;
-                game_start(vmi_p.XResolution, vmi_p.YResolution);
-              }
-              else if (state == SINGLEPLAYER && mouse_packet.rb)
+            if (packet_index == 3) { // packet complete
+              x += mouse_packet.delta_x;
+              y -= mouse_packet.delta_y;
+              if (state == MENU) {
+                menu_mouse_ih(x, y, mouse_packet.lb);
+              } else if (state == GAME && mouse_packet.rb) {
                 game_mouse_ih();
+              }
               mouse_restore();
             }
           }
@@ -142,6 +139,8 @@ void loop() {
 }
 
 int end() {
+  menu_end();
+
   if (vg_exit()) {
     printf("%s: vg_exit() error\n", __func__);
     return 1;

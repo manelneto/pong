@@ -1,6 +1,8 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 
+#include <stdint.h>
+
 /** @defgroup game game
  * @{
  * 
@@ -33,11 +35,9 @@ int game_draw();
 /**
  * @brief Handles a interrupt from the timer when in the game state
  * 
- * Updates game state: moves the ball and the wall.
- * 
- * @return Return 0 upon success and non-zero otherwise
+ * Moves the ball and the wall. Updates game state.
 */
-int game_timer_ih();
+void game_timer_ih();
 
 /**
  * @brief Handles a interrupt from the keyboard when in the game state

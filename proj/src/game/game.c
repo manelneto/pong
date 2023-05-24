@@ -5,8 +5,12 @@
 #include "ball.h"
 #include "wall.h"
 
+#include "model.h"
+
 static Ball *ball = NULL;
 static Wall *wall = NULL;
+
+extern State state;
 
 int game_start(uint16_t xResolution, uint16_t yResolution) {
   ball = construct_ball(xResolution / 2, yResolution / 2, 1, 1);
@@ -40,14 +44,12 @@ int game_draw() {
   return 0;
 }
 
-int game_timer_ih() {
+void game_timer_ih() {
   move_ball(ball);
   move_wall(wall);
 
   if (ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l))
-    return 1;
-
-  return 0;
+    game_to_menu();
 }
 
 void game_keyboard_ih(GameKey key) {

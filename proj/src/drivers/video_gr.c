@@ -5,6 +5,7 @@
 #include "VBE.h"
 
 static void *video_mem;          /* Process (virtual) address to which VRAM is mapped */
+//static void *buffer;             /* Back buffer for double buffering */
 
 static unsigned h_res;           /* Horizontal resolution in pixels */
 static unsigned v_res;           /* Vertical resolution in pixels */
