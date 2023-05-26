@@ -4,6 +4,8 @@
 
 #include "../drivers/video_gr.h"
 
+#include "../xpm/cursor.xpm"
+
 Cursor *construct_cursor(int16_t x, int16_t y) {
   Cursor *cursor = (Cursor *) malloc(sizeof(Cursor));
 
@@ -14,6 +16,12 @@ Cursor *construct_cursor(int16_t x, int16_t y) {
 
   cursor->x = x;
   cursor->y = y;
+  cursor->sprite = construct_sprite((xpm_map_t) cursor_xpm);
+
+  if (!cursor->sprite) {
+    printf("%s: construct_sprite(cursor_xpm) error\n", __func__);
+    return NULL;
+  }
 
   return cursor;
 }
@@ -24,8 +32,8 @@ int draw_cursor(Cursor *cursor) {
     return 1;
   }
 
-  if (vg_draw_pixel(cursor->x, cursor->y, 0x123456)) {
-    printf("%s: vg_draw_pixel(cursor->x: %d, cursor->y: %d, color: 0x%x) error\n", __func__, cursor->x, cursor->y, 0x123456);
+  if (draw_sprite(cursor->sprite, cursor->x, cursor->y)) {
+    printf("%s: draw_sprite(cursor->sprite, cursor->x: %d, cursor->y: %d) error\n", __func__, cursor->x, cursor->y);
     return 1;
   }
 

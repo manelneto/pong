@@ -2,6 +2,7 @@
     "files.associations": {
         "video_gr.h": "c",
         "keyboard.h": "c",
-        "mouse.h": "c"
+        "mouse.h": "c",
+        "*.xpm": "c"
     }
 }

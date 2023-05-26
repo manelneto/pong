@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include "sprite.h"
+
 /** @defgroup cursor cursor
  * @{
  * 
@@ -15,6 +17,7 @@
 typedef struct {
     int16_t x; /*!< horizontal coordinate of the cursor */
     int16_t y; /*!< vertical coordinate of the cursor */
+    Sprite *sprite;
 } Cursor;
 
 /**

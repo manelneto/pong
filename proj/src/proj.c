@@ -57,7 +57,7 @@ int start() {
     return 1;
   }
 
-  uint16_t mode = 0x110;
+  uint16_t mode = 0x115;
   if (!vg_init(mode)) {
     printf("%s: vg_init(mode: 0x%x) error\n", __func__, mode);
     return 1;
