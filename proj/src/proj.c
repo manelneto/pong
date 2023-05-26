@@ -37,6 +37,11 @@ int main(int argc, char *argv[]) {
 }
 
 int start() {
+  if (timer_set_frequency(0, 30)) {
+    printf("%s: timer_set_frequency(0, 30) error\n", __func__);
+    return 1;
+  }
+
   if (timer_subscribe_int(&timer_irq_set)) {
     printf("%s: timer_subscribe_int() error\n", __func__);
     return 1;
@@ -94,10 +99,8 @@ void loop() {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
             timer_int_handler();
-            if (counter % 2) {
-              menu_draw_cursor();
-              swap_buffers();
-            }
+            menu_draw_cursor();
+            swap_buffers();
             /*if (state == MENU) {
               menu_timer_ih();
               if (menu_draw()) {
