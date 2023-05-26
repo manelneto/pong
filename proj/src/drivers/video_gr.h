@@ -34,6 +34,15 @@ typedef struct {
 void *(vg_init)(uint16_t mode);
 
 /**
+ * @brief Swaps the buffers
+ * 
+ * Implementes double buffering with page flipping
+ * 
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int (swap_buffers)();
+
+/**
  * @brief Returns the RGB color components of a color
  * 
  * @param color color to convert to RGB

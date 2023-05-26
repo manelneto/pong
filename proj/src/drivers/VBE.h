@@ -23,6 +23,9 @@
 #define VBE_RETURN_CONTROLLER_INFO 0x00 /**< @brief Function to return the capabilites of the controller - must provide address for returned info in registers ES:DI */
 #define VBE_RETURN_MODE_INFO       0x01 /**< @brief Function to return VBE mode information - mode is passed on CX and must provide address for returned info in registers ES:DI */
 #define VBE_SET_MODE               0x02 /**< @brief Function to initialize the controller and set a video mode - mode is passed in register BX, which should have bit 14 set */
+#define VBE_SET_GET_DISPLAY_START  0x07 /**< @brief Function to set/get pixel to be displayed in the upper left corner of the display */
+#define VBE_SET_DISPLAY_START      0x00 /**< @brief Function to set the pixel to be displayed in the upper left corner of the display */
+#define VBE_GET_DISPLAY_START      0x01 /**< @brief Function to get the pixel to be displayed in the upper left corner of the display */
 
 /* Other */
 
@@ -30,6 +33,7 @@
 #define VBE_RETURN_TO_TEXT_MODE_AH 0x00    /**< @brief Value to set the AH register to return to text mode */
 #define VBE_RETURN_TO_TEXT_MODE_AL 0x03    /**< @brief Value to set the AL register to return to text mode */
 #define VBE_INDEXED_COLOR_MODE     0x105   /**< @brief Indexed color mode */
+#define VBE_RESERVED               0x00    /**< @brief Reserved fields must be 00h */
 
 /**@}*/
 

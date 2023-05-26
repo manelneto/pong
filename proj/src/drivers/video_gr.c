@@ -5,7 +5,7 @@
 #include "VBE.h"
 
 static void *video_mem;          /* Process (virtual) address to which VRAM is mapped */
-// static void *buffer;             /* Back buffer for double buffering */
+static void *buffer;             /* Back buffer for double buffering */
 
 static unsigned h_res;           /* Horizontal resolution in pixels */
 static unsigned v_res;           /* Vertical resolution in pixels */
@@ -27,21 +27,35 @@ void* (vg_init)(uint16_t mode) {
   struct minix_mem_range mr;
   unsigned int vram_base = vmi_p.PhysBasePtr;               /* VRAM's physical address */
   unsigned int vram_size = h_res * v_res * bytes_per_pixel; /* VRAM's size */
-  
+
+  struct minix_mem_range mr_buffer;
+  unsigned int buffer_base = vram_base + vram_size;
+
   /* Allow memory mapping */
   mr.mr_base = (phys_bytes) vram_base;
-  mr.mr_limit = mr.mr_base + vram_size;
+  mr_buffer.mr_base = (phys_bytes) buffer_base;
+
+  mr.mr_limit = mr.mr_base + vram_size * 2;
   if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)) {
     printf("%s: sys_privctl(SELF, SYS_PRIV_ADD_MEM, mr) error\n", __func__);
     return NULL;
   }
 
   /* Map memory */
-  video_mem = vm_map_phys(SELF, (void *)mr.mr_base, vram_size);
+  video_mem = vm_map_phys(SELF, (void *) mr.mr_base, vram_size);
   if (video_mem == MAP_FAILED) {
     printf("%s: vm_map_phys(SELF, mr.mr_base, vram_size) error\n", __func__);
     return NULL;
   }
+
+  buffer = vm_map_phys(SELF, (void *) mr_buffer.mr_base, vram_size);
+  if (buffer == MAP_FAILED) {
+    printf("%s: vm_map_phys(SELF, mr_buffer.mr_base, vram_size) error\n", __func__);
+    return NULL;
+  }
+
+  memset(video_mem, 0, vram_size);
+  memset(buffer, 0, vram_size);
 
   /* 3. Set the desired graphics mode using a linear frame buffer */
   reg86_t r;
@@ -60,6 +74,59 @@ void* (vg_init)(uint16_t mode) {
   }
 
   return video_mem;
+}
+
+int (swap_buffers)() {
+  /* 1. Get display start */
+  reg86_t r;
+
+  /* Specifiy the appropriate register values */
+  memset(&r, 0, sizeof(r));          /* zero the structure */
+  r.intno = VBE_INTNO;               /* BIOS video services */
+  r.ah = VBE_REG_AH;
+  r.al = VBE_SET_GET_DISPLAY_START;
+  r.bh = VBE_RESERVED;
+  r.bl = VBE_GET_DISPLAY_START;
+
+  /* Make the BIOS call */
+  if (sys_int86(&r)) {
+    printf("%s: sys_int86(r) error\n", __func__);
+    return 1;
+  }
+
+  // DX = First Displayed Scan Line
+  uint8_t dx;
+  if (r.dx == 0) dx = v_res;
+  else if (r.dx == v_res) dx = 0;
+  else {
+    printf("%s: DX error\n", __func__);
+    return 1;
+  }
+
+  /* 2. Set display start */
+
+  /* Specifiy the appropriate register values */
+  memset(&r, 0, sizeof(r));
+  r.intno = VBE_INTNO;
+  r.ah = VBE_REG_AH;
+  r.al = VBE_SET_GET_DISPLAY_START;
+  r.bh = VBE_RESERVED;
+  r.bl = VBE_SET_DISPLAY_START;
+  r.cx = 0;  // CX = First Displayed Pixel In Scan Line
+  r.dx = dx; // DX = First Displayed Scan Line
+
+  /* Make the BIOS call */
+  if (sys_int86(&r)) {
+    printf("%s: sys_int86(r) error\n", __func__);
+    return 1;
+  }
+
+  /* 3. Swap the pointers */
+  void *temp = video_mem;
+  video_mem = buffer;
+  buffer = temp;
+
+  return 0;
 }
 
 rgb_8_8_8_t (vg_get_colors)(uint32_t color) {
@@ -81,7 +148,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     return 1;
   }
 
-  uint8_t *byte = video_mem;
+  uint8_t *byte = buffer;
   byte += (x + y * h_res) * bytes_per_pixel;
   
   for (unsigned i = 0; i < bytes_per_pixel; i++, byte++, color >>= 8)

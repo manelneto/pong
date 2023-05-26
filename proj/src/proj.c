@@ -94,19 +94,24 @@ void loop() {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
             timer_int_handler();
-            if (state == MENU) {
+            if (counter % 2) {
+              menu_draw_cursor();
+              swap_buffers();
+            }
+            /*if (state == MENU) {
               menu_timer_ih();
-              if (counter % 2 && menu_draw_cursor()) {
+              if (menu_draw()) {
                 printf("%s: menu_draw_cursor() error\n", __func__);
                 state = EXIT;
               }
             } else if (state == GAME) {
               game_timer_ih();
-              if (counter % 2 && game_draw()) {
+              if (game_draw()) {
                 printf("%s: game_draw() error\n", __func__);
                 state = EXIT;
               }
             }
+            if (counter % 2) swap_buffers();*/
           }
           if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {
             kbc_ih();
@@ -127,6 +132,7 @@ void loop() {
               y -= mouse_packet.delta_y;
               if (state == MENU) {
                 menu_mouse_ih(x, y, mouse_packet.lb);
+                
               } else if (state == GAME && mouse_packet.rb) {
                 game_mouse_ih();
               }
