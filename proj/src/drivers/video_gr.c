@@ -6,6 +6,7 @@
 
 static void *video_mem;          /* Process (virtual) address to which VRAM is mapped */
 static void *buffer;             /* Back buffer for double buffering */
+static void *current;            /* Current buffer for double buffering */
 
 static unsigned h_res;           /* Horizontal resolution in pixels */
 static unsigned v_res;           /* Vertical resolution in pixels */
@@ -73,6 +74,8 @@ void* (vg_init)(uint16_t mode) {
     return NULL;
   }
 
+  current = buffer;
+
   return video_mem;
 }
 
@@ -96,8 +99,14 @@ int (swap_buffers)() {
 
   // DX = First Displayed Scan Line
   uint16_t dx;
-  if (r.dx == 0) dx = v_res;
-  else if (r.dx == v_res) dx = 0;
+  if (r.dx == 0) {
+    dx = v_res;
+    current = video_mem;
+  }
+  else if (r.dx == v_res) {
+    dx = 0;
+    current = buffer;
+  }
   else {
     printf("%s: DX error\n", __func__);
     return 1;
@@ -121,10 +130,11 @@ int (swap_buffers)() {
     return 1;
   }
 
-  /* 3. Swap the pointers */
-  void *temp = video_mem;
-  video_mem = buffer;
-  buffer = temp;
+  // this has to change!!!!
+  if (vg_clean(0, 0, h_res, v_res)) {
+    printf("%s: vg_clean(0, 0, %d, %d) error\n", __func__, h_res, v_res);
+    return 1;
+  }
 
   return 0;
 }
@@ -148,7 +158,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     return 1;
   }
 
-  uint8_t *byte = buffer;
+  uint8_t *byte = current;
   byte += (x + y * h_res) * bytes_per_pixel;
   
   for (unsigned i = 0; i < bytes_per_pixel; i++, byte++, color >>= 8)
