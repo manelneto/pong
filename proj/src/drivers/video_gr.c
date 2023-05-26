@@ -95,7 +95,7 @@ int (swap_buffers)() {
   }
 
   // DX = First Displayed Scan Line
-  uint8_t dx;
+  uint16_t dx;
   if (r.dx == 0) dx = v_res;
   else if (r.dx == v_res) dx = 0;
   else {
