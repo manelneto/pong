@@ -12,6 +12,7 @@ static unsigned h_res;           /* Horizontal resolution in pixels */
 static unsigned v_res;           /* Vertical resolution in pixels */
 static unsigned bits_per_pixel;  /* Number of VRAM bits per pixel */
 static unsigned bytes_per_pixel; /* Number of VRAM bytes per pixel*/
+static unsigned vram_size;       /* VRAM's size */
 
 void* (vg_init)(uint16_t mode) {
   /* 1. Initialize static global variables */
@@ -27,7 +28,7 @@ void* (vg_init)(uint16_t mode) {
   /* 2. Map VRAM to the process' address space */
   struct minix_mem_range mr;
   unsigned int vram_base = vmi_p.PhysBasePtr;               /* VRAM's physical address */
-  unsigned int vram_size = h_res * v_res * bytes_per_pixel; /* VRAM's size */
+  vram_size = h_res * v_res * bytes_per_pixel; /* VRAM's size */
 
   struct minix_mem_range mr_buffer;
   unsigned int buffer_base = vram_base + vram_size;
@@ -130,11 +131,7 @@ int (swap_buffers)() {
     return 1;
   }
 
-  // this has to change!!!!
-  if (vg_clean(0, 0, h_res, v_res)) {
-    printf("%s: vg_clean(0, 0, %d, %d) error\n", __func__, h_res, v_res);
-    return 1;
-  }
+  memset(current, 0, vram_size);
 
   return 0;
 }
