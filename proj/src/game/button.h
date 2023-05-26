@@ -15,8 +15,8 @@
 typedef struct {
   uint16_t x;    /*!< horizontal coordinate of the button (top-left corner) */
   uint16_t y;    /*!< vertical coordinate of the button (top-left corner) */
-  uint8_t w;     /*!< width of the button */
-  uint8_t h;     /*!< height of the button */
+  uint16_t w;     /*!< width of the button */
+  uint16_t h;     /*!< height of the button */
   bool selected; /*!< true if the button is selected, false otherwise */
 } Button;
 
@@ -29,7 +29,7 @@ typedef struct {
  * @param h height of the button
  * @return Constructed button on success, NULL otherwise
  */
-Button *construct_button(uint16_t x, uint16_t y, uint8_t w, uint8_t h);
+Button *construct_button(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 
 /**
  * @brief Button drawer

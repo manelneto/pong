@@ -4,7 +4,7 @@
 
 #include "../drivers/video_gr.h"
 
-Button *construct_button(uint16_t x, uint16_t y, uint8_t w, uint8_t h) {
+Button *construct_button(uint16_t x, uint16_t y, uint16_t w, uint16_t h) {
   Button *button = (Button *) malloc(sizeof(Button));
 
   if (!button) {
