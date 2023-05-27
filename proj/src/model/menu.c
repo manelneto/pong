@@ -55,9 +55,9 @@ int start_menu(uint16_t xResolution, uint16_t yResolution) {
 }
 
 void keyboard_menu_handler() {
-  if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
+  if (code.size == 1 && (code.bytes[0] == KBD_1_MAKECODE) || code.bytes[0] == KBD_P_MAKECODE)
     play->selected = true;
-  else if ((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE))
+  else if (code.size == 1 && (code.bytes[0] == KBD_2_MAKECODE) || code.bytes[0] == KBD_Q_MAKECODE)
     quit->selected = true;
 }
 
