@@ -2,7 +2,7 @@
 
 #include "ball_view.h"
 
-#include "../controller/video.h"
+#include "sprite_view.h"
 
 int draw_ball(Ball *ball) {
   if (!ball) {
@@ -10,8 +10,8 @@ int draw_ball(Ball *ball) {
     return 1;
   }
 
-  if (video_draw_pixel(ball->x, ball->y, 0xffffff)) {
-    printf("%s: video_draw_pixel(ball->x: %d, ball->y: %d, color: 0x%x) error\n", __func__, ball->x, ball->y, 0xffffff);
+  if (draw_sprite(ball->sprite, ball->x, ball->y)) {
+    printf("%s: draw_sprite(ball->sprite, ball->x: %d, ball->y: %d) error\n", __func__, ball->x, ball->y);
     return 1;
   }
 

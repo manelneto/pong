@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include "sprite.h"
+
 /** @defgroup ball ball
  * @{
  * 
@@ -17,6 +19,7 @@ typedef struct {
     int16_t y; /*!< vertical coordinate of the ball */
     int8_t vx;  /*!< horizontal velocity of the ball */
     int8_t vy;  /*!< vertical velocity of the ball */
+    Sprite *sprite;
 } Ball;
 
 /**

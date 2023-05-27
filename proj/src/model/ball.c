@@ -2,6 +2,8 @@
 
 #include "ball.h"
 
+#include "../xpm/ball.xpm"
+
 Ball *construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy) {
   Ball *ball = (Ball *) malloc(sizeof(Ball));
 
@@ -14,6 +16,12 @@ Ball *construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy) {
   ball->y = y;
   ball->vx = vx;
   ball->vy = vy;
+  ball->sprite = construct_sprite((xpm_map_t) ball_xpm, 0x818181);
+
+  if (!ball->sprite) {
+    printf("%s: construct_sprite(ball_xpm, 0x818181) error\n", __func__);
+    return NULL;
+  }
 
   return ball;
 }

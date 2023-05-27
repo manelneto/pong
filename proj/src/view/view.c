@@ -9,7 +9,7 @@
 
 #include "../controller/video.h"
 
-extern GameState state;
+extern State state;
 
 int draw_frame() {
   if (video_clean(0, 0, 800, 600)) {
