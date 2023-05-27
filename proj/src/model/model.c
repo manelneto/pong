@@ -79,6 +79,8 @@ void keyboard_interrupt_handler() {
       case GAME:
         keyboard_game_handler();
         break;
+      default:
+        break;
     }
     keyboard_restore();
     draw_frame();
@@ -119,6 +121,8 @@ void mouse_interrupt_handler() {
           state = GAME;
           start_game(vmi_p.XResolution, vmi_p.YResolution, 3);
         }
+        break;
+      default:
         break;
     }
     mouse_restore();
