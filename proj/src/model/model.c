@@ -24,20 +24,14 @@ int start_pong() {
     return 1;
   }
 
-  if (start_game(vmi_p.XResolution, vmi_p.YResolution)) {
-    printf("%s: start_game(vmi_p.XResolution: %d, vmi_p.YResolution: %d) error\n", __func__, vmi_p.XResolution, vmi_p.YResolution);
-    return 1;
-  }
-
   return 0;
 }
 
 void timer_state_handler() {
   timer_int_handler();
-  if (state == MENU)
-    // do nothing - timer_menu_state_handler();
   if (state == GAME) {
     timer_game_state_handler();
+    draw_frame();
     if (check_game_over()) {
       state = MENU;
       end_game();

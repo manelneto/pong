@@ -24,6 +24,8 @@ int move_ball(Ball *ball, uint16_t x_max, uint16_t y_max) {
     return 1;
   }
 
+  printf("ball: (%d, %d, %d, %d), xmax = %d, ymax = %d\n", ball->x, ball->y, ball->vx, ball->vy, x_max, y_max);
+
   ball->x += ball->vx;
   ball->y += ball->vy;
 

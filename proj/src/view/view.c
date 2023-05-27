@@ -7,9 +7,16 @@
 #include "menu_view.h"
 #include "game_view.h"
 
+#include "../controller/video.h"
+
 extern GameState state;
 
 int draw_frame() {
+  if (video_clean(0, 0, 800, 600)) {
+    printf("%s: vg_clean(0, 0, 800, 600) error\n", __func__);
+    return 1;
+  }
+
   if (state == MENU && draw_menu()) {
     printf("%s: draw_menu() error\n", __func__);
     return 1;
