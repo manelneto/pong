@@ -2,7 +2,9 @@
 
 #include "button.h"
 
-Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char * xpm[], char * xpm_selected[]) {
+#define BUTTON_TRANSPARENT_COLOR 0x000000
+
+Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char *xpm[], char *xpm_selected[]) {
   Button *button = (Button *) malloc(sizeof(Button));
 
   if (!button) {
@@ -15,17 +17,18 @@ Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char * xpm[
   button->w = w;
   button->h = h;
   button->selected = false;
-  button->sprite = construct_sprite((xpm_map_t) xpm, 0x000000);
+
+  button->sprite = construct_sprite((xpm_map_t) xpm, BUTTON_TRANSPARENT_COLOR);
 
   if (!button->sprite) {
-    printf("%s: construct_sprite(xpm, 0x000000) error\n", __func__);
+    printf("%s: construct_sprite(xpm, BUTTON_TRANSPARENT_COLOR: 0x%x) error\n", __func__, BUTTON_TRANSPARENT_COLOR);
     return NULL;
   }
 
-  button->sprite_selected = construct_sprite((xpm_map_t) xpm_selected, 0x000000);
-  
+  button->sprite_selected = construct_sprite((xpm_map_t) xpm_selected, BUTTON_TRANSPARENT_COLOR);
+
   if (!button->sprite_selected) {
-    printf("%s: construct_sprite(xpm_selected, 0x000000) error\n", __func__);
+    printf("%s: construct_sprite(xpm_selected, BUTTON_TRANSPARENT_COLOR: 0x%x) error\n", __func__, BUTTON_TRANSPARENT_COLOR);
     return NULL;
   }
 

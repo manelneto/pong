@@ -4,6 +4,8 @@
 
 #include "../xpm/cursor.xpm"
 
+#define CURSOR_TRANSPARENT_COLOR 0x000000
+
 Cursor *construct_cursor(int16_t x, int16_t y) {
   Cursor *cursor = (Cursor *) malloc(sizeof(Cursor));
 
@@ -14,10 +16,10 @@ Cursor *construct_cursor(int16_t x, int16_t y) {
 
   cursor->x = x;
   cursor->y = y;
-  cursor->sprite = construct_sprite((xpm_map_t) cursor_xpm, 0x000000);
+  cursor->sprite = construct_sprite((xpm_map_t) cursor_xpm, CURSOR_TRANSPARENT_COLOR);
 
   if (!cursor->sprite) {
-    printf("%s: construct_sprite(cursor_xpm, 0x000000) error\n", __func__);
+    printf("%s: construct_sprite(cursor_xpm, CURSOR_TRANSPARENT_COLOR: 0x%x) error\n", __func__, CURSOR_TRANSPARENT_COLOR);
     return NULL;
   }
 
