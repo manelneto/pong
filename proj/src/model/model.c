@@ -43,7 +43,7 @@ void timer_state_handler() {
       end_game();
     }
   }
-  //swap_buffers();
+  swap_buffers();
 }
 
 void keyboard_state_handler() {
@@ -72,8 +72,8 @@ void mouse_state_handler() {
         systemState = EXIT;
       }
     }
-    //else if (state == GAME)
-    //  mouse_game_state_handler();
+    else if (state == GAME)
+      mouse_game_state_handler();
     mouse_restore();
     draw_frame();
   }
@@ -81,5 +81,5 @@ void mouse_state_handler() {
 
 void end_pong() {
   end_menu();
-  //end_game();
+  end_game();
 }

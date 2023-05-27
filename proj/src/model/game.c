@@ -47,7 +47,7 @@ void keyboard_game_state_handler() {
     move_wall_down(wall, y_max);
 }
 
-void keyboard_mouse_state_handler() {
+void mouse_game_state_handler() {
   if (mouse_packet.rb)
     speedup_ball(ball);
 }
@@ -56,7 +56,7 @@ bool check_game_over() {
   return (ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l));
 }
 
-void game_end() {
+void end_game() {
   destroy_ball(ball);
   destroy_wall(wall);
 }

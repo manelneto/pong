@@ -75,7 +75,7 @@ void* (vg_init)(uint16_t mode) {
     return NULL;
   }
 
-  current = video_mem;
+  current = buffer;
 
   return video_mem;
 }
@@ -130,8 +130,6 @@ int (swap_buffers)() {
     printf("%s: sys_int86(r) error\n", __func__);
     return 1;
   }
-
-  memset(current, 0, vram_size);
 
   return 0;
 }
