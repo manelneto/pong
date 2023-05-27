@@ -10,8 +10,11 @@ int draw_button(Button *button) {
     return 1;
   }
 
-  if (draw_sprite(button->sprite, button->x, button->y)) {
+  if (!button->selected && draw_sprite(button->sprite, button->x, button->y)) {
     printf("%s: draw_sprite(button->sprite, button->x: %d, button->y: %d) error\n", __func__, button->x, button->y);
+    return 1;
+  } else if (button->selected && draw_sprite(button->sprite_selected, button->x, button->y)) {
+    printf("%s: draw_sprite(button->sprite_selected, button->x: %d, button->y: %d) error\n", __func__, button->x, button->y);
     return 1;
   }
 

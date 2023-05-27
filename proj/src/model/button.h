@@ -21,6 +21,7 @@ typedef struct {
   int16_t h;     /*!< height of the button */
   bool selected; /*!< true if the button is selected, false otherwise */
   Sprite *sprite;
+  Sprite *sprite_selected;
 } Button;
 
 /**
@@ -32,7 +33,7 @@ typedef struct {
  * @param h height of the button
  * @return Constructed button on success, NULL otherwise
  */
-Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char * xpm[]);
+Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char * xpm[], char * xpm_selected[]);
 
 /**
  * @brief Updates button state (selected/unselected) accordingly to cursor coordinates

@@ -9,7 +9,9 @@
 #include "../controller/mouse.h"
 
 #include "../xpm/button_play.xpm"
+#include "../xpm/button_play_selected.xpm"
 #include "../xpm/button_quit.xpm"
+#include "../xpm/button_quit_selected.xpm"
 
 extern scancode code;
 extern struct packet mouse_packet;
@@ -25,13 +27,13 @@ static int16_t x;
 static int16_t y;
 
 int start_menu(uint16_t xResolution, uint16_t yResolution) {
-  play = construct_button(xResolution/3, yResolution/5, xResolution/3, yResolution/5, button_play_xpm);
+  play = construct_button(xResolution/3, yResolution/5, xResolution/3, yResolution/5, button_play_xpm, button_play_selected_xpm);
   if (!play) {
     printf("%s: construct_button(%d, %d, %d, %d) error\n", __func__, xResolution/3, yResolution/5, xResolution/3, yResolution/5);
     return 1;
   }
 
-  quit = construct_button(xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5, button_quit_xpm);
+  quit = construct_button(xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5, button_quit_xpm, button_quit_selected_xpm);
   if (!quit) {
     printf("%s: construct_button(%d, %d, %d, %d) error\n", __func__, xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5);
     return 1;
@@ -70,13 +72,8 @@ void mouse_menu_handler() {
 
   move_cursor(cursor, x, y, x_max, y_max);
 
-  if (mouse_packet.lb) {
-    check_button(play, cursor->x, cursor->y);
-    check_button(quit, cursor->x, cursor->y);
-  } else {
-    play->selected = false;
-    quit->selected = false;
-  }
+  check_button(play, cursor->x, cursor->y);
+  check_button(quit, cursor->x, cursor->y);
 }
 
 bool check_play() {

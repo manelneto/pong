@@ -2,7 +2,7 @@
 
 #include "button.h"
 
-Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char * xpm[]) {
+Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char * xpm[], char * xpm_selected[]) {
   Button *button = (Button *) malloc(sizeof(Button));
 
   if (!button) {
@@ -19,6 +19,13 @@ Button *construct_button(int16_t x, int16_t y, int16_t w, int16_t h, char * xpm[
 
   if (!button->sprite) {
     printf("%s: construct_sprite(xpm, 0x000000) error\n", __func__);
+    return NULL;
+  }
+
+  button->sprite_selected = construct_sprite((xpm_map_t) xpm_selected, 0x000000);
+  
+  if (!button->sprite_selected) {
+    printf("%s: construct_sprite(xpm_selected, 0x000000) error\n", __func__);
     return NULL;
   }
 

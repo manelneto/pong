@@ -59,10 +59,10 @@ void mouse_interrupt_handler() {
   if (packet_index == 3) { // packet complete
     if (state == MENU) {
       mouse_menu_handler();
-      if (check_play()) {
+      if (check_play() && mouse_packet.lb) {
         state = GAME;
         start_game(vmi_p.XResolution, vmi_p.YResolution);
-      } else if (check_quit()) {
+      } else if (check_quit() && mouse_packet.lb) {
         state = END;
       }
     }
