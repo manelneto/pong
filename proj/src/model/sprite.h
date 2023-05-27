@@ -10,12 +10,13 @@ typedef struct {
     uint16_t height;
     uint16_t width;
     uint32_t *colors;
+    uint32_t background;
 } Sprite;
 
 /**
  * 
 */
-Sprite* construct_sprite(xpm_map_t xpm);
+Sprite* construct_sprite(xpm_map_t xpm, uint32_t background);
 
 /**
  * 

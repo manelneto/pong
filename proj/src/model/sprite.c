@@ -2,7 +2,7 @@
 
 #include "sprite.h"
 
-Sprite* construct_sprite(xpm_map_t xpm) {
+Sprite* construct_sprite(xpm_map_t xpm, uint32_t background) {
     Sprite *sprite = (Sprite *) malloc(sizeof(Sprite));
     
     if (!sprite) {
@@ -21,6 +21,7 @@ Sprite* construct_sprite(xpm_map_t xpm) {
 
     sprite->height = image.height;
     sprite->width = image.width;
+    sprite->background = background;
 
     return sprite;
 }
