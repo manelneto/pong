@@ -46,13 +46,13 @@ void *(vg_init) (uint16_t mode) {
   /* Map memory */
   video_mem = vm_map_phys(SELF, (void *) mr.mr_base, vram_size);
   if (video_mem == MAP_FAILED) {
-    printf("%s: vm_map_phys(SELF, mr.mr_base: 0x%x, vram_size: %d) error\n", __func__, mr.mr_base, vram_size);
+    printf("%s: vm_map_phys(SELF, mr.mr_base, vram_size: %d) error\n", __func__, vram_size);
     return NULL;
   }
 
   buffer = vm_map_phys(SELF, (void *) mr_buffer.mr_base, vram_size);
   if (buffer == MAP_FAILED) {
-    printf("%s: vm_map_phys(SELF, mr_buffer.mr_base: 0x%x, vram_size: %d) error\n", __func__, mr_buffer.mr_base, vram_size);
+    printf("%s: vm_map_phys(SELF, mr_buffer.mr_base, vram_size: %d) error\n", __func__, vram_size);
     return NULL;
   }
 

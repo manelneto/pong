@@ -88,7 +88,7 @@ int(kbc_write_argument)(uint8_t argument) {
     }
 
     if (tickdelay(micros_to_ticks(KBD_DELAY))) {
-      printf("%s: tickdelay(micros_to_ticks(KBD_DELAY: %d)) error\n", KBD_DELAY, __func__);
+      printf("%s: tickdelay(micros_to_ticks(KBD_DELAY: %d)) error\n", __func__,  KBD_DELAY);
       return 1;
     }
   }
