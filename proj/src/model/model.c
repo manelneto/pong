@@ -36,8 +36,9 @@ void timer_interrupt_handler() {
     case GAME:
       timer_game_handler();
       if (check_game_over()) {
-        state = MENU;
         end_game();
+        state = MENU;
+        start_menu(vmi_p.XResolution, vmi_p.YResolution);
       }
       draw_frame();
       break;
@@ -61,6 +62,7 @@ void keyboard_interrupt_handler() {
         }
         keyboard_menu_handler();
         if (check_play() && !code.makecode) {
+          end_menu();
           state = LEVELS;
           start_levels(vmi_p.XResolution, vmi_p.YResolution);
         }
@@ -72,6 +74,7 @@ void keyboard_interrupt_handler() {
         break;
       case LEVELS:
         keyboard_levels_handler();
+        break;
       case END:
         break;
       default:
@@ -89,6 +92,7 @@ void mouse_interrupt_handler() {
       case MENU:
         mouse_menu_handler();
         if (check_play() && mouse_packet.lb) {
+          end_menu();
           state = LEVELS;
           start_levels(vmi_p.XResolution, vmi_p.YResolution);
         }
