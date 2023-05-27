@@ -3,15 +3,15 @@
 
 /** @defgroup levels_view levels_view
  * @{
- * 
+ *
  * Functions related to the levels view
-*/
+ */
 
 /**
  * @brief Draws the levels (in the current state)
- * 
+ *
  * @return Return 0 upon success and non-zero otherwise
-*/
+ */
 int draw_levels();
 
 /**@}*/

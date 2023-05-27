@@ -29,7 +29,7 @@ int draw_levels() {
   }
 
   if (draw_cursor(cursor_levels)) {
-    printf("%s: draw_cursor(cursor) error\n", __func__);
+    printf("%s: draw_cursor(cursor_levels) error\n", __func__);
     return 1;
   }
 

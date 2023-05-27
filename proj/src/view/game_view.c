@@ -4,8 +4,8 @@
 
 #include "../model/game.h"
 
-#include "sprite_view.h"
 #include "ball_view.h"
+#include "sprite_view.h"
 #include "wall_view.h"
 
 extern Ball *ball;
@@ -18,17 +18,17 @@ extern uint16_t y_max;
 
 int draw_game() {
   if (draw_times(x_max * 0.05, y_max * 0.05)) {
-    printf("%s: draw_x(x_max * 0.05: %f, y_max * 0.05: %f)\n", __func__, x_max * 0.05, y_max * 0.05);
+    printf("%s: draw_times(x_max * 0.05: %f, y_max * 0.05: %f)\n", __func__, x_max * 0.05, y_max * 0.05);
     return 1;
   }
 
   if (draw_digit(multiplier, x_max * 0.05 + 20, y_max * 0.05)) {
-    printf("%s: draw_digit(multiplier: %d) error\n", __func__, multiplier);
+    printf("%s: draw_digit(multiplier: %d, x_max * 0.05 + 20: %f, y_max * 0.05: %f) error\n", __func__, multiplier, x_max * 0.05 + 20, y_max * 0.05);
     return 1;
   }
 
   if (draw_number(score, x_max * 0.95, y_max * 0.05)) {
-    printf("%s: draw_number(score: %d) error\n", __func__, score);
+    printf("%s: draw_number(score: %d, x_max * 0.95: %f, y_max * 0.05: %f) error\n", __func__, score, x_max * 0.95, y_max * 0.05);
     return 1;
   }
 

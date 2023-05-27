@@ -5,16 +5,16 @@
 
 /** @defgroup cursor_view cursor_view
  * @{
- * 
+ *
  * Functions related to the cursor view
-*/
+ */
 
 /**
  * @brief Cursor drawer
- * 
+ *
  * @param cursor pointer to the cursor to be drawn
  * @return Return 0 upon success and non-zero otherwise
-*/
+ */
 int draw_cursor(Cursor *cursor);
 
 /**@}*/

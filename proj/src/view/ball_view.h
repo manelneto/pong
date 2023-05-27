@@ -5,16 +5,16 @@
 
 /** @defgroup ball_view ball_view
  * @{
- * 
+ *
  * Functions related to the ball view
-*/
+ */
 
 /**
  * @brief Ball drawer
- * 
+ *
  * @param ball pointer to the ball to be drawn
  * @return Return 0 upon success and non-zero otherwise
-*/
+ */
 int draw_ball(Ball *ball);
 
 /**@}*/

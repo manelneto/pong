@@ -23,7 +23,7 @@ int draw_menu() {
   }
 
   if (draw_cursor(cursor_menu)) {
-    printf("%s: draw_cursor(cursor) error\n", __func__);
+    printf("%s: draw_cursor(cursor_menu) error\n", __func__);
     return 1;
   }
 

@@ -106,8 +106,6 @@ int draw_digit(uint8_t digit, uint16_t x, uint16_t y) {
         return 1;
       }
       break;
-    default:
-      break;
   }
   return 0;
 }
