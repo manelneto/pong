@@ -17,7 +17,7 @@ Cursor *construct_cursor(int16_t x, int16_t y) {
   cursor->sprite = construct_sprite((xpm_map_t) cursor_xpm, 0x000000);
 
   if (!cursor->sprite) {
-    printf("%s: construct_sprite(cursor_xpm) error\n", __func__);
+    printf("%s: construct_sprite(cursor_xpm, 0x000000) error\n", __func__);
     return NULL;
   }
 

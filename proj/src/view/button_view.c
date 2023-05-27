@@ -2,7 +2,7 @@
 
 #include "button_view.h"
 
-#include "../controller/video.h"
+#include "sprite_view.h"
 
 int draw_button(Button *button) {
   if (!button) {
@@ -10,8 +10,8 @@ int draw_button(Button *button) {
     return 1;
   }
 
-  if (video_draw_rectangle(button->x, button->y, button->w, button->h, 0xffffff)) {
-    printf("%s: video_draw_rectangle(button->x: %d, button->y: %d, button->w: %d, button->h: %d, 0x%x) error\n", __func__, button->x, button->y, button->w, button->h, 0xffffff);
+  if (draw_sprite(button->sprite, button->x, button->y)) {
+    printf("%s: draw_sprite(button->sprite, button->x: %d, button->y: %d) error\n", __func__, button->x, button->y);
     return 1;
   }
 

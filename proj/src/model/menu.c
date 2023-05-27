@@ -8,6 +8,9 @@
 #include "../controller/keyboard.h"
 #include "../controller/mouse.h"
 
+#include "../xpm/button_play.xpm"
+#include "../xpm/button_quit.xpm"
+
 extern scancode code;
 extern struct packet mouse_packet;
 
@@ -22,13 +25,13 @@ static int16_t x;
 static int16_t y;
 
 int start_menu(uint16_t xResolution, uint16_t yResolution) {
-  play = construct_button(xResolution/3, yResolution/5, xResolution/3, yResolution/5);
+  play = construct_button(xResolution/3, yResolution/5, xResolution/3, yResolution/5, button_play_xpm);
   if (!play) {
     printf("%s: construct_button(%d, %d, %d, %d) error\n", __func__, xResolution/3, yResolution/5, xResolution/3, yResolution/5);
     return 1;
   }
 
-  quit = construct_button(xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5);
+  quit = construct_button(xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5, button_quit_xpm);
   if (!quit) {
     printf("%s: construct_button(%d, %d, %d, %d) error\n", __func__, xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5);
     return 1;
