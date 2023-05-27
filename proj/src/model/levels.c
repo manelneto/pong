@@ -74,9 +74,9 @@ void keyboard_levels_handler() {
 
 void mouse_levels_handler() {
   x += mouse_packet.delta_x;
-  if (x < 0)                                           // colisão com o limite esquerdo do ecrã
+  if (x < 0)                                          // colisão com o limite esquerdo do ecrã
     x = 0;
-  else if (x + cursor_levels->sprite->width >= x_max)  // colisão com o limite direito do ecrã
+  else if (x + cursor_levels->sprite->width >= x_max) // colisão com o limite direito do ecrã
     x = x_max - cursor_levels->sprite->width - 1;
 
   y -= mouse_packet.delta_y;
