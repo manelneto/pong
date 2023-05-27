@@ -24,7 +24,7 @@ int move_wall_up(Wall *wall) {
     return 1;
   }
 
-  wall->y -= wall->h / 5;
+  wall->y -= 10;
 
   if (wall->y < 0)
     wall->y = 0;
@@ -38,7 +38,7 @@ int move_wall_down(Wall *wall, uint16_t y_max) {
     return 1;
   }
 
-  wall->y += wall->h / 5;
+  wall->y += 10;
 
   if (wall->y + wall->h >= y_max)
     wall->y = y_max - wall->h - 1;

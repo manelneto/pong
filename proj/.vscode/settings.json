@@ -3,6 +3,9 @@
         "video_gr.h": "c",
         "keyboard.h": "c",
         "mouse.h": "c",
-        "*.xpm": "c"
+        "*.xpm": "c",
+        "video.h": "c",
+        "menu.h": "c",
+        "levels.h": "c"
     }
 }
