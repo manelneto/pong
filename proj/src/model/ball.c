@@ -38,17 +38,17 @@ int move_ball(Ball *ball, uint16_t x_max, uint16_t y_max) {
   if (ball->x < 0) {
     ball->vx = -ball->vx;
     ball->x = 0;
-  } else if (ball->x >= x_max) {
+  } else if (ball->x + ball->sprite->width >= x_max) {
     ball->vx = -ball->vx;
-    ball->x = x_max - 1;
+    ball->x = x_max - ball->sprite->width - 1;
   }
 
   if (ball->y < 0) {
     ball->vy = -ball->vy;
     ball->y = 0;
-  } else if (ball->y >= y_max) {
+  } else if (ball->y + ball->sprite->height >= y_max) {
     ball->vy = -ball->vy;
-    ball->y = y_max - 1;
+    ball->y = y_max - ball->sprite->height - 1;
   }
 
   return 0;

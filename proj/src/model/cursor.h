@@ -35,7 +35,7 @@ Cursor* construct_cursor(int16_t x, int16_t y);
  * @param cursor pointer to the cursor to be updated/moved
  * @return Return 0 upon success and non-zero otherwise
 */
-int move_cursor(Cursor *cursor, int16_t x, int16_t y, uint16_t x_max, uint16_t y_max);
+int move_cursor(Cursor *cursor, int16_t x, int16_t y);
 
 /**
  * @brief Cursor destructor
