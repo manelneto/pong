@@ -81,7 +81,7 @@ int (mouse_restore)() {
 int (mouse_write_command)(uint8_t command) {
   for (int i = 0; i < KBC_MAX_ATTEMPTS; i++) {
     if (kbc_write_command(KBC_WRITE_TO_MOUSE_CMD)) {
-      printf("%s: kbc_write_command(KBC_WRITE_TO_MOUSE_CMD) error\n");
+      printf("%s: kbc_write_command(KBC_WRITE_TO_MOUSE_CMD) error\n", __func__);
       return 1;
     }
 

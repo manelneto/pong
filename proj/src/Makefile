@@ -10,7 +10,7 @@ SRCS = proj.c model.c menu.c levels.c game.c button.c cursor.c ball.c wall.c spr
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
-CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2
+CFLAGS += -pedantic -D __LCOM_OPTIMIZED__
 
 # list of library dependencies
 DPADD += ${LIBLCF}

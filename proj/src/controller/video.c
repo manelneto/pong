@@ -159,7 +159,7 @@ int (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
   byte += (x + y * h_res) * bytes_per_pixel;
   
   if (!memcpy(byte, &color, bytes_per_pixel)) {
-    printf("%s: memcpy(byte: 0x%x, color: 0x%x, bytes_per_pixel: 0x%x)\n", __func__, byte, color, bytes_per_pixel);
+    printf("%s: memcpy(byte: 0x%x, color: 0x%x, bytes_per_pixel: 0x%x)\n", __func__, *byte, color, bytes_per_pixel);
     return 1;
   }
   

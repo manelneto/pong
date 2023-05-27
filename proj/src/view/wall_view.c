@@ -11,7 +11,7 @@ int draw_wall(Wall *wall) {
   }
 
   if (video_draw_rectangle(wall->x, wall->y, wall->w, wall->h, 0xFFFF00)) {
-    printf("%s: video_draw_rectangle(wall->x; %d, wall->y: %d, wall->w: %d, wall->h: %d, 0xFFFF00) error\n", __func__, wall->x, wall->y, wall->w, wall->h, 0xffffff);
+    printf("%s: video_draw_rectangle(wall->x; %d, wall->y: %d, wall->w: %d, wall->h: %d, 0xFFFF00) error\n", __func__, wall->x, wall->y, wall->w, wall->h);
     return 1;
   }
 

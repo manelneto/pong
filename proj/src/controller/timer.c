@@ -95,7 +95,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 	}
 	
 	if (util_sys_inb(TIMER_PORT(timer), st)) {
-		printf("%s: util_sys_inb(TIMER_PORT(timer: %d), st: 0x%x) error\n", __func__, timer, st);
+		printf("%s: util_sys_inb(TIMER_PORT(timer: %d), st: 0x%x) error\n", __func__, timer, *st);
 		return 1;
 	}
 	

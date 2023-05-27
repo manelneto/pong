@@ -4,7 +4,7 @@
 
 int (kbc_read_status)(uint8_t *status) {
 	if (util_sys_inb(KBC_STATUS_REG, status)) {
-		printf("%s: util_sys_inb(KBC_STATUS_REG, status: 0x%x) error\n", __func__, status);
+		printf("%s: util_sys_inb(KBC_STATUS_REG, status: 0x%x) error\n", __func__, *status);
 		return 1;
 	}
   return 0;
@@ -22,7 +22,7 @@ int (kbc_read_output)(uint8_t *output) {
 
 		if (status & KBC_OBF) {
 			if (util_sys_inb(KBC_OUT_BUF, output)) {
-				printf("%s: util_sys_inb(KBC_OUT_BUF, 0x%x) error\n", __func__, output);
+				printf("%s: util_sys_inb(KBC_OUT_BUF, 0x%x) error\n", __func__, *output);
 				return 1;
 			}
 
@@ -41,7 +41,7 @@ int (kbc_read_output)(uint8_t *output) {
 
 int (kbc_read_acknowledgment_byte)(uint8_t *acknowledgment_byte) {
 	if (util_sys_inb(KBC_OUT_BUF, acknowledgment_byte)) {
-		printf("%s: util_sys_inb(KBC_OUT_BUF, acknowledgment_byte: 0x%x) error\n", __func__, acknowledgment_byte);
+		printf("%s: util_sys_inb(KBC_OUT_BUF, acknowledgment_byte: 0x%x) error\n", __func__, *acknowledgment_byte);
 		return 1;
 	}
 	return 0;

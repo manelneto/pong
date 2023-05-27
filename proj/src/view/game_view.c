@@ -14,7 +14,7 @@ extern uint32_t score;
 
 int draw_game() {
   if (draw_number(score)) {
-    printf("%s: draw_number(score: %d) error\n", __func__);
+    printf("%s: draw_number(score: %d) error\n", __func__, score);
     return 1;
   }
 
