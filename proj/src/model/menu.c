@@ -27,21 +27,21 @@ static int16_t x;
 static int16_t y;
 
 int start_menu(uint16_t xResolution, uint16_t yResolution) {
-  play = construct_button(xResolution/3, yResolution/5, xResolution/3, yResolution/5, button_play_xpm, button_play_selected_xpm);
+  play = construct_button(xResolution / 3, yResolution / 5, xResolution / 3, yResolution / 5, button_play_xpm, button_play_selected_xpm);
   if (!play) {
-    printf("%s: construct_button(%d, %d, %d, %d) error\n", __func__, xResolution/3, yResolution/5, xResolution/3, yResolution/5);
+    printf("%s: construct_button(%d, %d, %d, %d, button_play_xpm, button_play_selected_xpm) error\n", __func__, xResolution / 3, yResolution / 5, xResolution / 3, yResolution / 5);
     return 1;
   }
 
-  quit = construct_button(xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5, button_quit_xpm, button_quit_selected_xpm);
+  quit = construct_button(xResolution / 3, 3 * yResolution / 5, xResolution / 3, yResolution / 5, button_quit_xpm, button_quit_selected_xpm);
   if (!quit) {
-    printf("%s: construct_button(%d, %d, %d, %d) error\n", __func__, xResolution/3, 3 * yResolution/5, xResolution/3, yResolution/5);
+    printf("%s: construct_button(%d, %d, %d, %d, button_quit_xpm, button_quit_selected_xpm) error\n", __func__, xResolution / 3, 3 * yResolution / 5, xResolution / 3, yResolution / 5);
     return 1;
   }
 
-  cursor_menu = construct_cursor(xResolution/2, yResolution/2);
+  cursor_menu = construct_cursor(xResolution / 2, yResolution / 2);
   if (!cursor_menu) {
-    printf("%s: construct_cursor(%d, %d) error\n", __func__, xResolution/2, yResolution/2);
+    printf("%s: construct_cursor(%d, %d) error\n", __func__, xResolution / 2, yResolution / 2);
     return 1;
   }
 
@@ -63,12 +63,16 @@ void keyboard_menu_handler() {
 
 void mouse_menu_handler() {
   x += mouse_packet.delta_x;
-  if (x < 0) x = 0;
-  else if (x + cursor_menu->sprite->width >= x_max) x = x_max - cursor_menu->sprite->width - 1;
+  if (x < 0)                                        // colisão com o limite esquerdo do ecrã
+    x = 0;
+  else if (x + cursor_menu->sprite->width >= x_max) // colisão com o limite direito do ecrã
+    x = x_max - cursor_menu->sprite->width - 1;
 
   y -= mouse_packet.delta_y;
-  if (y < 0) y = 0;
-  else if (y + cursor_menu->sprite->height >= y_max) y = y_max - cursor_menu->sprite->height - 1;
+  if (y < 0)                                         // colisão com o limite superior do ecrã
+    y = 0;
+  else if (y + cursor_menu->sprite->height >= y_max) // colisão com o limite inferior do ecrã
+    y = y_max - cursor_menu->sprite->height - 1;
 
   move_cursor(cursor_menu, x, y);
 
