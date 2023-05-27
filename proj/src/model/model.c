@@ -54,12 +54,10 @@ void timer_interrupt_handler() {
 void keyboard_interrupt_handler() {
   kbc_ih();
   if (code.size > 0) { // code complete
+    if (code.bytes[0] == KBD_ESC_BREAKCODE)
+      state = END;
     switch (state) {
       case MENU:
-        if (code.bytes[0] == KBD_ESC_BREAKCODE) {
-          state = END;
-          break;
-        }
         keyboard_menu_handler();
         if (check_play() && !code.makecode) {
           end_menu();
@@ -107,17 +105,17 @@ void mouse_interrupt_handler() {
         if (check_easy() && mouse_packet.lb) {
           end_levels();
           state = GAME;
-          start_game(vmi_p.XResolution, vmi_p.YResolution);
+          start_game(vmi_p.XResolution, vmi_p.YResolution, 1);
         }
         else if (check_medium() && mouse_packet.lb) {
           end_levels();
           state = GAME;
-          start_game(vmi_p.XResolution, vmi_p.YResolution);
+          start_game(vmi_p.XResolution, vmi_p.YResolution, 2);
         }
         else if (check_hard() && mouse_packet.lb) {
           end_levels();
           state = GAME;
-          start_game(vmi_p.XResolution, vmi_p.YResolution);
+          start_game(vmi_p.XResolution, vmi_p.YResolution, 3);
         }
         break;
       case END:

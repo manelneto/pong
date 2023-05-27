@@ -19,7 +19,7 @@
  * @param yResolution vertical resolution of the screen in pixels
  * @return Return 0 upon success and non-zero otherwise
 */
-int start_game(uint16_t xResolution, uint16_t yResolution);
+int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty);
 
 
 /**
