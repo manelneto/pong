@@ -18,7 +18,8 @@ static uint16_t x_max;
 static uint16_t y_max;
 
 int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
-  ball = construct_ball(xResolution / 2, yResolution / 2, 1 * difficulty, 1 * difficulty);
+  uint8_t direction = (rand() % 2) ? 1 : -1;
+  ball = construct_ball(xResolution / 2, yResolution / 2, 1 * difficulty * direction, 1 * difficulty * direction);
   if (!ball) {
     printf("%s: construct_ball(%d, %d, %d, %d) error\n", __func__, xResolution / 2, yResolution / 2, 1, 1);
     return 1;
