@@ -4,6 +4,7 @@
 
 #include "ball.h"
 #include "wall.h"
+#include "sprite.h"
 
 #include "../controller/keyboard.h"
 #include "../controller/mouse.h"
@@ -16,6 +17,9 @@ Wall *wall = NULL;
 
 static uint16_t x_max;
 static uint16_t y_max;
+
+uint32_t score = 1;
+static uint8_t multiplier;
 
 int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
   uint8_t direction = (rand() % 2) ? 1 : -1;
@@ -31,8 +35,14 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
     return 1;
   }
 
+  if (construct_numbers()) {
+    printf("%s: construct_numbers() error\n", __func__);
+    return 1;
+  }
+
   x_max = xResolution;
   y_max = yResolution;
+  multiplier = difficulty;
 
   return 0;
 }
@@ -49,8 +59,8 @@ void keyboard_game_handler() {
 }
 
 void mouse_game_handler() {
-  if (mouse_packet.rb)
-    speedup_ball(ball);
+  if (mouse_packet.rb) {  score += 1;}
+    //speedup_ball(ball);
 }
 
 bool check_game_over() {
@@ -60,4 +70,5 @@ bool check_game_over() {
 void end_game() {
   destroy_ball(ball);
   destroy_wall(wall);
+  destroy_numbers();
 }

@@ -3,6 +3,8 @@
 
 #include "../model/sprite.h"
 
+int draw_number(uint32_t number);
+
 int draw_sprite(Sprite *sprite, uint16_t x, uint16_t y);
 
 #endif /* _SPRITE_VIEW_H_ */

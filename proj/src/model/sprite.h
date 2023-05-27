@@ -23,4 +23,14 @@ Sprite* construct_sprite(xpm_map_t xpm, uint32_t background);
 */
 void destroy_sprite(Sprite *sprite);
 
+/**
+ * 
+*/
+int construct_numbers();
+
+/**
+ * 
+*/
+void destroy_numbers();
+
 #endif /* _SPRITE_H_ */
