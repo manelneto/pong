@@ -15,11 +15,11 @@ extern struct packet mouse_packet;
 Ball *ball = NULL;
 Wall *wall = NULL;
 
-static uint16_t x_max;
-static uint16_t y_max;
+uint16_t x_max;
+uint16_t y_max;
 
-uint32_t score = 1;
-static uint8_t multiplier;
+uint32_t score;
+uint8_t multiplier;
 
 int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
   uint8_t direction = (rand() % 2) ? 1 : -1;
@@ -42,13 +42,19 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
 
   x_max = xResolution;
   y_max = yResolution;
+  score = 0;
   multiplier = difficulty;
 
   return 0;
 }
 
 void timer_game_handler() {
-  move_ball(ball, wall, x_max, y_max);
+  int16_t y = ball->y + ball->sprite->height/2; // ordenada do ponto mais à esquerda da bola
+  if (ball->x <= wall->x + wall->w && y >= wall->y && y <= wall->y + wall->h) {
+    score += multiplier;
+    move_ball_after_collision_with_wall(ball, wall);
+  }
+  move_ball(ball, x_max, y_max);
 }
 
 void keyboard_game_handler() {
@@ -59,8 +65,8 @@ void keyboard_game_handler() {
 }
 
 void mouse_game_handler() {
-  if (mouse_packet.rb) {  score += 1;}
-    //speedup_ball(ball);
+  if (mouse_packet.rb && !speedup_ball(ball))
+    multiplier++;
 }
 
 bool check_game_over() {
