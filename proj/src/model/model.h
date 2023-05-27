@@ -2,21 +2,13 @@
 #define _MODEL_H_
 
 /**
- * @brief Enum for the system states
- */
-typedef enum {
-  RUNNING, /*!< menu */
-  EXIT  /*!< exit */
-} SystemState;
-
-/**
- * @brief Enum for the game states
+ * @brief Enum for the states
  */
 typedef enum {
   MENU, /*!< menu */
   GAME, /*!< game */
   END   /*!< end */
-} GameState;
+} State;
 
 int start_pong();
 void timer_interrupt_handler();

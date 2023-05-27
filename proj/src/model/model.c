@@ -10,8 +10,7 @@
 #include "../controller/mouse.h"
 #include "../controller/video.h"
 
-SystemState systemState = RUNNING;
-GameState state = MENU;
+State state = MENU;
 
 extern scancode code;
 extern struct packet mouse_packet;
@@ -44,7 +43,7 @@ void keyboard_interrupt_handler() {
   kbc_ih();
   if (code.size > 0) { // code complete
     if (code.bytes[0] == KBD_ESC_BREAKCODE)
-      systemState = EXIT;
+      state = END;
     else if (state == MENU)
       keyboard_menu_handler();
     else if (state == GAME)
@@ -63,7 +62,7 @@ void mouse_interrupt_handler() {
         state = GAME;
         start_game(vmi_p.XResolution, vmi_p.YResolution);
       } else if (check_quit()) {
-        systemState = EXIT;
+        state = END;
       }
     }
     else if (state == GAME)

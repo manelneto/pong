@@ -9,7 +9,7 @@
 #include "controller/video.h"
 #include <lcom/timer.h>
 
-extern SystemState systemState;
+extern State state;
 
 uint8_t timer_irq_set;
 uint8_t keyboard_irq_set;
@@ -80,7 +80,7 @@ void loop() {
   int ipc_status, r;
   message msg;
 
-  while (systemState != EXIT) {
+  while (state != END) {
     if ((r = driver_receive(ANY, &msg, &ipc_status))) {
       printf("%s: driver_receive failed with: %d\n", __func__, r);
       continue;
