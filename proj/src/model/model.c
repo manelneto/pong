@@ -31,7 +31,6 @@ void timer_interrupt_handler() {
   if (state == GAME) {
     timer_game_handler();
     if (check_game_over()) {
-      printf("game over\n");
       state = MENU;
       end_game();
     }

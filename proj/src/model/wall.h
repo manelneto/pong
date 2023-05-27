@@ -15,7 +15,8 @@
 typedef struct {
     int16_t x;           /*!< horizontal coordinate of the wall */
     int16_t y;           /*!< initial vertical coordinate of the wall */
-    uint8_t l;           /*!< length of the wall */
+    uint8_t w;           /*!< width of the wall */
+    uint8_t h;           /*!< height of the wall */
 } Wall;
 
 /**
@@ -23,10 +24,11 @@ typedef struct {
  * 
  * @param x horizontal coordinate of the wall
  * @param y initial vertical coordinate of the wall
- * @param l length of the wall
+ * @param w width of the wall
+ * @param h height of the wall
  * @return Constructed wall on success, NULL otherwise
 */
-Wall* construct_wall(int16_t x, int16_t y, uint8_t l);
+Wall* construct_wall(int16_t x, int16_t y, uint8_t w, uint8_t h);
 
 /**
  * @brief Moves wall up

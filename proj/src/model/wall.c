@@ -2,7 +2,7 @@
 
 #include "wall.h"
 
-Wall *construct_wall(int16_t x, int16_t y, uint8_t l) {
+Wall *construct_wall(int16_t x, int16_t y, uint8_t w, uint8_t h) {
   Wall *wall = (Wall *) malloc(sizeof(Wall));
 
   if (!wall) {
@@ -12,7 +12,8 @@ Wall *construct_wall(int16_t x, int16_t y, uint8_t l) {
 
   wall->x = x;
   wall->y = y;
-  wall->l = l;
+  wall->w = w;
+  wall->h = h;
 
   return wall;
 }
@@ -23,7 +24,7 @@ int move_wall_up(Wall *wall) {
     return 1;
   }
 
-  wall->y -= wall->l/5;
+  wall->y -= wall->h/5;
 
   if (wall->y < 0)
     wall->y = 0;
@@ -37,10 +38,10 @@ int move_wall_down(Wall *wall, uint16_t y_max) {
     return 1;
   }
 
-  wall->y += wall->l/5;
+  wall->y += wall->h/5;
   
-  if (wall->y + wall->l >= y_max)
-    wall->y = y_max - wall->l - 1;
+  if (wall->y + wall->h >= y_max)
+    wall->y = y_max - wall->h - 1;
 
   return 0;
 }

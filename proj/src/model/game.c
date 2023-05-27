@@ -24,7 +24,7 @@ int start_game(uint16_t xResolution, uint16_t yResolution) {
     return 1;
   }
 
-  wall = construct_wall(0, yResolution / 2 - 25, 50);
+  wall = construct_wall(0, yResolution / 2 - 25, 10, 50);
   if (!wall) {
     printf("%s: construct_wall(%d, %d, %d) error\n", __func__, 0, yResolution / 2 - 25, 50);
     return 1;
@@ -37,7 +37,7 @@ int start_game(uint16_t xResolution, uint16_t yResolution) {
 }
 
 void timer_game_handler() {
-  move_ball(ball, x_max, y_max);
+  move_ball(ball, wall->x + wall->w, x_max, y_max);
 }
 
 void keyboard_game_handler() {
@@ -53,7 +53,7 @@ void mouse_game_handler() {
 }
 
 bool check_game_over() {
-  return ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l);
+  return ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->h);
 }
 
 void end_game() {

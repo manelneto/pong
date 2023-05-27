@@ -26,7 +26,7 @@ Ball *construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy) {
   return ball;
 }
 
-int move_ball(Ball *ball, uint16_t x_max, uint16_t y_max) {
+int move_ball(Ball *ball, uint16_t x_min, uint16_t x_max, uint16_t y_max) {
   if (!ball) {
     printf("%s: ball is NULL\n", __func__);
     return 1;
@@ -35,9 +35,9 @@ int move_ball(Ball *ball, uint16_t x_max, uint16_t y_max) {
   ball->x += ball->vx;
   ball->y += ball->vy;
 
-  if (ball->x < 0) {
+  if (ball->x < x_min) {
     ball->vx = -ball->vx;
-    ball->x = 0;
+    ball->x = x_min;
   } else if (ball->x + ball->sprite->width >= x_max) {
     ball->vx = -ball->vx;
     ball->x = x_max - ball->sprite->width - 1;
