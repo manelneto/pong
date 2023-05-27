@@ -9,11 +9,13 @@
 
 #include "../controller/video.h"
 
+#define BACKGROUND 0xADD8E6
+
 extern State state;
 
 int draw_frame() {
-  if (video_draw_background(0xADD8E6)) {
-    printf("%s: video_draw_background(0xADD8E6) error\n", __func__);
+  if (video_draw_background(BACKGROUND)) {
+    printf("%s: video_draw_background(BACKGROUND: %d) error\n", __func__, BACKGROUND);
     return 1;
   }
 
