@@ -10,8 +10,8 @@ int draw_wall(Wall *wall) {
     return 1;
   }
 
-  if (video_draw_rectangle(wall->x, wall->y, wall->w, wall->h, 0xffffff)) {
-    printf("%s: video_draw_rectangle(wall->x; %d, wall->y: %d, wall->w: %d, wall->h: %d, 0xffffff) error\n", __func__, wall->x, wall->y, wall->w, wall->h, 0xffffff);
+  if (video_draw_rectangle(wall->x, wall->y, wall->w, wall->h, 0xFFFF00)) {
+    printf("%s: video_draw_rectangle(wall->x; %d, wall->y: %d, wall->w: %d, wall->h: %d, 0xFFFF00) error\n", __func__, wall->x, wall->y, wall->w, wall->h, 0xffffff);
     return 1;
   }
 

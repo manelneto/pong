@@ -55,8 +55,10 @@ int move_ball(Ball *ball, uint16_t x_min, uint16_t x_max, uint16_t y_max) {
 }
 
 void speedup_ball(Ball *ball) {
-  ball->vx *= 2;
-  ball->vy *= 2;
+  if (ball->vx < 64 && ball->vy < 64) {
+    ball->vx *= 2;
+    ball->vy *= 2;
+  }
 }
 
 void destroy_ball(Ball *ball) {

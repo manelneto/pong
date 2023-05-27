@@ -98,6 +98,21 @@ void mouse_interrupt_handler() {
         break;
       case LEVELS:
         mouse_levels_handler();
+        if (check_easy() && mouse_packet.lb) {
+          end_levels();
+          state = GAME;
+          start_game(vmi_p.XResolution, vmi_p.YResolution);
+        }
+        else if (check_medium() && mouse_packet.lb) {
+          end_levels();
+          state = GAME;
+          start_game(vmi_p.XResolution, vmi_p.YResolution);
+        }
+        else if (check_hard() && mouse_packet.lb) {
+          end_levels();
+          state = GAME;
+          start_game(vmi_p.XResolution, vmi_p.YResolution);
+        }
         break;
       case END:
         break;
