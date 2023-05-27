@@ -1,9 +1,10 @@
 #include <lcom/lcf.h>
 
-#include "menu.h"
-#include "levels.h"
-#include "game.h"
 #include "model.h"
+
+#include "game.h"
+#include "levels.h"
+#include "menu.h"
 
 #include "../view/view.h"
 
@@ -30,24 +31,14 @@ int start_pong() {
 void timer_interrupt_handler() {
   timer_int_handler();
   swap_buffers();
-  switch (state) {
-    case MENU:
-      break;
-    case GAME:
-      timer_game_handler();
-      if (check_game_over()) {
-        end_game();
-        state = MENU;
-        start_menu(vmi_p.XResolution, vmi_p.YResolution);
-      }
-      draw_frame();
-      break;
-    case LEVELS:
-      break;
-    case END:
-      break;
-    default:
-      break;
+  if (state == GAME) {
+    timer_game_handler();
+    if (check_game_over()) {
+      end_game();
+      state = MENU;
+      start_menu(vmi_p.XResolution, vmi_p.YResolution);
+    }
+    draw_frame();
   }
 }
 
@@ -67,15 +58,26 @@ void keyboard_interrupt_handler() {
         else if (check_quit() && !code.makecode)
           state = END;
         break;
-      case GAME:
-        keyboard_game_handler();
-        break;
       case LEVELS:
         keyboard_levels_handler();
+        if (check_easy() && !code.makecode) {
+          end_levels();
+          state = GAME;
+          start_game(vmi_p.XResolution, vmi_p.YResolution, 1);
+        }
+        else if (check_medium() && !code.makecode) {
+          end_levels();
+          state = GAME;
+          start_game(vmi_p.XResolution, vmi_p.YResolution, 2);
+        }
+        else if (check_hard() && !code.makecode) {
+          end_levels();
+          state = GAME;
+          start_game(vmi_p.XResolution, vmi_p.YResolution, 3);
+        }
         break;
-      case END:
-        break;
-      default:
+      case GAME:
+        keyboard_game_handler();
         break;
     }
     keyboard_restore();
@@ -118,11 +120,7 @@ void mouse_interrupt_handler() {
           start_game(vmi_p.XResolution, vmi_p.YResolution, 3);
         }
         break;
-      case END:
-        break;
-      default:
-        break;
-    } 
+    }
     mouse_restore();
     draw_frame();
   }
