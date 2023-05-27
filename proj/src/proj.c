@@ -89,15 +89,9 @@ void loop() {
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
-          if (msg.m_notify.interrupts & BIT(timer_irq_set)) {
-            timer_state_handler();
-          }
-          if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) {
-            keyboard_state_handler();
-          }
-          if (msg.m_notify.interrupts & BIT(mouse_irq_set)) {
-            mouse_state_handler();
-          }
+          if (msg.m_notify.interrupts & BIT(timer_irq_set)) timer_interrupt_handler();
+          if (msg.m_notify.interrupts & BIT(keyboard_irq_set)) keyboard_interrupt_handler();
+          if (msg.m_notify.interrupts & BIT(mouse_irq_set)) mouse_interrupt_handler();
       }
     }
   }

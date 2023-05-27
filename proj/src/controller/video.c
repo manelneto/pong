@@ -4,7 +4,7 @@
 
 #include "VBE.h"
 
-static uint8_t *video_mem;          /* Process (virtual) address to which VRAM is mapped */
+static uint8_t *video_mem;       /* Process (virtual) address to which VRAM is mapped */
 static void *buffer;             /* Back buffer for double buffering */
 static void *current;            /* Current buffer for double buffering */
 
@@ -103,10 +103,12 @@ int (swap_buffers)() {
   if (r.dx == 0) {
     dx = v_res;
     current = video_mem;
+    memcpy(current, buffer, vram_size);
   }
   else if (r.dx == v_res) {
     dx = 0;
     current = buffer;
+    memcpy(current, video_mem, vram_size);
   }
   else {
     printf("%s: DX error\n", __func__);

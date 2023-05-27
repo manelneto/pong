@@ -18,8 +18,8 @@ Cursor *cursor = NULL;
 static uint16_t x_max;
 static uint16_t y_max;
 
-static uint16_t x;
-static uint16_t y;
+static int16_t x;
+static int16_t y;
 
 int start_menu(uint16_t xResolution, uint16_t yResolution) {
   play = construct_button(xResolution/3, yResolution/5, xResolution/3, yResolution/5);
@@ -49,17 +49,24 @@ int start_menu(uint16_t xResolution, uint16_t yResolution) {
   return 0;
 }
 
-void keyboard_menu_state_handler() {
+void keyboard_menu_handler() {
   if ((code.size == 2 && code.bytes[0] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
     play->selected = true;
   if ((code.size == 2 && code.bytes[0] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE))
     quit->selected = true;
 }
 
-void mouse_menu_state_handler() {
+void mouse_menu_handler() {
   x += mouse_packet.delta_x;
+  if (x < 0) x = 0;
+  else if (x + cursor->sprite->width >= x_max) x = x_max - cursor->sprite->width - 1;
+
   y -= mouse_packet.delta_y;
+  if (y < 0) y = 0;
+  else if (y + cursor->sprite->height >= y_max) y = y_max - cursor->sprite->height - 1;
+
   move_cursor(cursor, x, y, x_max, y_max);
+
   if (mouse_packet.lb) {
     check_button(play, cursor->x, cursor->y);
     check_button(quit, cursor->x, cursor->y);

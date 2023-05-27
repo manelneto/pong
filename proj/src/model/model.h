@@ -19,9 +19,9 @@ typedef enum {
 } GameState;
 
 int start_pong();
-void timer_state_handler();
-void keyboard_state_handler();
-void mouse_state_handler();
+void timer_interrupt_handler();
+void keyboard_interrupt_handler();
+void mouse_interrupt_handler();
 void end_pong();
 
 #endif /* _MODEL_H_ */

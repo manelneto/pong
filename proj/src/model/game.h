@@ -27,21 +27,21 @@ int start_game(uint16_t xResolution, uint16_t yResolution);
  * 
  * Moves the ball and the wall. Updates game state.
 */
-void timer_game_state_handler();
+void timer_game_handler();
 
 /**
  * @brief Handles a interrupt from the keyboard when in the game state
  * 
  * Updates wall direction.
 */
-void keyboard_game_state_handler();
+void keyboard_game_handler();
 
 /**
  * @brief Handles a interrupt from the mouse when in the game state
  * 
  * Updates ball velocity.
 */
-void mouse_game_state_handler();
+void mouse_game_handler();
 
 /**
  * 

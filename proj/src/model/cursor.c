@@ -24,21 +24,13 @@ Cursor *construct_cursor(int16_t x, int16_t y) {
   return cursor;
 }
 
-int move_cursor(Cursor *cursor, uint16_t x, uint16_t y, uint16_t x_max, uint16_t y_max) {
+int move_cursor(Cursor *cursor, int16_t x, int16_t y, uint16_t x_max, uint16_t y_max) {
   if (!cursor) {
     printf("%s: cursor is NULL\n", __func__);
     return 1;
   }
-
   cursor->x = x;
   cursor->y = y;
-
-  if (cursor->x < 0) cursor->x = 0;
-  else if (cursor->x >= x_max) cursor->x = x_max - 1;
-
-  if (cursor->y < 0) cursor->y = 0;
-  else if (cursor->y >= y_max) cursor->y = y_max - 1;
-
   return 0;
 }
 

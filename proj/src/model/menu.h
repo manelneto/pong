@@ -26,12 +26,12 @@ int start_menu(uint16_t xResolution, uint16_t yResolution);
  * 
  * Updates buttons
 */
-void keyboard_menu_state_handler();
+void keyboard_menu_handler();
 
 /**
  * 
 */
-void mouse_menu_state_handler();
+void mouse_menu_handler();
 
 /**
  * 

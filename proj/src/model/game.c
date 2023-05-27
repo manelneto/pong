@@ -36,18 +36,18 @@ int start_game(uint16_t xResolution, uint16_t yResolution) {
   return 0;
 }
 
-void timer_game_state_handler() {
+void timer_game_handler() {
   move_ball(ball, x_max, y_max);
 }
 
-void keyboard_game_state_handler() {
+void keyboard_game_handler() {
   if ((code.size == 2 && code.bytes[1] == KBD_ARROW_UP_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_W_MAKECODE))
     move_wall_up(wall);
   if ((code.size == 2 && code.bytes[1] == KBD_ARROW_DOWN_MAKECODE_LSB) || (code.size == 1 && code.bytes[0] == KBD_S_MAKECODE))
     move_wall_down(wall, y_max);
 }
 
-void mouse_game_state_handler() {
+void mouse_game_handler() {
   if (mouse_packet.rb)
     speedup_ball(ball);
 }
