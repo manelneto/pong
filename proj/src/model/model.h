@@ -5,9 +5,10 @@
  * @brief Enum for the states
  */
 typedef enum {
-  MENU, /*!< menu */
-  GAME, /*!< game */
-  END   /*!< end */
+  MENU,   /*!< menu */
+  LEVELS, /*!< levels */
+  GAME,   /*!< game */
+  END     /*!< end */
 } State;
 
 int start_pong();

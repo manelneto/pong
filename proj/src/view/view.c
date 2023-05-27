@@ -5,6 +5,7 @@
 #include "model/model.h"
 
 #include "menu_view.h"
+#include "levels_view.h"
 #include "game_view.h"
 
 #include "../controller/video.h"
@@ -21,6 +22,10 @@ int draw_frame() {
 
   if (state == MENU && draw_menu()) {
     printf("%s: draw_menu() error\n", __func__);
+    return 1;
+  }
+  else if (state == LEVELS && draw_levels()) {
+    printf("%s: draw_levels() error\n", __func__);
     return 1;
   }
   else if (state == GAME && draw_game()) {

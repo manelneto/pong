@@ -18,7 +18,7 @@ extern struct packet mouse_packet;
 
 Button *play = NULL;
 Button *quit = NULL;
-Cursor *cursor = NULL;
+Cursor *cursor_menu = NULL;
 
 static uint16_t x_max;
 static uint16_t y_max;
@@ -39,8 +39,8 @@ int start_menu(uint16_t xResolution, uint16_t yResolution) {
     return 1;
   }
 
-  cursor = construct_cursor(xResolution/2, yResolution/2);
-  if (!cursor) {
+  cursor_menu = construct_cursor(xResolution/2, yResolution/2);
+  if (!cursor_menu) {
     printf("%s: construct_cursor(%d, %d) error\n", __func__, xResolution/2, yResolution/2);
     return 1;
   }
@@ -48,8 +48,8 @@ int start_menu(uint16_t xResolution, uint16_t yResolution) {
   x_max = xResolution;
   y_max = yResolution;
 
-  x = cursor->x;
-  y = cursor->y;
+  x = cursor_menu->x;
+  y = cursor_menu->y;
 
   return 0;
 }
@@ -64,16 +64,16 @@ void keyboard_menu_handler() {
 void mouse_menu_handler() {
   x += mouse_packet.delta_x;
   if (x < 0) x = 0;
-  else if (x + cursor->sprite->width >= x_max) x = x_max - cursor->sprite->width - 1;
+  else if (x + cursor_menu->sprite->width >= x_max) x = x_max - cursor_menu->sprite->width - 1;
 
   y -= mouse_packet.delta_y;
   if (y < 0) y = 0;
-  else if (y + cursor->sprite->height >= y_max) y = y_max - cursor->sprite->height - 1;
+  else if (y + cursor_menu->sprite->height >= y_max) y = y_max - cursor_menu->sprite->height - 1;
 
-  move_cursor(cursor, x, y, x_max, y_max);
+  move_cursor(cursor_menu, x, y);
 
-  check_button(play, cursor->x, cursor->y);
-  check_button(quit, cursor->x, cursor->y);
+  check_button(play, cursor_menu->x, cursor_menu->y);
+  check_button(quit, cursor_menu->x, cursor_menu->y);
 }
 
 bool check_play() {
@@ -87,5 +87,5 @@ bool check_quit() {
 void end_menu() {
   destroy_button(play);
   destroy_button(quit);
-  destroy_cursor(cursor);
+  destroy_cursor(cursor_menu);
 }

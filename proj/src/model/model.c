@@ -1,7 +1,8 @@
 #include <lcom/lcf.h>
 
-#include "game.h"
 #include "menu.h"
+#include "levels.h"
+#include "game.h"
 #include "model.h"
 
 #include "../view/view.h"
@@ -28,58 +29,88 @@ int start_pong() {
 
 void timer_interrupt_handler() {
   timer_int_handler();
-  if (state == GAME) {
-    timer_game_handler();
-    if (check_game_over()) {
-      state = MENU;
-      end_game();
-    }
-    draw_frame();
-  }
   swap_buffers();
+  switch (state) {
+    case MENU:
+      break;
+    case GAME:
+      timer_game_handler();
+      if (check_game_over()) {
+        state = MENU;
+        end_game();
+      }
+      draw_frame();
+      break;
+    case LEVELS:
+      break;
+    case END:
+      break;
+    default:
+      break;
+  }
 }
 
 void keyboard_interrupt_handler() {
   kbc_ih();
   if (code.size > 0) { // code complete
-    if (code.bytes[0] == KBD_ESC_BREAKCODE)
-      state = END;
-    else if (state == MENU) {
-      keyboard_menu_handler();
-      if (check_play() && !code.makecode) {
-        state = GAME;
-        start_game(vmi_p.XResolution, vmi_p.YResolution);
-      } else if (check_quit() && !code.makecode) {
-        state = END;
-      }
+    switch (state) {
+      case MENU:
+        if (code.bytes[0] == KBD_ESC_BREAKCODE)
+          state = END;
+        keyboard_menu_handler();
+        if (check_play() && !code.makecode) {
+          state = LEVELS;
+          start_levels(vmi_p.XResolution, vmi_p.YResolution);
+        }
+        else if (check_quit() && !code.makecode)
+          state = END;
+        break;
+      case GAME:
+        keyboard_game_handler();
+        break;
+      case LEVELS:
+        keyboard_levels_handler();
+      case END:
+        break;
+      default:
+        break;
     }
-    else if (state == GAME)
-      keyboard_game_handler();
     keyboard_restore();
+    draw_frame();
   }
-  draw_frame();
 }
 
 void mouse_interrupt_handler() {
   mouse_ih();
   if (packet_index == 3) { // packet complete
-    if (state == MENU) {
-      mouse_menu_handler();
-      if (check_play() && mouse_packet.lb) {
-        state = GAME;
-        start_game(vmi_p.XResolution, vmi_p.YResolution);
-      } else if (check_quit() && mouse_packet.lb) {
-        state = END;
-      }
-    }
-    else if (state == GAME)
-      mouse_game_handler();
+    switch (state) {
+      case MENU:
+        mouse_menu_handler();
+        if (check_play() && mouse_packet.lb) {
+          state = LEVELS;
+          start_levels(vmi_p.XResolution, vmi_p.YResolution);
+        }
+        else if (check_quit() && mouse_packet.lb)
+          state = END;
+        break;
+      case GAME:
+        mouse_game_handler();
+        break;
+      case LEVELS:
+        mouse_levels_handler();
+        break;
+      case END:
+        break;
+      default:
+        break;
+    } 
     mouse_restore();
     draw_frame();
   }
 }
 
 void end_pong() {
-  end_menu();
   end_game();
+  end_levels();
+  end_menu();
 }

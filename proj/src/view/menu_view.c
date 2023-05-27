@@ -9,7 +9,7 @@
 
 extern Button *play;
 extern Button *quit;
-extern Cursor *cursor;
+extern Cursor *cursor_menu;
 
 int draw_menu() {
   if (draw_button(play)) {
@@ -22,7 +22,7 @@ int draw_menu() {
     return 1;
   }
 
-  if (draw_cursor(cursor)) {
+  if (draw_cursor(cursor_menu)) {
     printf("%s: draw_cursor(cursor) error\n", __func__);
     return 1;
   }
