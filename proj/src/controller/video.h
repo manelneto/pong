@@ -125,6 +125,8 @@ int (video_draw_pixmap)(uint16_t x, uint16_t y, xpm_image_t *image);
 */
 int (video_clean)(uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf);
 
+int video_draw_background(uint32_t color);
+
 /**@}*/
 
 #endif /* _VIDEO_H_ */

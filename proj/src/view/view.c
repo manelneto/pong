@@ -12,8 +12,8 @@
 extern State state;
 
 int draw_frame() {
-  if (video_clean(0, 0, 800, 600)) {
-    printf("%s: vg_clean(0, 0, 800, 600) error\n", __func__);
+  if (video_draw_background(0xADD8E6)) {
+    printf("%s: video_draw_background(0xADD8E6) error\n", __func__);
     return 1;
   }
 
