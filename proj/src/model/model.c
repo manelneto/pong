@@ -2,9 +2,9 @@
 
 #include "model.h"
 
-#include "game.h"
-#include "levels.h"
 #include "menu.h"
+#include "levels.h"
+#include "game.h"
 
 #include "../view/view.h"
 
