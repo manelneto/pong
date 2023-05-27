@@ -2,8 +2,6 @@
 
 #include "ball.h"
 
-#include "../drivers/video_gr.h"
-
 Ball *construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy) {
   Ball *ball = (Ball *) malloc(sizeof(Ball));
 
@@ -20,21 +18,7 @@ Ball *construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy) {
   return ball;
 }
 
-int draw_ball(Ball *ball) {
-  if (!ball) {
-    printf("%s: ball is NULL\n", __func__);
-    return 1;
-  }
-
-  if (vg_draw_pixel(ball->x, ball->y, 0xffffff)) {
-    printf("%s: vg_draw_pixel(ball->x: %d, ball->y: %d, color: 0x%x) error\n", __func__, ball->x, ball->y, 0xffffff);
-    return 1;
-  }
-
-  return 0;
-}
-
-int move_ball(Ball *ball) {
+int move_ball(Ball *ball, uint16_t x_max, uint16_t y_max) {
   if (!ball) {
     printf("%s: ball is NULL\n", __func__);
     return 1;
@@ -46,20 +30,25 @@ int move_ball(Ball *ball) {
   if (ball->x < 0) {
     ball->vx = -ball->vx;
     ball->x = 0;
-  } else if (ball->x >= vmi_p.XResolution) {
+  } else if (ball->x >= x_max) {
     ball->vx = -ball->vx;
-    ball->x = vmi_p.XResolution - 1;
+    ball->x = x_max - 1;
   }
 
   if (ball->y < 0) {
     ball->vy = -ball->vy;
     ball->y = 0;
-  } else if (ball->y >= vmi_p.YResolution) {
+  } else if (ball->y >= y_max) {
     ball->vy = -ball->vy;
-    ball->y = vmi_p.YResolution - 1;
+    ball->y = y_max - 1;
   }
 
   return 0;
+}
+
+void speedup_ball(Ball *ball) {
+  ball->vx *= 2;
+  ball->vy *= 2;
 }
 
 void destroy_ball(Ball *ball) {

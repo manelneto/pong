@@ -10,22 +10,12 @@
 */
 
 /**
- * @brief Enum for the wall movement direction
-*/
-typedef enum {
-    STOP, /*!< no movement */
-    UP,   /*!< move up */
-    DOWN  /*!< move down */
-} Direction;
-
-/**
  * @brief Struct for the wall
 */
 typedef struct {
     int16_t x;           /*!< horizontal coordinate of the wall */
     int16_t y;           /*!< initial vertical coordinate of the wall */
     uint8_t l;           /*!< length of the wall */
-    Direction direction; /*!< direction of the wall movement */
 } Wall;
 
 /**
@@ -39,20 +29,20 @@ typedef struct {
 Wall* construct_wall(int16_t x, int16_t y, uint8_t l);
 
 /**
- * @brief Wall drawer
- * 
- * @param wall pointer to the wall to be drawn
- * @return Return 0 upon success and non-zero otherwise
-*/
-int draw_wall(Wall *wall);
-
-/**
- * @brief Moves wall up/down according to direction
+ * @brief Moves wall up
  * 
  * @param wall pointer to the wall to be moved
  * @return Return 0 upon success and non-zero otherwise
 */
-int move_wall(Wall *wall);
+int move_wall_up(Wall *wall);
+
+/**
+ * @brief Moves wall down
+ * 
+ * @param wall pointer to the wall to be moved
+ * @return Return 0 upon success and non-zero otherwise
+*/
+int move_wall_down(Wall *wall, uint16_t y_max);
 
 /**
  * @brief Wall destructor

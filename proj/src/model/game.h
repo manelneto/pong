@@ -2,17 +2,13 @@
 #define _GAME_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 
 /** @defgroup game game
  * @{
  * 
  * Functions related to the game
 */
-
-typedef enum {
-    ARROW_UP,
-    ARROW_DOWN
-} GameKey;
 
 /**
  * @brief Starts the game
@@ -23,44 +19,41 @@ typedef enum {
  * @param yResolution vertical resolution of the screen in pixels
  * @return Return 0 upon success and non-zero otherwise
 */
-int game_start(uint16_t xResolution, uint16_t yResolution);
+int start_game(uint16_t xResolution, uint16_t yResolution);
 
-/**
- * @brief Draws the game (in the current state)
- * 
- * @return Return 0 upon success and non-zero otherwise
-*/
-int game_draw();
 
 /**
  * @brief Handles a interrupt from the timer when in the game state
  * 
  * Moves the ball and the wall. Updates game state.
 */
-void game_timer_ih();
+void timer_game_state_handler();
 
 /**
  * @brief Handles a interrupt from the keyboard when in the game state
  * 
  * Updates wall direction.
- * 
- * @param key key pressed
 */
-void game_keyboard_ih(GameKey key);
+void keyboard_game_state_handler();
 
 /**
  * @brief Handles a interrupt from the mouse when in the game state
  * 
  * Updates ball velocity.
 */
-void game_mouse_ih();
+void mouse_game_state_handler();
+
+/**
+ * 
+*/
+bool check_game_over();
 
 /**
  * @brief Ends the game
  * 
  * Destroys the ball and the wall.
 */
-void game_end();
+void end_game();
 
 /**@}*/
 

@@ -30,20 +30,12 @@ typedef struct {
 Cursor* construct_cursor(int16_t x, int16_t y);
 
 /**
- * @brief Cursor drawer
- * 
- * @param cursor pointer to the cursor to be drawn
- * @return Return 0 upon success and non-zero otherwise
-*/
-int draw_cursor(Cursor *cursor);
-
-/**
  * @brief Updates cursor position
  * 
  * @param cursor pointer to the cursor to be updated/moved
  * @return Return 0 upon success and non-zero otherwise
 */
-int move_cursor(Cursor *cursor, int16_t x, int16_t y);
+int move_cursor(Cursor *cursor, uint16_t x, uint16_t y, uint16_t x_max, uint16_t y_max);
 
 /**
  * @brief Cursor destructor

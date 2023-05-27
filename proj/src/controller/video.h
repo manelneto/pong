@@ -1,5 +1,5 @@
-#ifndef _VIDEO_GR_H_
-#define _VIDEO_GR_H_
+#ifndef _VIDEO_H_
+#define _VIDEO_H_
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -31,7 +31,7 @@ typedef struct {
  * @param mode 16-bit VBE mode to set
  * @return Virtual address VRAM was mapped to. NULL, upon failure.
  */
-void *(vg_init)(uint16_t mode);
+void *(video_init)(uint16_t mode);
 
 /**
  * @brief Swaps the buffers
@@ -48,7 +48,7 @@ int (swap_buffers)();
  * @param color color to convert to RGB
  * @return RGB color components of the color
 */
-rgb_8_8_8_t (vg_get_colors)(uint32_t color);
+rgb_8_8_8_t (video_get_colors)(uint32_t color);
 
 /**
  * @brief Returns the color enconding of RGB color components
@@ -56,7 +56,7 @@ rgb_8_8_8_t (vg_get_colors)(uint32_t color);
  * @param colors RGB color components to encode
  * @return Color enconding of the RGB color components
 */
-uint32_t (vg_get_color)(rgb_8_8_8_t colors);
+uint32_t (video_get_color)(rgb_8_8_8_t colors);
 
 /**
  * @brief Draws (paints) a pixel by changing the video RAM
@@ -66,7 +66,7 @@ uint32_t (vg_get_color)(rgb_8_8_8_t colors);
  * @param color color to set the pixel
  * @return Return 0 upon success and non-zero otherwise
 */
-int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
+int (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 
 /**
  * @brief Draws a horizontal line by changing the video RAM
@@ -84,7 +84,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
  * @return Return 0 on success and non-zero otherwise
  */
 
-int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
+int (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 
 /**
  * @brief Draws a filled rectangle by changing the video RAM
@@ -102,7 +102,7 @@ int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
  * 
  * @return Return 0 on success and non-zero otherwise
  */
-int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
+int (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
 
 /**
  * @brief Draws a Pixmap on the screen at specified coordinates
@@ -112,7 +112,7 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
  * @param image address of the image to draw
  * @return Return 0 upon success and non-zero otherwise
 */
-int (vg_draw_pixmap)(uint16_t x, uint16_t y, xpm_image_t *image);
+int (video_draw_pixmap)(uint16_t x, uint16_t y, xpm_image_t *image);
 
 /**
  * @brief Resets the color of the screen pixels inside the specified area
@@ -123,8 +123,8 @@ int (vg_draw_pixmap)(uint16_t x, uint16_t y, xpm_image_t *image);
  * @param yf y-coordinates of the bottom-right corner
  * @return Return 0 upon success and non-zero otherwise
 */
-int (vg_clean)(uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf);
+int (video_clean)(uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf);
 
 /**@}*/
 
-#endif /* _VIDEO_GR_H_ */
+#endif /* _VIDEO_H_ */

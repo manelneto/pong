@@ -32,14 +32,6 @@ typedef struct {
 Button *construct_button(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 
 /**
- * @brief Button drawer
- *
- * @param button pointer to the button to be drawn
- * @return Return 0 upon success and non-zero otherwise
- */
-int draw_button(Button *button);
-
-/**
  * @brief Updates button state (selected/unselected) accordingly to cursor coordinates
  * 
  * @param button button to be updated
@@ -47,7 +39,7 @@ int draw_button(Button *button);
  * @param y vertical coordinate of the cursor
  * @return Return 0 upon success and non-zero otherwise
 */
-int update_button(Button *button, uint16_t x, uint16_t y);
+int check_button(Button *button, uint16_t x, uint16_t y);
 
 /**
  * @brief Button destructor

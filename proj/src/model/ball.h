@@ -31,20 +31,17 @@ typedef struct {
 Ball* construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy);
 
 /**
- * @brief Ball drawer
- * 
- * @param ball pointer to the ball to be drawn
- * @return Return 0 upon success and non-zero otherwise
-*/
-int draw_ball(Ball *ball);
-
-/**
  * @brief Updates ball position and velocity
  * 
  * @param ball pointer to the ball to be updated/moved
  * @return Return 0 upon success and non-zero otherwise
 */
-int move_ball(Ball *ball);
+int move_ball(Ball *ball, uint16_t x_max, uint16_t y_max);
+
+/**
+ * 
+*/
+void speedup_ball(Ball *ball);
 
 /**
  * @brief Ball destructor

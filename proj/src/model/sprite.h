@@ -1,7 +1,7 @@
 #ifndef _SPRITE_H_
 #define _SPRITE_H_
 
-#include "../drivers/video_gr.h"
+#include "../controller/video.h"
 
 /**
  * @brief Struct for the sprite
@@ -16,11 +16,6 @@ typedef struct {
  * 
 */
 Sprite* construct_sprite(xpm_map_t xpm);
-
-/**
- * 
-*/
-int draw_sprite(Sprite *sprite, uint16_t x, uint16_t y);
 
 /**
  * 

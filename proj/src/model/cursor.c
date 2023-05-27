@@ -2,8 +2,6 @@
 
 #include "cursor.h"
 
-#include "../drivers/video_gr.h"
-
 #include "../xpm/cursor.xpm"
 
 Cursor *construct_cursor(int16_t x, int16_t y) {
@@ -26,21 +24,8 @@ Cursor *construct_cursor(int16_t x, int16_t y) {
   return cursor;
 }
 
-int draw_cursor(Cursor *cursor) {
-  if (!cursor) {
-    printf("%s: cursor is NULL\n", __func__);
-    return 1;
-  }
 
-  if (draw_sprite(cursor->sprite, cursor->x, cursor->y)) {
-    printf("%s: draw_sprite(cursor->sprite, cursor->x: %d, cursor->y: %d) error\n", __func__, cursor->x, cursor->y);
-    return 1;
-  }
-
-  return 0;
-}
-
-int move_cursor(Cursor *cursor, int16_t x, int16_t y) {
+int move_cursor(Cursor *cursor, uint16_t x, uint16_t y, uint16_t x_max, uint16_t y_max) {
   if (!cursor) {
     printf("%s: cursor is NULL\n", __func__);
     return 1;
@@ -50,10 +35,10 @@ int move_cursor(Cursor *cursor, int16_t x, int16_t y) {
   cursor->y = y;
 
   if (cursor->x < 0) cursor->x = 0;
-  else if (cursor->x >= vmi_p.XResolution) cursor->x = vmi_p.XResolution - 1;
+  else if (cursor->x >= x_max) cursor->x = x_max - 1;
 
   if (cursor->y < 0) cursor->y = 0;
-  else if (cursor->y >= vmi_p.YResolution) cursor->y = vmi_p.YResolution - 1;
+  else if (cursor->y >= y_max) cursor->y = y_max - 1;
 
   return 0;
 }
