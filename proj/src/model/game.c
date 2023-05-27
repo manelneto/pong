@@ -53,7 +53,7 @@ void mouse_game_handler() {
 }
 
 bool check_game_over() {
-  return (ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l));
+  return ball->x <= wall->x && (ball->y < wall->y || ball->y > wall->y + wall->l);
 }
 
 void end_game() {

@@ -12,12 +12,12 @@ extern Wall *wall;
 
 int draw_game() {
   if (draw_ball(ball)) {
-    printf("%d: draw_ball(ball) error\n", __func__);
+    printf("%s: draw_ball(ball) error\n", __func__);
     return 1;
   }
 
   if (draw_wall(wall)) {
-    printf("%d: draw_wall(wall) error\n", __func__);
+    printf("%s: draw_wall(wall) error\n", __func__);
     return 1;
   }
 

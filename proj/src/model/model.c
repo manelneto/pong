@@ -30,11 +30,12 @@ void timer_interrupt_handler() {
   timer_int_handler();
   if (state == GAME) {
     timer_game_handler();
-    draw_frame();
     if (check_game_over()) {
+      printf("game over\n");
       state = MENU;
       end_game();
     }
+    draw_frame();
   }
   swap_buffers();
 }
