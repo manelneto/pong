@@ -14,15 +14,15 @@
 
 /**
  * @brief Struct for scancodes
-*/
+ */
 typedef struct {
-  bool makecode;    /*!< indicates whether this is a make or a break code */
+  bool makecode;    /*!< indicates whether the scancode is a make or a break code */
   uint8_t size;     /*!< size of the scancode in bytes */
   uint8_t bytes[2]; /*!< array with the bytes of the scancode, in order */
 } scancode;
 
 /**
- * @brief Subscribes and enables Keyboard interrupts
+ * @brief Subscribes and enables keyboard interrupts
  *
  * @param bit_no address of memory to be initialized with the bit number to be set in the mask returned upon an interrupt
  * @return Return 0 upon success and non-zero otherwise
@@ -30,7 +30,7 @@ typedef struct {
 int(keyboard_subscribe_int)(uint8_t *bit_no);
 
 /**
- * @brief Unsubscribes Keyboard interrupts
+ * @brief Unsubscribes keyboard interrupts
  *
  * @return Return 0 upon success and non-zero otherwise
  */
@@ -38,9 +38,9 @@ int(keyboard_unsubscribe_int)();
 
 /**
  * @brief Reads the scancode byte from the output buffer
- * 
+ *
  * @return Return 0 upon success and non-zero otherwise
-*/
+ */
 int(keyboard_read_scancode_byte());
 
 /**
@@ -57,10 +57,10 @@ void(keyboard_restore)();
 
 /**
  * @brief Enables keyboard interrupts, by writing an appropriate KBC command byte
- * 
+ *
  * @return Return 0 upon success and non-zero otherwise
-*/
-int (keyboard_enable_interrupts)();
+ */
+int(keyboard_enable_interrupts)();
 
 /**@}*/
 
