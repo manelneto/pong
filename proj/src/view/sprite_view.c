@@ -19,8 +19,8 @@ extern Sprite *nine;
 
 int draw_number(uint32_t number) {
   uint8_t digit;
-  uint16_t x = vmi_p.XResolution - NUMBER_WIDTH;
-  uint16_t y = NUMBER_WIDTH;
+  uint16_t x = vmi_p.XResolution * 0.95;
+  uint16_t y = vmi_p.YResolution * 0.05;
   while (number > 0) {
     digit = number % 10;
     switch (digit) {
