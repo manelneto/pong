@@ -63,67 +63,67 @@ void destroy_sprite(Sprite *sprite) {
 int construct_numbers() {
   zero = construct_sprite((xpm_map_t) zero_xpm, NUMBER_BACKGROUND);
   if (!zero) {
-    printf("%s: construct_sprite(zero_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(zero_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   one = construct_sprite((xpm_map_t) one_xpm, NUMBER_BACKGROUND);
   if (!one) {
-    printf("%s: construct_sprite(one_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(one_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   two = construct_sprite((xpm_map_t) two_xpm, NUMBER_BACKGROUND);
   if (!two) {
-    printf("%s: construct_sprite(two_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(two_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   three = construct_sprite((xpm_map_t) three_xpm, NUMBER_BACKGROUND);
   if (!three) {
-    printf("%s: construct_sprite(three_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(three_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   four = construct_sprite((xpm_map_t) four_xpm, NUMBER_BACKGROUND);
   if (!four) {
-    printf("%s: construct_sprite(four_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(four_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   five = construct_sprite((xpm_map_t) five_xpm, NUMBER_BACKGROUND);
   if (!five) {
-    printf("%s: construct_sprite(five_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(five_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   six = construct_sprite((xpm_map_t) six_xpm, NUMBER_BACKGROUND);
   if (!six) {
-    printf("%s: construct_sprite(six_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(six_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   seven = construct_sprite((xpm_map_t) seven_xpm, NUMBER_BACKGROUND);
   if (!seven) {
-    printf("%s: construct_sprite(seven_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(seven_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   eight = construct_sprite((xpm_map_t) eight_xpm, NUMBER_BACKGROUND);
   if (!eight) {
-    printf("%s: construct_sprite(eight_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(eight_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   nine = construct_sprite((xpm_map_t) nine_xpm, NUMBER_BACKGROUND);
   if (!nine) {
-    printf("%s: construct_sprite(nine_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(nine_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
   times = construct_sprite((xpm_map_t) x_xpm, NUMBER_BACKGROUND);
   if (!times) {
-    printf("%s: construct_sprite(x_xpm, NUMBER_BACKGROUND: %d) error\n", __func__, NUMBER_BACKGROUND);
+    printf("%s: construct_sprite(x_xpm, NUMBER_BACKGROUND: 0x%x) error\n", __func__, NUMBER_BACKGROUND);
     return 1;
   }
 
