@@ -55,8 +55,10 @@ void keyboard_interrupt_handler() {
   if (code.size > 0) { // code complete
     switch (state) {
       case MENU:
-        if (code.bytes[0] == KBD_ESC_BREAKCODE)
+        if (code.bytes[0] == KBD_ESC_BREAKCODE) {
           state = END;
+          break;
+        }
         keyboard_menu_handler();
         if (check_play() && !code.makecode) {
           state = LEVELS;

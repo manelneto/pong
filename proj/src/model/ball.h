@@ -5,6 +5,8 @@
 
 #include "sprite.h"
 
+#include "wall.h"
+
 /** @defgroup ball ball
  * @{
  * 
@@ -39,7 +41,7 @@ Ball* construct_ball(int16_t x, int16_t y, int8_t vx, int8_t vy);
  * @param ball pointer to the ball to be updated/moved
  * @return Return 0 upon success and non-zero otherwise
 */
-int move_ball(Ball *ball, uint16_t x_min, uint16_t x_max, uint16_t y_max);
+int move_ball(Ball *ball, Wall *wall, uint16_t x_max, uint16_t y_max);
 
 /**
  * 

@@ -37,7 +37,7 @@ int start_game(uint16_t xResolution, uint16_t yResolution) {
 }
 
 void timer_game_handler() {
-  move_ball(ball, wall->x + wall->w, x_max, y_max);
+  move_ball(ball, wall, x_max, y_max);
 }
 
 void keyboard_game_handler() {
