@@ -29,9 +29,9 @@ int(mouse_unsubscribe_int)();
 
 /**
  * @brief Reads the packet byte from the output buffer
- * 
+ *
  * @return Return 0 upon success and non-zero otherwise
-*/
+ */
 int(mouse_read_packet_byte)();
 
 /**
@@ -50,19 +50,19 @@ int(mouse_restore)();
 
 /**
  * @brief Writes mouse command
- * 
+ *
  * @param command command to be written to mouse
  * @return Return 0 upon success and non-zero otherwise
-*/
-int (mouse_write_command)(uint8_t command);
+ */
+int(mouse_write_command)(uint8_t command);
 
 /**
  * @brief Enables or disables mouse data reporting
- * 
+ *
  * @param enable true to enable mouse data reporting, false to disable mouse data reporting
  * @return Return 0 upon success and non-zero otherwise
-*/
-int (mouse_data_reporting)(bool enable);
+ */
+int(mouse_data_reporting)(bool enable);
 
 /**@}*/
 

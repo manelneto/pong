@@ -6,23 +6,23 @@ struct packet mouse_packet;
 int32_t mouse_hook_id = MOUSE_IRQ;
 uint8_t packet_index = 0;
 
-int (mouse_subscribe_int)(uint8_t *bit_no) {
-	*bit_no = mouse_hook_id;
+int(mouse_subscribe_int)(uint8_t *bit_no) {
+  *bit_no = mouse_hook_id;
 
-	if (sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &mouse_hook_id)) {
-		printf("%s: sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, mouse_hook_id: %d) error\n", __func__, mouse_hook_id);
-		return 1;
-	}
+  if (sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &mouse_hook_id)) {
+    printf("%s: sys_irqsetpolicy(MOUSE_IRQ: %d, IRQ_REENABLE | IRQ_EXCLUSIVE, mouse_hook_id: %d) error\n", __func__, MOUSE_IRQ, mouse_hook_id);
+    return 1;
+  }
 
-	return 0;
+  return 0;
 }
 
-int (mouse_unsubscribe_int)() {
-	if (sys_irqrmpolicy(&mouse_hook_id)) {
-		printf("%s: sys_irqrmpolicy(mouse_hook_id: %d) error\n", __func__, mouse_hook_id);
-		return 1;
-	}
-	return 0;
+int(mouse_unsubscribe_int)() {
+  if (sys_irqrmpolicy(&mouse_hook_id)) {
+    printf("%s: sys_irqrmpolicy(mouse_hook_id: %d) error\n", __func__, mouse_hook_id);
+    return 1;
+  }
+  return 0;
 }
 
 int mouse_read_packet_byte() {
@@ -51,10 +51,10 @@ int mouse_read_packet_byte() {
 
     if (first_byte & MOUSE_MSB_X_DELTA)
       mouse_packet.delta_x |= MOUSE_SET_MSB;
-    
+
     if (first_byte & MOUSE_MSB_Y_DELTA)
       mouse_packet.delta_y |= MOUSE_SET_MSB;
-    
+
     mouse_packet.x_ov = (bool) (first_byte & MOUSE_X_OVFL);
     mouse_packet.y_ov = (bool) (first_byte & MOUSE_Y_OVFL);
   }
@@ -64,11 +64,11 @@ int mouse_read_packet_byte() {
   return 0;
 }
 
-void (mouse_ih)() {
+void(mouse_ih)() {
   mouse_read_packet_byte();
 }
 
-int (mouse_restore)() {
+int(mouse_restore)() {
   mouse_packet.bytes[0] = 0;
   mouse_packet.bytes[1] = 0;
   mouse_packet.bytes[2] = 0;
@@ -78,10 +78,10 @@ int (mouse_restore)() {
   return 0;
 }
 
-int (mouse_write_command)(uint8_t command) {
+int(mouse_write_command)(uint8_t command) {
   for (int i = 0; i < KBC_MAX_ATTEMPTS; i++) {
     if (kbc_write_command(KBC_WRITE_TO_MOUSE_CMD)) {
-      printf("%s: kbc_write_command(KBC_WRITE_TO_MOUSE_CMD) error\n", __func__);
+      printf("%s: kbc_write_command(KBC_WRITE_TO_MOUSE_CMD: 0x%x) error\n", __func__, KBC_WRITE_CMD);
       return 1;
     }
 
@@ -103,23 +103,24 @@ int (mouse_write_command)(uint8_t command) {
       return 1;
 
     if (tickdelay(micros_to_ticks(KBD_DELAY))) {
-        printf("%s: tickdelay(micros_to_ticks(KBD_DELAY)) error\n", __func__);
-        return 1;
+      printf("%s: tickdelay(micros_to_ticks(KBD_DELAY: %d)) error\n", __func__, KBD_DELAY);
+      return 1;
     }
   }
 
   return 0;
 }
 
-int (mouse_data_reporting)(bool enable) {
+int(mouse_data_reporting)(bool enable) {
   if (enable) {
     if (mouse_write_command(KBC_ENABLE_DATA_REPORTING)) {
-      printf("%s: mouse_write_command(KBC_ENABLE_DATA_REPORTING) error\n", __func__);
+      printf("%s: mouse_write_command(KBC_ENABLE_DATA_REPORTING: 0x%x) error\n", __func__, KBC_ENABLE_DATA_REPORTING);
       return 1;
     }
-  } else {
+  }
+  else {
     if (mouse_write_command(KBC_DISABLE_DATA_REPORTING)) {
-      printf("%s: mouse_write_command(KBC_DISABLE_DATA_REPORTING) error\n", __func__);
+      printf("%s: mouse_write_command(KBC_DISABLE_DATA_REPORTING: 0x%x) error\n", __func__, KBC_DISABLE_DATA_REPORTING);
       return 1;
     }
   }
