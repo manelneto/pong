@@ -21,7 +21,7 @@ int draw_sprite(Sprite *sprite, uint16_t x, uint16_t y);
 
 /**
  * @brief Times symbol (cross - x) drawer
- * 
+ *
  * @param x x-coordinate where to draw the times symbol
  * @param y y-coordinate where to draw the times symbol
  * @return Return 0 upon success and non-zero otherwise

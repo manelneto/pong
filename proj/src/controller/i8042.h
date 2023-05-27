@@ -111,9 +111,13 @@
 #define KBD_E_MAKECODE 0x12                /**< @brief Keyboard E makecode */
 #define KBD_M_MAKECODE 0x32                /**< @brief Keyboard M makecode */
 #define KBD_H_MAKECODE 0x23                /**< @brief Keyboard H makecode */
+#define KBD_P_MAKECODE 0x19                /**< @brief Keyboard P makecode */
+#define KBD_Q_MAKECODE 0x10                /**< @brief Keyboard Q makecode */
 #define KBD_E_BREAKCODE 0x92               /**< @brief Keyboard E breakcode */
 #define KBD_M_BREAKCODE 0xB2               /**< @brief Keyboard M breakcode */
 #define KBD_H_BREAKCODE 0xA3               /**< @brief Keyboard H breakcode */
+#define KBD_P_BREAKCODE 0x99               /**< @brief Keyboard P makecode */
+#define KBD_Q_BREAKCODE 0x90               /**< @brief Keyboard Q makecode */
 
 /* Other - Mouse */
 
