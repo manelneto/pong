@@ -101,6 +101,20 @@
 #define KBD_ENTER_BREAKCODE 0x39
 #define KBD_SPACE_BREAKCODE 0x9B
 
+#define KBD_1_MAKECODE  0x02
+#define KBD_2_MAKECODE  0x03
+#define KBD_3_MAKECODE  0x04
+#define KBD_1_BREAKCODE 0x82
+#define KBD_2_BREAKCODE 0x83
+#define KBD_3_BREAKCODE 0x84
+
+#define KBD_E_MAKECODE  0x12
+#define KBD_M_MAKECODE  0x32
+#define KBD_H_MAKECODE  0x23
+#define KBD_E_BREAKCODE 0x92
+#define KBD_M_BREAKCODE 0xB2
+#define KBD_H_BREAKCODE 0xA3
+
 /* Other - Mouse */
 
 #define MOUSE_LB          BIT(0) /**< @brief Left Button */

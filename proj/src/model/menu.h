@@ -13,7 +13,7 @@
 /**
  * @brief Starts the menu
  *
- * Constroys the buttons (play and quit) and the cursor. Initializes global variables (x_max, y_max, x and y).
+ * Constructs the buttons (play and quit) and the cursor. Initializes global variables (x_max, y_max, x and y).
  *
  * @param xResolution horizontal resolution of the screen in pixels
  * @param yResolution vertical resolution of the screen in pixels
