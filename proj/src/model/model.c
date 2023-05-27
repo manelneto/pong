@@ -45,8 +45,15 @@ void keyboard_interrupt_handler() {
   if (code.size > 0) { // code complete
     if (code.bytes[0] == KBD_ESC_BREAKCODE)
       state = END;
-    else if (state == MENU)
+    else if (state == MENU) {
       keyboard_menu_handler();
+      if (check_play() && !code.makecode) {
+        state = GAME;
+        start_game(vmi_p.XResolution, vmi_p.YResolution);
+      } else if (check_quit() && !code.makecode) {
+        state = END;
+      }
+    }
     else if (state == GAME)
       keyboard_game_handler();
     keyboard_restore();

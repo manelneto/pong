@@ -96,6 +96,11 @@
 #define KBD_S_BREAKCODE 0x9F
 #define KBD_D_BREAKCODE 0xA0
 
+#define KBD_ENTER_MAKECODE  0x1C
+#define KBD_SPACE_MAKECODE  0x9C
+#define KBD_ENTER_BREAKCODE 0x39
+#define KBD_SPACE_BREAKCODE 0x9B
+
 /* Other - Mouse */
 
 #define MOUSE_LB          BIT(0) /**< @brief Left Button */
