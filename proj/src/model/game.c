@@ -3,8 +3,8 @@
 #include "game.h"
 
 #include "ball.h"
-#include "wall.h"
 #include "sprite.h"
+#include "wall.h"
 
 #include "../controller/keyboard.h"
 #include "../controller/mouse.h"
@@ -22,16 +22,16 @@ uint32_t score;
 uint8_t multiplier;
 
 int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
-  uint8_t direction = (rand() % 2) ? 1 : -1;
-  ball = construct_ball(xResolution / 2, yResolution / 2, 1 * difficulty * direction, 1 * difficulty * direction);
+  uint8_t direction = (rand() % 2) ? 1 : -1; // ball starting direction may be left or right
+  ball = construct_ball(xResolution / 2, yResolution / 2, difficulty * direction, difficulty * direction);
   if (!ball) {
-    printf("%s: construct_ball(%d, %d, %d, %d) error\n", __func__, xResolution / 2, yResolution / 2, 1, 1);
+    printf("%s: construct_ball(%d, %d, %d, %d) error\n", __func__, xResolution / 2, yResolution / 2, difficulty * direction, difficulty * direction);
     return 1;
   }
 
-  wall = construct_wall(0, yResolution / 2 - 25, 10, 90/difficulty);
+  wall = construct_wall(0, yResolution / 2 - 25, 10, 90 / difficulty);
   if (!wall) {
-    printf("%s: construct_wall(%d, %d, %d) error\n", __func__, 0, yResolution / 2 - 25, 50);
+    printf("%s: construct_wall(%d, %d, %d, %d) error\n", __func__, 0, yResolution / 2 - 25, 10, 90 / difficulty);
     return 1;
   }
 
@@ -49,8 +49,9 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
 }
 
 void timer_game_handler() {
-  int16_t y = ball->y + ball->sprite->height/2; // ordenada do ponto mais à esquerda da bola
+  int16_t y = ball->y + ball->sprite->height / 2; // ordenada do ponto mais à esquerda da bola
   if (ball->x <= wall->x + wall->w && y >= wall->y && y <= wall->y + wall->h) {
+    // colisão da bola com a parede
     score += multiplier;
     move_ball_after_collision_with_wall(ball, wall);
   }
