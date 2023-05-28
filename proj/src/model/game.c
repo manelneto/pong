@@ -3,8 +3,8 @@
 #include "game.h"
 
 #include "ball.h"
-#include "wall.h"
 #include "sprite.h"
+#include "wall.h"
 
 #include "../controller/keyboard.h"
 #include "../controller/mouse.h"

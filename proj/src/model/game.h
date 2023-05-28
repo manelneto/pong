@@ -27,7 +27,7 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty);
  *
  * Moves the ball and updates the score.
  * If ten seconds elapsed, increases ball velocity.
- * 
+ *
  */
 void timer_game_handler();
 

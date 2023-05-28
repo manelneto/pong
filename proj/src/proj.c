@@ -4,10 +4,10 @@
 
 #include "view/view.h"
 
-#include <lcom/timer.h>
 #include "controller/keyboard.h"
 #include "controller/mouse.h"
 #include "controller/video.h"
+#include <lcom/timer.h>
 
 #define FPS 60
 #define MODE 0x115
