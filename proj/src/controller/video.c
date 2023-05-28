@@ -80,7 +80,7 @@ void *(video_init) (uint16_t mode) {
   return video_mem;
 }
 
-int(swap_buffers)() {
+int(video_swap_buffers)() {
   /* 1. Get display start */
   reg86_t r;
 

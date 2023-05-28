@@ -40,7 +40,7 @@ void *(video_init) (uint16_t mode);
  *
  * @return Return 0 upon success and non-zero otherwise
  */
-int(swap_buffers)();
+int(video_swap_buffers)();
 
 /**
  * @brief Returns the RGB color components of a color

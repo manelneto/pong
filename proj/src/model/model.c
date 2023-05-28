@@ -30,7 +30,7 @@ int start_pong() {
 
 void timer_interrupt_handler() {
   timer_int_handler();
-  swap_buffers();
+  video_swap_buffers();
   if (state == GAME) {
     timer_game_handler();
     if (check_game_over()) {
