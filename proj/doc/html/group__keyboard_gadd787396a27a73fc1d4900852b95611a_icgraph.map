@@ -1,0 +1,4 @@
+<map id="keyboard_enable_interrupts" name="keyboard_enable_interrupts">
+<area shape="rect" id="node1" title="Enables keyboard interrupts, by writing an appropriate KBC command byte." alt="" coords="92,5,273,31"/>
+<area shape="rect" id="node2" href="$group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b" title="Reads the scancode byte from the output buffer." alt="" coords="5,5,44,31"/>
+</map>

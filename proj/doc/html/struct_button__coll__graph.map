@@ -1,0 +1,9 @@
+<map id="Button" name="Button">
+<area shape="rect" id="node1" title="Struct for the button." alt="" coords="85,240,145,265"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,108,67,133"/>
+<area shape="rect" id="node3" title=" " alt="" coords="91,108,138,133"/>
+<area shape="rect" id="node4" href="$struct_sprite.html" title="Struct for the sprite." alt="" coords="171,108,227,133"/>
+<area shape="rect" id="node5" title=" " alt="" coords="67,5,135,31"/>
+<area shape="rect" id="node6" title=" " alt="" coords="160,5,237,31"/>
+<area shape="rect" id="node7" title=" " alt="" coords="262,5,330,31"/>
+</map>

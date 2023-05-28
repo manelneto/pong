@@ -1,0 +1,6 @@
+<map id="video_draw_background" name="video_draw_background">
+<area shape="rect" id="node1" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="node2" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="212,5,357,31"/>
+<area shape="rect" id="node3" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="405,5,524,31"/>
+<area shape="rect" id="node4" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="572,5,691,31"/>
+</map>

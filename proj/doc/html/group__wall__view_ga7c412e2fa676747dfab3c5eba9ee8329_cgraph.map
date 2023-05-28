@@ -1,0 +1,6 @@
+<map id="draw_wall" name="draw_wall">
+<area shape="rect" id="node1" title="Wall drawer." alt="" coords="5,5,84,31"/>
+<area shape="rect" id="node2" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="132,5,277,31"/>
+<area shape="rect" id="node3" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="325,5,444,31"/>
+<area shape="rect" id="node4" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="492,5,611,31"/>
+</map>

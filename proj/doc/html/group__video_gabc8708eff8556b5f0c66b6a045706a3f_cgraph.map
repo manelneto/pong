@@ -1,0 +1,4 @@
+<map id="video_clean" name="video_clean">
+<area shape="rect" id="node1" title="Resets the color of the screen pixels inside the specified area." alt="" coords="5,5,95,31"/>
+<area shape="rect" id="node2" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="143,5,261,31"/>
+</map>

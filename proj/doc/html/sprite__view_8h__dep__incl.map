@@ -1,0 +1,8 @@
+<map id="view/sprite_view.h" name="view/sprite_view.h">
+<area shape="rect" id="node1" title=" " alt="" coords="295,5,419,31"/>
+<area shape="rect" id="node2" href="$ball__view_8c.html" title=" " alt="" coords="5,79,117,104"/>
+<area shape="rect" id="node3" href="$button__view_8c.html" title=" " alt="" coords="141,79,269,104"/>
+<area shape="rect" id="node4" href="$cursor__view_8c.html" title=" " alt="" coords="293,79,421,104"/>
+<area shape="rect" id="node5" href="$game__view_8c.html" title=" " alt="" coords="446,79,570,104"/>
+<area shape="rect" id="node6" href="$sprite__view_8c.html" title=" " alt="" coords="594,79,718,104"/>
+</map>

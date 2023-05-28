@@ -1,0 +1,48 @@
+<map id="mouse_interrupt_handler" name="mouse_interrupt_handler">
+<area shape="rect" id="node1" title="Handles an interrupt from the mouse." alt="" coords="5,351,169,376"/>
+<area shape="rect" id="node2" href="$group__levels.html#ga1f470ca50eab9548d5bc64810c9197f1" title="Checks if the easy button is selected." alt="" coords="246,5,338,31"/>
+<area shape="rect" id="node3" href="$group__levels.html#ga5630c6c6a7517ddccbd9d438b56786bd" title="Checks if the hard button is selected." alt="" coords="247,55,337,80"/>
+<area shape="rect" id="node4" href="$group__levels.html#gadb6c7a5b773c1d6bd2f23a36812eac87" title="Checks if the medium button is selected." alt="" coords="237,104,347,129"/>
+<area shape="rect" id="node5" href="$group__menu.html#gafa7191497e49f76ad1b53efe39ff3204" title="Checks if the play button is selected." alt="" coords="248,153,336,179"/>
+<area shape="rect" id="node6" href="$group__menu.html#ga5a587e6ee1ebb64fb30b6be6ee4877b5" title="Checks if the quit button is selected." alt="" coords="249,203,335,228"/>
+<area shape="rect" id="node7" href="$group__view.html#ga1265a5e2843f2b1c45ad05ae61de7000" title="Draws the current frame." alt="" coords="248,252,336,277"/>
+<area shape="rect" id="node23" href="$group__levels.html#gac47f2fd2fe3da54acf16194c52f3f75b" title="Ends the levels." alt="" coords="251,301,333,327"/>
+<area shape="rect" id="node26" href="$group__menu.html#gae18f1d8182edf522c8ac617445f0c213" title="Ends the menu." alt="" coords="251,351,333,376"/>
+<area shape="rect" id="node27" href="$group__game.html#gabd6510909f5fa762c76b4d2f66ed6611" title="Handles an interrupt from the mouse when in the game state." alt="" coords="217,400,367,425"/>
+<area shape="rect" id="node29" href="$group__mouse.html#ga210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="253,449,331,475"/>
+<area shape="rect" id="node34" href="$group__levels.html#gad61df0eb5337b0c685d47297b606a688" title="Handles an interrupt from the mouse when in the levels state." alt="" coords="217,499,367,524"/>
+<area shape="rect" id="node37" href="$group__menu.html#ga23b977c955d2955e3c117f74b66dd5cf" title="Handles an interrupt from the mouse when in the menu state." alt="" coords="217,548,367,573"/>
+<area shape="rect" id="node38" href="$group__mouse.html#gad0186e4f8f6974a7d2db0557b913d4c8" title="Restores mouse (resets packet)" alt="" coords="238,597,346,623"/>
+<area shape="rect" id="node39" href="$group__game.html#gafb5ec20a73ee79726b0c2d838eadfad3" title="Starts the game." alt="" coords="249,647,335,672"/>
+<area shape="rect" id="node44" href="$group__levels.html#gae00eca1f6cb677fde14a0daf395d2b69" title="Starts the levels." alt="" coords="249,745,335,771"/>
+<area shape="rect" id="node8" href="$group__game__view.html#ga3cef68220fcc611902108d6f0159e50f" title="Draws the game (in the current state)" alt="" coords="456,200,544,225"/>
+<area shape="rect" id="node18" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="456,71,544,96"/>
+<area shape="rect" id="node21" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="456,120,544,145"/>
+<area shape="rect" id="node22" href="$group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="633,399,792,424"/>
+<area shape="rect" id="node9" href="$group__ball__view.html#gadcc4d15fbe25e840d9c5b5486e65853d" title="Ball drawer." alt="" coords="875,272,951,297"/>
+<area shape="rect" id="node12" href="$group__sprite__view.html#ga4d01b37496a4c1f3ebace73ea9071553" title="Digit [0&#45;9] drawer." alt="" coords="873,197,953,223"/>
+<area shape="rect" id="node13" href="$group__sprite__view.html#gad7f61052219664fd09baafa1683835d8" title="Number drawer." alt="" coords="663,197,762,223"/>
+<area shape="rect" id="node14" href="$group__sprite__view.html#gaeecb54ece606d3cfbcde3bdac5adc480" title="Times symbol (cross &#45; x) drawer." alt="" coords="869,148,957,173"/>
+<area shape="rect" id="node15" href="$group__wall__view.html#ga7c412e2fa676747dfab3c5eba9ee8329" title="Wall drawer." alt="" coords="673,349,752,375"/>
+<area shape="rect" id="node10" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="1049,173,1137,199"/>
+<area shape="rect" id="node11" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="1200,236,1319,261"/>
+<area shape="rect" id="node16" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="840,349,985,375"/>
+<area shape="rect" id="node17" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="1033,312,1152,337"/>
+<area shape="rect" id="node19" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="667,47,759,72"/>
+<area shape="rect" id="node20" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="667,96,759,121"/>
+<area shape="rect" id="node24" href="$group__button.html#ga6b75c612ee123b9b3261a831fd6d805b" title="Button destructor." alt="" coords="446,301,554,327"/>
+<area shape="rect" id="node25" href="$group__cursor.html#ga703c262b2001b4ee8aadfadd87baae71" title="Cursor destructor." alt="" coords="446,351,554,376"/>
+<area shape="rect" id="node28" href="$group__ball.html#ga86138e436b462d916fc4146f73fcfd65" title="Doubles ball velocity (in both directions, horizontal and vertical)" alt="" coords="451,400,549,425"/>
+<area shape="rect" id="node30" href="$group__mouse.html#ga9c22815c56151a93b2c65fdcf8a25ef5" title="Reads the packet byte from the output buffer." alt="" coords="415,449,585,475"/>
+<area shape="rect" id="node31" href="$group__kbc.html#gada5301c684470a4267fbcd2796016934" title="Reads the KBC output." alt="" coords="653,449,772,475"/>
+<area shape="rect" id="node32" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="853,475,972,500"/>
+<area shape="rect" id="node33" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="1047,449,1138,475"/>
+<area shape="rect" id="node35" href="$group__button.html#ga1cc54e71c27606b483f95416693f5221" title="Updates button state (selected/unselected) accordingly to cursor coordinates." alt="" coords="450,499,550,524"/>
+<area shape="rect" id="node36" href="$group__cursor.html#gaa72cc96c6d56c18ed4dd494e5538673c" title="Updates cursor position." alt="" coords="453,548,547,573"/>
+<area shape="rect" id="node40" href="$group__ball.html#ga8f545cbd600ec6cc400c3483b51c8bcb" title="Ball constructor." alt="" coords="449,647,551,672"/>
+<area shape="rect" id="node42" href="$group__sprite.html#gab32e013b98922f4ec574d9848a8452c2" title="Numbers (and times symbol) constructor." alt="" coords="433,597,567,623"/>
+<area shape="rect" id="node43" href="$group__wall.html#ga474f6eddb247ac0f0002f9adba1bdcb5" title="Wall constructor." alt="" coords="447,696,553,721"/>
+<area shape="rect" id="node41" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="655,696,770,721"/>
+<area shape="rect" id="node45" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="441,795,559,820"/>
+<area shape="rect" id="node46" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="441,745,559,771"/>
+</map>

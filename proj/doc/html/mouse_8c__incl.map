@@ -1,0 +1,9 @@
+<map id="controller/mouse.c" name="controller/mouse.c">
+<area shape="rect" id="node1" title=" " alt="" coords="29,5,159,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,84,104"/>
+<area shape="rect" id="node3" href="$mouse_8h.html" title=" " alt="" coords="109,79,181,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="14,225,89,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="201,225,267,251"/>
+<area shape="rect" id="node6" href="$kbc_8h.html" title=" " alt="" coords="117,152,172,177"/>
+<area shape="rect" id="node7" href="$i8042_8h.html" title=" " alt="" coords="113,225,177,251"/>
+</map>

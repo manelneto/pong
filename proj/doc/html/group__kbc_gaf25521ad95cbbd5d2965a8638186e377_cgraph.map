@@ -1,0 +1,5 @@
+<map id="kbc_write_command" name="kbc_write_command">
+<area shape="rect" id="node1" title="Writes command to KBC." alt="" coords="5,5,147,31"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="195,5,313,31"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="361,5,452,31"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="end_levels" name="end_levels">
+<area shape="rect" id="node1" title="Ends the levels." alt="" coords="5,31,88,56"/>
+<area shape="rect" id="node2" href="$group__button.html#ga6b75c612ee123b9b3261a831fd6d805b" title="Button destructor." alt="" coords="136,5,244,31"/>
+<area shape="rect" id="node3" href="$group__cursor.html#ga703c262b2001b4ee8aadfadd87baae71" title="Cursor destructor." alt="" coords="136,55,244,80"/>
+</map>

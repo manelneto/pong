@@ -1,0 +1,17 @@
+<map id="construct_sprite" name="construct_sprite">
+<area shape="rect" id="node1" title="Sprite constructor." alt="" coords="787,80,901,105"/>
+<area shape="rect" id="node2" href="$group__ball.html#ga8f545cbd600ec6cc400c3483b51c8bcb" title="Ball constructor." alt="" coords="621,5,723,31"/>
+<area shape="rect" id="node8" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="613,104,731,129"/>
+<area shape="rect" id="node14" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="613,153,731,179"/>
+<area shape="rect" id="node15" href="$group__sprite.html#gab32e013b98922f4ec574d9848a8452c2" title="Numbers (and times symbol) constructor." alt="" coords="605,55,739,80"/>
+<area shape="rect" id="node3" href="$group__game.html#gafb5ec20a73ee79726b0c2d838eadfad3" title="Starts the game." alt="" coords="471,51,557,76"/>
+<area shape="rect" id="node4" href="$group__model.html#gad383895f42571ff2bb4d226c5f4fb83e" title="Handles an interrupt from the keyboard." alt="" coords="276,97,405,137"/>
+<area shape="rect" id="node7" href="$group__model.html#ga1ba8ccf32722915b37e49d01e9f9b6d6" title="Handles an interrupt from the mouse." alt="" coords="259,47,423,72"/>
+<area shape="rect" id="node5" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,119,210,144"/>
+<area shape="rect" id="node6" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,159,115,184"/>
+<area shape="rect" id="node9" href="$group__levels.html#gae00eca1f6cb677fde14a0daf395d2b69" title="Starts the levels." alt="" coords="471,104,557,129"/>
+<area shape="rect" id="node10" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="471,153,557,179"/>
+<area shape="rect" id="node11" href="$group__model.html#ga7eaccedbdd108ffb00a7b00eeb3132b8" title="Starts pong." alt="" coords="299,211,382,236"/>
+<area shape="rect" id="node13" href="$group__model.html#gac7c3715c83c45c6411f9f3f9f6cf8c7f" title="Handles an interrupt from the timer." alt="" coords="263,161,418,187"/>
+<area shape="rect" id="node12" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Configures the devices as needed and starts the project." alt="" coords="163,183,211,208"/>
+</map>

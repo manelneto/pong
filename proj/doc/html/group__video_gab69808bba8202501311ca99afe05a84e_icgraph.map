@@ -1,0 +1,13 @@
+<map id="video_draw_rectangle" name="video_draw_rectangle">
+<area shape="rect" id="node1" title="Draws a filled rectangle by changing the video RAM." alt="" coords="940,94,1085,119"/>
+<area shape="rect" id="node2" href="$group__wall__view.html#ga7c412e2fa676747dfab3c5eba9ee8329" title="Wall drawer." alt="" coords="813,69,892,94"/>
+<area shape="rect" id="node11" href="$group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="607,119,765,145"/>
+<area shape="rect" id="node3" href="$group__game__view.html#ga3cef68220fcc611902108d6f0159e50f" title="Draws the game (in the current state)" alt="" coords="642,70,730,95"/>
+<area shape="rect" id="node4" href="$group__view.html#ga1265a5e2843f2b1c45ad05ae61de7000" title="Draws the current frame." alt="" coords="471,95,559,121"/>
+<area shape="rect" id="node5" href="$group__model.html#gad383895f42571ff2bb4d226c5f4fb83e" title="Handles an interrupt from the keyboard." alt="" coords="276,5,405,45"/>
+<area shape="rect" id="node8" href="$group__model.html#ga1ba8ccf32722915b37e49d01e9f9b6d6" title="Handles an interrupt from the mouse." alt="" coords="259,70,423,95"/>
+<area shape="rect" id="node9" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Configures the devices as needed and starts the project." alt="" coords="163,145,211,170"/>
+<area shape="rect" id="node10" href="$group__model.html#gac7c3715c83c45c6411f9f3f9f6cf8c7f" title="Handles an interrupt from the timer." alt="" coords="263,119,418,145"/>
+<area shape="rect" id="node6" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,95,210,121"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,121,115,146"/>
+</map>

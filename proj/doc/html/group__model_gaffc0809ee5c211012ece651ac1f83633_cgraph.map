@@ -1,0 +1,12 @@
+<map id="end_pong" name="end_pong">
+<area shape="rect" id="node1" title="Ends pong." alt="" coords="5,153,84,179"/>
+<area shape="rect" id="node2" href="$group__game.html#ga4202fa5c5191c7e387d7570da6c8cd8c" title="Ends the game." alt="" coords="132,80,215,105"/>
+<area shape="rect" id="node7" href="$group__levels.html#gac47f2fd2fe3da54acf16194c52f3f75b" title="Ends the levels." alt="" coords="132,203,215,228"/>
+<area shape="rect" id="node10" href="$group__menu.html#gae18f1d8182edf522c8ac617445f0c213" title="Ends the menu." alt="" coords="132,153,215,179"/>
+<area shape="rect" id="node3" href="$group__ball.html#gacd5f0ca3e76fbf07c860b847fc9c3c24" title="Ball destructor." alt="" coords="278,5,370,31"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga71ae7e6eb4898555616d90ae43cc1cc1" title="Numbers (and times symbol) destructor." alt="" coords="263,55,385,80"/>
+<area shape="rect" id="node6" href="$group__wall.html#ga524595dbe261c7e436c17dd50a2e58f7" title="Wall destructor." alt="" coords="277,104,371,129"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga607cfeb4f019a84c346eb3bce9da0420" title="Sprite destructor." alt="" coords="433,55,537,80"/>
+<area shape="rect" id="node8" href="$group__button.html#ga6b75c612ee123b9b3261a831fd6d805b" title="Button destructor." alt="" coords="270,203,378,228"/>
+<area shape="rect" id="node9" href="$group__cursor.html#ga703c262b2001b4ee8aadfadd87baae71" title="Cursor destructor." alt="" coords="270,153,378,179"/>
+</map>

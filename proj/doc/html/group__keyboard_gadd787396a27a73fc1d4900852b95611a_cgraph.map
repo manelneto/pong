@@ -1,0 +1,8 @@
+<map id="keyboard_enable_interrupts" name="keyboard_enable_interrupts">
+<area shape="rect" id="node1" title="Enables keyboard interrupts, by writing an appropriate KBC command byte." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="node2" href="$group__kbc.html#gada5301c684470a4267fbcd2796016934" title="Reads the KBC output." alt="" coords="246,104,365,129"/>
+<area shape="rect" id="node5" href="$group__kbc.html#ga89a84c86a8c4ad0158026675088cf290" title="Writes argument to KBC." alt="" coords="236,5,375,31"/>
+<area shape="rect" id="node6" href="$group__kbc.html#gaf25521ad95cbbd5d2965a8638186e377" title="Writes command to KBC." alt="" coords="235,55,376,80"/>
+<area shape="rect" id="node3" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="424,53,543,79"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="591,79,681,104"/>
+</map>

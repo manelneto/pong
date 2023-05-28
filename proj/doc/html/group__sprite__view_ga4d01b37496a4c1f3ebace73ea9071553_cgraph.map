@@ -1,0 +1,5 @@
+<map id="draw_digit" name="draw_digit">
+<area shape="rect" id="node1" title="Digit [0&#45;9] drawer." alt="" coords="5,5,85,31"/>
+<area shape="rect" id="node2" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="133,5,221,31"/>
+<area shape="rect" id="node3" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="269,5,388,31"/>
+</map>

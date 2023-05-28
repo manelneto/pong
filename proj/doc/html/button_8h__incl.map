@@ -1,0 +1,8 @@
+<map id="model/button.h" name="model/button.h">
+<area shape="rect" id="node1" title=" " alt="" coords="15,5,123,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,225,71,251"/>
+<area shape="rect" id="node3" href="$sprite_8h.html" title=" " alt="" coords="88,79,153,104"/>
+<area shape="rect" id="node4" href="$video_8h.html" title=" " alt="" coords="71,152,202,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="97,225,171,251"/>
+<area shape="rect" id="node6" title=" " alt="" coords="196,225,280,251"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="mouse_game_handler" name="mouse_game_handler">
+<area shape="rect" id="node1" title="Handles an interrupt from the mouse when in the game state." alt="" coords="5,5,155,31"/>
+<area shape="rect" id="node2" href="$group__ball.html#ga86138e436b462d916fc4146f73fcfd65" title="Doubles ball velocity (in both directions, horizontal and vertical)" alt="" coords="203,5,301,31"/>
+</map>

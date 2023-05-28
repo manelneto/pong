@@ -1,0 +1,8 @@
+<map id="kbc_read_acknowledgment_byte" name="kbc_read_acknowledgment_byte">
+<area shape="rect" id="node1" title="Reads the KBC acknowledgment byte from the output buffer." alt="" coords="664,31,875,56"/>
+<area shape="rect" id="node2" href="$group__mouse.html#ga38d52a9770ba9b635e98e4968ae7c330" title="Writes mouse command." alt="" coords="457,31,616,56"/>
+<area shape="rect" id="node3" href="$group__mouse.html#ga5fa5e20a44e51994ceec5407699dd3ff" title="Enables or disables mouse data reporting." alt="" coords="259,31,409,56"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a882067407682fbb5472b9ebaed581708" title="Unsubscribes interrupts from all devices and ends the project." alt="" coords="165,5,208,31"/>
+<area shape="rect" id="node6" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Configures the devices as needed and starts the project." alt="" coords="163,55,211,80"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,31,115,56"/>
+</map>

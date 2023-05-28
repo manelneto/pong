@@ -1,0 +1,7 @@
+<map id="draw_menu" name="draw_menu">
+<area shape="rect" id="node1" title="Draws the menu (in the current state)" alt="" coords="5,31,93,56"/>
+<area shape="rect" id="node2" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="141,5,233,31"/>
+<area shape="rect" id="node5" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="141,55,233,80"/>
+<area shape="rect" id="node3" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="281,31,369,56"/>
+<area shape="rect" id="node4" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="417,31,536,56"/>
+</map>

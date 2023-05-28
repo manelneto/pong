@@ -1,0 +1,12 @@
+<map id="construct_button" name="construct_button">
+<area shape="rect" id="node1" title="Button constructor." alt="" coords="605,92,724,117"/>
+<area shape="rect" id="node2" href="$group__levels.html#gae00eca1f6cb677fde14a0daf395d2b69" title="Starts the levels." alt="" coords="471,63,557,88"/>
+<area shape="rect" id="node7" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="471,116,557,141"/>
+<area shape="rect" id="node3" href="$group__model.html#gad383895f42571ff2bb4d226c5f4fb83e" title="Handles an interrupt from the keyboard." alt="" coords="276,55,405,95"/>
+<area shape="rect" id="node6" href="$group__model.html#ga1ba8ccf32722915b37e49d01e9f9b6d6" title="Handles an interrupt from the mouse." alt="" coords="259,5,423,31"/>
+<area shape="rect" id="node4" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,77,210,103"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,117,115,143"/>
+<area shape="rect" id="node8" href="$group__model.html#ga7eaccedbdd108ffb00a7b00eeb3132b8" title="Starts pong." alt="" coords="299,169,382,195"/>
+<area shape="rect" id="node10" href="$group__model.html#gac7c3715c83c45c6411f9f3f9f6cf8c7f" title="Handles an interrupt from the timer." alt="" coords="263,120,418,145"/>
+<area shape="rect" id="node9" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Configures the devices as needed and starts the project." alt="" coords="163,141,211,167"/>
+</map>

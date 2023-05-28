@@ -1,0 +1,5 @@
+<map id="video_draw_rectangle" name="video_draw_rectangle">
+<area shape="rect" id="node1" title="Draws a filled rectangle by changing the video RAM." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="node2" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="199,5,317,31"/>
+<area shape="rect" id="node3" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="365,5,484,31"/>
+</map>

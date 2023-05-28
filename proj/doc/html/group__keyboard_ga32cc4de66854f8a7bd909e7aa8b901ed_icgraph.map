@@ -1,0 +1,5 @@
+<map id="keyboard_unsubscribe_int" name="keyboard_unsubscribe_int">
+<area shape="rect" id="node1" title="Unsubscribes keyboard interrupts." alt="" coords="253,5,427,31"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a882067407682fbb5472b9ebaed581708" title="Unsubscribes interrupts from all devices and ends the project." alt="" coords="163,5,205,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,5,115,31"/>
+</map>

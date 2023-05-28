@@ -1,0 +1,6 @@
+<map id="start_levels" name="start_levels">
+<area shape="rect" id="node1" title="Starts the levels." alt="" coords="5,31,92,56"/>
+<area shape="rect" id="node2" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="140,5,259,31"/>
+<area shape="rect" id="node4" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="140,55,259,80"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="307,31,421,56"/>
+</map>

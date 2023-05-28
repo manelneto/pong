@@ -1,0 +1,5 @@
+<map id="keyboard_game_handler" name="keyboard_game_handler">
+<area shape="rect" id="node1" title="Handles an interrupt from the keyboard when in the game state." alt="" coords="5,31,168,56"/>
+<area shape="rect" id="node2" href="$group__wall.html#ga156dc0bbb050cfb0189bd1401d11a442" title="Moves wall down." alt="" coords="216,5,335,31"/>
+<area shape="rect" id="node3" href="$group__wall.html#gae2f8c11162ff392a7806b47040861360" title="Moves wall up." alt="" coords="224,55,327,80"/>
+</map>

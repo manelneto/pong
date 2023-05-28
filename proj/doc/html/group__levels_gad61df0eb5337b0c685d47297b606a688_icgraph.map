@@ -1,0 +1,6 @@
+<map id="mouse_levels_handler" name="mouse_levels_handler">
+<area shape="rect" id="node1" title="Handles an interrupt from the mouse when in the levels state." alt="" coords="469,5,619,31"/>
+<area shape="rect" id="node2" href="$group__model.html#ga1ba8ccf32722915b37e49d01e9f9b6d6" title="Handles an interrupt from the mouse." alt="" coords="257,5,421,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,5,209,31"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,5,115,31"/>
+</map>

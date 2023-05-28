@@ -1,0 +1,4 @@
+<map id="video_draw_hline" name="video_draw_hline">
+<area shape="rect" id="node1" title="Draws a horizontal line by changing the video RAM." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="node2" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="172,5,291,31"/>
+</map>

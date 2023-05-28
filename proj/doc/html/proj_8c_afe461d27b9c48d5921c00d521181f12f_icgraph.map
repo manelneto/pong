@@ -1,0 +1,4 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node1" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,5,209,31"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,5,115,31"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="mouse_read_packet_byte" name="mouse_read_packet_byte">
+<area shape="rect" id="node1" title="Reads the packet byte from the output buffer." alt="" coords="5,31,176,56"/>
+<area shape="rect" id="node2" href="$group__kbc.html#gada5301c684470a4267fbcd2796016934" title="Reads the KBC output." alt="" coords="224,31,343,56"/>
+<area shape="rect" id="node3" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="391,5,509,31"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="557,31,648,56"/>
+</map>

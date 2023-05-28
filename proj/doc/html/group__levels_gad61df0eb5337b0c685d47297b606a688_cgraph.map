@@ -1,0 +1,5 @@
+<map id="mouse_levels_handler" name="mouse_levels_handler">
+<area shape="rect" id="node1" title="Handles an interrupt from the mouse when in the levels state." alt="" coords="5,31,155,56"/>
+<area shape="rect" id="node2" href="$group__button.html#ga1cc54e71c27606b483f95416693f5221" title="Updates button state (selected/unselected) accordingly to cursor coordinates." alt="" coords="203,5,303,31"/>
+<area shape="rect" id="node3" href="$group__cursor.html#gaa72cc96c6d56c18ed4dd494e5538673c" title="Updates cursor position." alt="" coords="205,55,300,80"/>
+</map>

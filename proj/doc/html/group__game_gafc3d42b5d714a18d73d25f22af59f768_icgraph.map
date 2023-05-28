@@ -1,0 +1,6 @@
+<map id="keyboard_game_handler" name="keyboard_game_handler">
+<area shape="rect" id="node1" title="Handles an interrupt from the keyboard when in the game state." alt="" coords="435,13,597,38"/>
+<area shape="rect" id="node2" href="$group__model.html#gad383895f42571ff2bb4d226c5f4fb83e" title="Handles an interrupt from the keyboard." alt="" coords="257,5,387,45"/>
+<area shape="rect" id="node3" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,13,209,38"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,13,115,38"/>
+</map>

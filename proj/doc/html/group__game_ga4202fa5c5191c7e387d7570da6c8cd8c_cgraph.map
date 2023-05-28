@@ -1,0 +1,7 @@
+<map id="end_game" name="end_game">
+<area shape="rect" id="node1" title="Ends the game." alt="" coords="5,55,88,80"/>
+<area shape="rect" id="node2" href="$group__ball.html#gacd5f0ca3e76fbf07c860b847fc9c3c24" title="Ball destructor." alt="" coords="151,5,243,31"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga71ae7e6eb4898555616d90ae43cc1cc1" title="Numbers (and times symbol) destructor." alt="" coords="136,55,259,80"/>
+<area shape="rect" id="node5" href="$group__wall.html#ga524595dbe261c7e436c17dd50a2e58f7" title="Wall destructor." alt="" coords="150,104,245,129"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga607cfeb4f019a84c346eb3bce9da0420" title="Sprite destructor." alt="" coords="307,55,411,80"/>
+</map>

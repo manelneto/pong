@@ -1,0 +1,7 @@
+<map id="keyboard_restore" name="keyboard_restore">
+<area shape="rect" id="node1" title="Restores keyboard (resets scancode)" alt="" coords="435,35,557,60"/>
+<area shape="rect" id="node2" href="$group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b" title="Reads the scancode byte from the output buffer." alt="" coords="303,5,341,31"/>
+<area shape="rect" id="node3" href="$group__model.html#gad383895f42571ff2bb4d226c5f4fb83e" title="Handles an interrupt from the keyboard." alt="" coords="257,55,387,95"/>
+<area shape="rect" id="node4" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,63,209,88"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,63,115,88"/>
+</map>

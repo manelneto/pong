@@ -1,0 +1,5 @@
+<map id="view/wall_view.h" name="view/wall_view.h">
+<area shape="rect" id="node1" title=" " alt="" coords="82,5,197,31"/>
+<area shape="rect" id="node2" href="$game__view_8c.html" title=" " alt="" coords="5,79,129,104"/>
+<area shape="rect" id="node3" href="$wall__view_8c.html" title=" " alt="" coords="154,79,269,104"/>
+</map>

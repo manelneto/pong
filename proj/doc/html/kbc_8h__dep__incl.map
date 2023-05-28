@@ -1,0 +1,13 @@
+<map id="controller/kbc.h" name="controller/kbc.h">
+<area shape="rect" id="node1" title=" " alt="" coords="323,5,433,31"/>
+<area shape="rect" id="node2" href="$kbc_8c.html" title=" " alt="" coords="172,79,283,104"/>
+<area shape="rect" id="node3" href="$keyboard_8h.html" title=" " alt="" coords="307,79,449,104"/>
+<area shape="rect" id="node10" href="$mouse_8h.html" title=" " alt="" coords="473,79,603,104"/>
+<area shape="rect" id="node4" href="$keyboard_8c.html" title=" " alt="" coords="5,152,148,177"/>
+<area shape="rect" id="node5" href="$game_8c.html" title=" " alt="" coords="511,152,615,177"/>
+<area shape="rect" id="node6" href="$levels_8c.html" title=" " alt="" coords="639,152,743,177"/>
+<area shape="rect" id="node7" href="$menu_8c.html" title=" " alt="" coords="173,152,277,177"/>
+<area shape="rect" id="node8" href="$model_8c.html" title=" " alt="" coords="301,152,407,177"/>
+<area shape="rect" id="node9" href="$proj_8c.html" title=" " alt="" coords="432,152,487,177"/>
+<area shape="rect" id="node11" href="$mouse_8c.html" title=" " alt="" coords="768,152,897,177"/>
+</map>

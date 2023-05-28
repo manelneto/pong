@@ -1,0 +1,18 @@
+<map id="draw_frame" name="draw_frame">
+<area shape="rect" id="node1" title="Draws the current frame." alt="" coords="5,131,93,156"/>
+<area shape="rect" id="node2" href="$group__game__view.html#ga3cef68220fcc611902108d6f0159e50f" title="Draws the game (in the current state)" alt="" coords="177,181,265,207"/>
+<area shape="rect" id="node12" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="177,31,265,56"/>
+<area shape="rect" id="node15" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="177,80,265,105"/>
+<area shape="rect" id="node16" href="$group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="141,281,300,307"/>
+<area shape="rect" id="node3" href="$group__ball__view.html#gadcc4d15fbe25e840d9c5b5486e65853d" title="Ball drawer." alt="" coords="529,107,605,132"/>
+<area shape="rect" id="node6" href="$group__sprite__view.html#ga4d01b37496a4c1f3ebace73ea9071553" title="Digit [0&#45;9] drawer." alt="" coords="527,156,607,181"/>
+<area shape="rect" id="node7" href="$group__sprite__view.html#gad7f61052219664fd09baafa1683835d8" title="Number drawer." alt="" coords="348,156,447,181"/>
+<area shape="rect" id="node8" href="$group__sprite__view.html#gaeecb54ece606d3cfbcde3bdac5adc480" title="Times symbol (cross &#45; x) drawer." alt="" coords="523,232,611,257"/>
+<area shape="rect" id="node9" href="$group__wall__view.html#ga7c412e2fa676747dfab3c5eba9ee8329" title="Wall drawer." alt="" coords="358,308,437,333"/>
+<area shape="rect" id="node4" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="703,132,791,157"/>
+<area shape="rect" id="node5" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="855,208,973,233"/>
+<area shape="rect" id="node10" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="495,308,640,333"/>
+<area shape="rect" id="node11" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="688,232,807,257"/>
+<area shape="rect" id="node13" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="351,55,443,80"/>
+<area shape="rect" id="node14" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="351,5,443,31"/>
+</map>

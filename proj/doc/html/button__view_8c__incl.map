@@ -1,0 +1,12 @@
+<map id="view/button_view.c" name="view/button_view.c">
+<area shape="rect" id="node1" title=" " alt="" coords="94,5,222,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,84,104"/>
+<area shape="rect" id="node3" href="$button__view_8h.html" title=" " alt="" coords="108,79,208,104"/>
+<area shape="rect" id="node10" href="$sprite__view_8h.html" title=" " alt="" coords="230,152,326,177"/>
+<area shape="rect" id="node4" href="$button_8h.html" title=" " alt="" coords="86,152,206,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="117,372,183,397"/>
+<area shape="rect" id="node6" href="$sprite_8h.html" title=" " alt="" coords="216,225,281,251"/>
+<area shape="rect" id="node7" href="$video_8h.html" title=" " alt="" coords="183,299,314,324"/>
+<area shape="rect" id="node8" title=" " alt="" coords="209,372,283,397"/>
+<area shape="rect" id="node9" title=" " alt="" coords="308,372,392,397"/>
+</map>

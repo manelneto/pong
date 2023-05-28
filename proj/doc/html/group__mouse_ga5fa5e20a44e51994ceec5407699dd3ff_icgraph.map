@@ -1,0 +1,6 @@
+<map id="mouse_data_reporting" name="mouse_data_reporting">
+<area shape="rect" id="node1" title="Enables or disables mouse data reporting." alt="" coords="259,31,409,56"/>
+<area shape="rect" id="node2" href="$proj_8c.html#a882067407682fbb5472b9ebaed581708" title="Unsubscribes interrupts from all devices and ends the project." alt="" coords="165,5,208,31"/>
+<area shape="rect" id="node4" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Configures the devices as needed and starts the project." alt="" coords="163,55,211,80"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,31,115,56"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="mouse_subscribe_int" name="mouse_subscribe_int">
+<area shape="rect" id="node1" title="Subscribes and enables mouse interrupts." alt="" coords="259,5,404,31"/>
+<area shape="rect" id="node2" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Configures the devices as needed and starts the project." alt="" coords="163,5,211,31"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,5,115,31"/>
+</map>

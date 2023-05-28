@@ -1,0 +1,23 @@
+<map id="end" name="end">
+<area shape="rect" id="node1" title="Unsubscribes interrupts from all devices and ends the project." alt="" coords="5,265,48,291"/>
+<area shape="rect" id="node2" href="$group__model.html#gaffc0809ee5c211012ece651ac1f83633" title="Ends pong." alt="" coords="143,105,222,131"/>
+<area shape="rect" id="node12" href="$group__keyboard.html#ga32cc4de66854f8a7bd909e7aa8b901ed" title="Unsubscribes keyboard interrupts." alt="" coords="96,216,269,241"/>
+<area shape="rect" id="node13" href="$group__mouse.html#ga5fa5e20a44e51994ceec5407699dd3ff" title="Enables or disables mouse data reporting." alt="" coords="107,265,258,291"/>
+<area shape="rect" id="node20" href="$group__mouse.html#ga3ecf823d80520009ae5e0d76ae40a3c3" title="Unsubscribes mouse interrupts." alt="" coords="103,315,262,340"/>
+<area shape="rect" id="node21" href="$timer_8c.html#afabd21de449be154dd65d5fdb2d8045d" title=" " alt="" coords="108,364,257,389"/>
+<area shape="rect" id="node3" href="$group__game.html#ga4202fa5c5191c7e387d7570da6c8cd8c" title="Ends the game." alt="" coords="355,141,438,167"/>
+<area shape="rect" id="node8" href="$group__levels.html#gac47f2fd2fe3da54acf16194c52f3f75b" title="Ends the levels." alt="" coords="355,19,438,44"/>
+<area shape="rect" id="node11" href="$group__menu.html#gae18f1d8182edf522c8ac617445f0c213" title="Ends the menu." alt="" coords="355,68,438,93"/>
+<area shape="rect" id="node4" href="$group__ball.html#gacd5f0ca3e76fbf07c860b847fc9c3c24" title="Ball destructor." alt="" coords="549,153,641,179"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga71ae7e6eb4898555616d90ae43cc1cc1" title="Numbers (and times symbol) destructor." alt="" coords="533,203,656,228"/>
+<area shape="rect" id="node7" href="$group__wall.html#ga524595dbe261c7e436c17dd50a2e58f7" title="Wall destructor." alt="" coords="547,104,642,129"/>
+<area shape="rect" id="node6" href="$group__sprite.html#ga607cfeb4f019a84c346eb3bce9da0420" title="Sprite destructor." alt="" coords="767,203,871,228"/>
+<area shape="rect" id="node9" href="$group__button.html#ga6b75c612ee123b9b3261a831fd6d805b" title="Button destructor." alt="" coords="541,55,649,80"/>
+<area shape="rect" id="node10" href="$group__cursor.html#ga703c262b2001b4ee8aadfadd87baae71" title="Cursor destructor." alt="" coords="541,5,649,31"/>
+<area shape="rect" id="node14" href="$group__mouse.html#ga38d52a9770ba9b635e98e4968ae7c330" title="Writes mouse command." alt="" coords="317,279,476,304"/>
+<area shape="rect" id="node15" href="$group__kbc.html#ga0981f295f50b227baf2b8cabc0c04b12" title="Reads the KBC acknowledgment byte from the output buffer." alt="" coords="713,253,924,279"/>
+<area shape="rect" id="node17" href="$group__kbc.html#ga89a84c86a8c4ad0158026675088cf290" title="Writes argument to KBC." alt="" coords="525,353,664,379"/>
+<area shape="rect" id="node19" href="$group__kbc.html#gaf25521ad95cbbd5d2965a8638186e377" title="Writes command to KBC." alt="" coords="524,304,665,329"/>
+<area shape="rect" id="node16" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="972,279,1063,304"/>
+<area shape="rect" id="node18" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="759,304,878,329"/>
+</map>

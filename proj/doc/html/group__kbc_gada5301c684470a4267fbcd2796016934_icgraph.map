@@ -1,0 +1,10 @@
+<map id="kbc_read_output" name="kbc_read_output">
+<area shape="rect" id="node1" title="Reads the KBC output." alt="" coords="825,31,944,56"/>
+<area shape="rect" id="node2" href="$group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b" title="Reads the scancode byte from the output buffer." alt="" coords="489,5,528,31"/>
+<area shape="rect" id="node3" href="$group__keyboard.html#gadd787396a27a73fc1d4900852b95611a" title="Enables keyboard interrupts, by writing an appropriate KBC command byte." alt="" coords="596,31,777,56"/>
+<area shape="rect" id="node4" href="$group__mouse.html#ga9c22815c56151a93b2c65fdcf8a25ef5" title="Reads the packet byte from the output buffer." alt="" coords="601,80,772,105"/>
+<area shape="rect" id="node5" href="$group__mouse.html#ga210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="469,80,548,105"/>
+<area shape="rect" id="node6" href="$group__model.html#ga1ba8ccf32722915b37e49d01e9f9b6d6" title="Handles an interrupt from the mouse." alt="" coords="257,80,421,105"/>
+<area shape="rect" id="node7" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,80,209,105"/>
+<area shape="rect" id="node8" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,80,115,105"/>
+</map>

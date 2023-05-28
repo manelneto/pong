@@ -1,0 +1,14 @@
+var searchData=
+[
+  ['vg_5finit_0',['vg_init',['../video_8c.html#afa0e432c3ebeefc29a59abc4d22918df',1,'video.c']]],
+  ['video_5fclean_1',['video_clean',['../group__video.html#gabc8708eff8556b5f0c66b6a045706a3f',1,'video_clean(uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf):&#160;video.c'],['../group__video.html#gabc8708eff8556b5f0c66b6a045706a3f',1,'video_clean(uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf):&#160;video.c']]],
+  ['video_5fdraw_5fbackground_2',['video_draw_background',['../group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb',1,'video_draw_background(uint32_t color):&#160;video.c'],['../group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb',1,'video_draw_background(uint32_t color):&#160;video.c']]],
+  ['video_5fdraw_5fhline_3',['video_draw_hline',['../group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6',1,'video_draw_hline(uint16_t x, uint16_t y, uint16_t len, uint32_t color):&#160;video.c'],['../group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6',1,'video_draw_hline(uint16_t x, uint16_t y, uint16_t len, uint32_t color):&#160;video.c']]],
+  ['video_5fdraw_5fpixel_4',['video_draw_pixel',['../group__video.html#gaab7e6116680ca792cf7e2613b823db78',1,'video_draw_pixel(uint16_t x, uint16_t y, uint32_t color):&#160;video.c'],['../group__video.html#gaab7e6116680ca792cf7e2613b823db78',1,'video_draw_pixel(uint16_t x, uint16_t y, uint32_t color):&#160;video.c']]],
+  ['video_5fdraw_5fpixmap_5',['video_draw_pixmap',['../group__video.html#gaa4c176e4c1b02cac6d2eec9fe64b53d2',1,'video_draw_pixmap(uint16_t x, uint16_t y, xpm_image_t *image):&#160;video.c'],['../group__video.html#gaa4c176e4c1b02cac6d2eec9fe64b53d2',1,'video_draw_pixmap(uint16_t x, uint16_t y, xpm_image_t *image):&#160;video.c']]],
+  ['video_5fdraw_5frectangle_6',['video_draw_rectangle',['../group__video.html#gab69808bba8202501311ca99afe05a84e',1,'video_draw_rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color):&#160;video.c'],['../group__video.html#gab69808bba8202501311ca99afe05a84e',1,'video_draw_rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color):&#160;video.c']]],
+  ['video_5fget_5fcolor_7',['video_get_color',['../group__video.html#ga8ab8130b22d939a5d388fcb9bf1b305e',1,'video_get_color(rgb_8_8_8_t colors):&#160;video.c'],['../group__video.html#ga8ab8130b22d939a5d388fcb9bf1b305e',1,'video_get_color(rgb_8_8_8_t colors):&#160;video.c']]],
+  ['video_5fget_5fcolors_8',['video_get_colors',['../group__video.html#gae7db14fbb97022dedcb7b962a94d365f',1,'video_get_colors(uint32_t color):&#160;video.c'],['../group__video.html#gae7db14fbb97022dedcb7b962a94d365f',1,'video_get_colors(uint32_t color):&#160;video.c']]],
+  ['video_5finit_9',['video_init',['../group__video.html#ga27f9047879cee35f24ae69729e89c732',1,'video.h']]],
+  ['void_10',['void',['../keyboard_8c.html#a9601b65a5838f1622a33914a6a94e4f3',1,'keyboard.c']]]
+];

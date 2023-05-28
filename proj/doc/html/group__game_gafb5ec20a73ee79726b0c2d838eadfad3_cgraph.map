@@ -1,0 +1,7 @@
+<map id="start_game" name="start_game">
+<area shape="rect" id="node1" title="Starts the game." alt="" coords="5,55,92,80"/>
+<area shape="rect" id="node2" href="$group__ball.html#ga8f545cbd600ec6cc400c3483b51c8bcb" title="Ball constructor." alt="" coords="155,5,258,31"/>
+<area shape="rect" id="node4" href="$group__sprite.html#gab32e013b98922f4ec574d9848a8452c2" title="Numbers (and times symbol) constructor." alt="" coords="140,55,273,80"/>
+<area shape="rect" id="node5" href="$group__wall.html#ga474f6eddb247ac0f0002f9adba1bdcb5" title="Wall constructor." alt="" coords="154,104,259,129"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="321,31,436,56"/>
+</map>

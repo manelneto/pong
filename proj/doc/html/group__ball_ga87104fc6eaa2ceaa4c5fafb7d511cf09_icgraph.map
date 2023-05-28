@@ -1,0 +1,7 @@
+<map id="move_ball_after_collision_with_wall" name="move_ball_after_collision_with_wall">
+<area shape="rect" id="node1" title="Updates ball position and velocity after collision with wall." alt="" coords="647,5,812,45"/>
+<area shape="rect" id="node2" href="$group__game.html#ga48c243ef9f97bd6e54d0a99ba25b3266" title="Handles an interrupt from the timer when in the game state." alt="" coords="460,13,599,38"/>
+<area shape="rect" id="node3" href="$group__model.html#gac7c3715c83c45c6411f9f3f9f6cf8c7f" title="Handles an interrupt from the timer." alt="" coords="257,13,412,38"/>
+<area shape="rect" id="node4" href="$proj_8c.html#afe461d27b9c48d5921c00d521181f12f" title="Receives and handles the subscribed interrupts, while in the game state." alt="" coords="163,13,209,38"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,13,115,38"/>
+</map>

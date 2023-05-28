@@ -1,0 +1,5 @@
+<map id="draw_button" name="draw_button">
+<area shape="rect" id="node1" title="Button drawer." alt="" coords="5,5,97,31"/>
+<area shape="rect" id="node2" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="145,5,233,31"/>
+<area shape="rect" id="node3" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="281,5,400,31"/>
+</map>

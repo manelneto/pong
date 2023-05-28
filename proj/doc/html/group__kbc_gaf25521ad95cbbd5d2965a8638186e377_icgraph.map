@@ -1,0 +1,10 @@
+<map id="kbc_write_command" name="kbc_write_command">
+<area shape="rect" id="node1" title="Writes command to KBC." alt="" coords="687,31,828,56"/>
+<area shape="rect" id="node2" href="$group__keyboard.html#gadd787396a27a73fc1d4900852b95611a" title="Enables keyboard interrupts, by writing an appropriate KBC command byte." alt="" coords="457,5,639,31"/>
+<area shape="rect" id="node4" href="$group__mouse.html#ga38d52a9770ba9b635e98e4968ae7c330" title="Writes mouse command." alt="" coords="469,55,627,80"/>
+<area shape="rect" id="node3" href="$group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b" title="Reads the scancode byte from the output buffer." alt="" coords="315,5,353,31"/>
+<area shape="rect" id="node5" href="$group__mouse.html#ga5fa5e20a44e51994ceec5407699dd3ff" title="Enables or disables mouse data reporting." alt="" coords="259,55,409,80"/>
+<area shape="rect" id="node6" href="$proj_8c.html#a882067407682fbb5472b9ebaed581708" title="Unsubscribes interrupts from all devices and ends the project." alt="" coords="165,29,208,55"/>
+<area shape="rect" id="node8" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Configures the devices as needed and starts the project." alt="" coords="163,79,211,104"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="LCOM Project main loop." alt="" coords="5,55,115,80"/>
+</map>

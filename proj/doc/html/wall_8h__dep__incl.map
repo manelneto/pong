@@ -1,0 +1,12 @@
+<map id="model/wall.h" name="model/wall.h">
+<area shape="rect" id="node1" title=" " alt="" coords="269,5,364,31"/>
+<area shape="rect" id="node2" href="$ball_8h.html" title=" " alt="" coords="140,79,232,104"/>
+<area shape="rect" id="node4" href="$game_8c.html" title=" " alt="" coords="258,152,362,177"/>
+<area shape="rect" id="node8" href="$wall_8c.html" title=" " alt="" coords="312,79,407,104"/>
+<area shape="rect" id="node9" href="$wall__view_8h.html" title=" " alt="" coords="431,79,546,104"/>
+<area shape="rect" id="node3" href="$ball_8c.html" title=" " alt="" coords="5,152,97,177"/>
+<area shape="rect" id="node5" href="$ball__view_8h.html" title=" " alt="" coords="122,152,234,177"/>
+<area shape="rect" id="node6" href="$ball__view_8c.html" title=" " alt="" coords="122,225,234,251"/>
+<area shape="rect" id="node7" href="$game__view_8c.html" title=" " alt="" coords="297,225,421,251"/>
+<area shape="rect" id="node10" href="$wall__view_8c.html" title=" " alt="" coords="437,152,551,177"/>
+</map>

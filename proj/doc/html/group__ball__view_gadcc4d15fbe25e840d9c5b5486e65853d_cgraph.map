@@ -1,0 +1,5 @@
+<map id="draw_ball" name="draw_ball">
+<area shape="rect" id="node1" title="Ball drawer." alt="" coords="5,5,81,31"/>
+<area shape="rect" id="node2" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="129,5,217,31"/>
+<area shape="rect" id="node3" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="265,5,384,31"/>
+</map>
