@@ -77,8 +77,11 @@ void keyboard_game_handler() {
 }
 
 void mouse_game_handler() {
-  if (mouse_packet.rb && !speedup_ball(ball))
+  if (mouse_packet.rb && !speedup_ball(ball)) {
     multiplier++;
+    speedup  = 600 * multiplier;
+    counter = 0;
+  }
 }
 
 bool check_game_over() {
