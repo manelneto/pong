@@ -14,7 +14,7 @@ static unsigned bits_per_pixel;  /* Number of VRAM bits per pixel */
 static unsigned bytes_per_pixel; /* Number of VRAM bytes per pixel*/
 static unsigned vram_size;       /* VRAM's size */
 
-void *(vg_init) (uint16_t mode) {
+void *(video_init) (uint16_t mode) {
   /* 1. Initialize static global variables */
   if (vbe_get_mode_info(mode, &vmi_p)) {
     printf("%s: vbe_get_mode_info(mode: 0x%x, vmi_p) error\n", __func__, mode);

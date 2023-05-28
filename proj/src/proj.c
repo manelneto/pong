@@ -67,7 +67,7 @@ int start() {
     return 1;
   }
 
-  if (!vg_init(MODE)) {
+  if (!video_init(MODE)) {
     printf("%s: vg_init(mode: 0x%x) error\n", __func__, MODE);
     return 1;
   }
