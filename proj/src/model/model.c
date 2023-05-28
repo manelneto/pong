@@ -116,9 +116,6 @@ void mouse_interrupt_handler() {
         else if (check_quit() && mouse_packet.lb)
           state = END;
         break;
-      case GAME:
-        mouse_game_handler();
-        break;
       case LEVELS:
         mouse_levels_handler();
         if (check_easy() && mouse_packet.lb) {
@@ -136,6 +133,9 @@ void mouse_interrupt_handler() {
           state = GAME;
           start_game(vmi_p.XResolution, vmi_p.YResolution, 3);
         }
+        break;
+      case GAME:
+        mouse_game_handler();
         break;
       default:
         break;
