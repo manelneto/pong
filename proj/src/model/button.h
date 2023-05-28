@@ -20,7 +20,7 @@ typedef struct {
   int16_t w;               /*!< width of the button */
   int16_t h;               /*!< height of the button */
   bool selected;           /*!< true if the button is selected, false otherwise */
-  Sprite *sprite;          /*!< sprite of the button (when unselected)*/
+  Sprite *sprite;          /*!< sprite of the button (when unselected) */
   Sprite *sprite_selected; /*!< sprite of the button (when selected) */
 } Button;
 
