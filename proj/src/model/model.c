@@ -2,9 +2,9 @@
 
 #include "model.h"
 
-#include "menu.h"
-#include "levels.h"
 #include "game.h"
+#include "levels.h"
+#include "menu.h"
 
 #include "../view/view.h"
 
@@ -45,39 +45,54 @@ void timer_interrupt_handler() {
 void keyboard_interrupt_handler() {
   kbc_ih();
   if (code.size > 0) { // code complete
-    if (code.bytes[0] == KBD_ESC_BREAKCODE)
-      state = END;
     switch (state) {
       case MENU:
-        keyboard_menu_handler();
-        if (check_play() && !code.makecode) {
-          end_menu();
-          state = LEVELS;
-          start_levels(vmi_p.XResolution, vmi_p.YResolution);
-        }
-        else if (check_quit() && !code.makecode)
+        if (code.bytes[0] == KBD_ESC_BREAKCODE)
           state = END;
+        else {
+          keyboard_menu_handler();
+          if (check_play() && !code.makecode) {
+            end_menu();
+            state = LEVELS;
+            start_levels(vmi_p.XResolution, vmi_p.YResolution);
+          }
+          else if (check_quit() && !code.makecode)
+            state = END;
+        }
         break;
       case LEVELS:
-        keyboard_levels_handler();
-        if (check_easy() && !code.makecode) {
+        if (code.bytes[0] == KBD_ESC_BREAKCODE) {
           end_levels();
-          state = GAME;
-          start_game(vmi_p.XResolution, vmi_p.YResolution, 1);
+          state = MENU;
+          start_menu(vmi_p.XResolution, vmi_p.YResolution);
         }
-        else if (check_medium() && !code.makecode) {
-          end_levels();
-          state = GAME;
-          start_game(vmi_p.XResolution, vmi_p.YResolution, 2);
-        }
-        else if (check_hard() && !code.makecode) {
-          end_levels();
-          state = GAME;
-          start_game(vmi_p.XResolution, vmi_p.YResolution, 3);
+        else {
+          keyboard_levels_handler();
+          if (check_easy() && !code.makecode) {
+            end_levels();
+            state = GAME;
+            start_game(vmi_p.XResolution, vmi_p.YResolution, 1);
+          }
+          else if (check_medium() && !code.makecode) {
+            end_levels();
+            state = GAME;
+            start_game(vmi_p.XResolution, vmi_p.YResolution, 2);
+          }
+          else if (check_hard() && !code.makecode) {
+            end_levels();
+            state = GAME;
+            start_game(vmi_p.XResolution, vmi_p.YResolution, 3);
+          }
         }
         break;
       case GAME:
-        keyboard_game_handler();
+        if (code.bytes[0] == KBD_ESC_BREAKCODE) {
+          end_game();
+          state = LEVELS;
+          start_levels(vmi_p.XResolution, vmi_p.YResolution);
+        }
+        else
+          keyboard_game_handler();
         break;
       default:
         break;
