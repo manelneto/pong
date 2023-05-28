@@ -21,6 +21,10 @@ uint16_t y_max;
 uint32_t score;
 uint8_t multiplier;
 
+static uint32_t counter;
+
+#define TICKS 600
+
 int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
   uint8_t direction = (rand() % 2) ? 1 : -1; // ball starting direction may be left or right
   ball = construct_ball(xResolution / 2, yResolution / 2, difficulty * direction, difficulty * direction);
@@ -43,7 +47,8 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
   x_max = xResolution;
   y_max = yResolution;
   score = 0;
-  multiplier = difficulty;
+  multiplier = difficulty - 1;
+  counter = 0;
 
   return 0;
 }
@@ -56,6 +61,8 @@ void timer_game_handler() {
     move_ball_after_collision_with_wall(ball, wall);
   }
   move_ball(ball, x_max, y_max);
+  if (counter++ % TICKS == 0 && !speedup_ball(ball))
+    multiplier++;
 }
 
 void keyboard_game_handler() {

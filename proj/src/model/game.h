@@ -26,6 +26,8 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty);
  * @brief Handles an interrupt from the timer when in the game state
  *
  * Moves the ball and updates the score.
+ * If ten seconds elapsed, increases ball velocity.
+ * 
  */
 void timer_game_handler();
 
