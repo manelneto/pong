@@ -22,8 +22,7 @@ uint32_t score;
 uint8_t multiplier;
 
 static uint32_t counter;
-
-#define TICKS 600
+static uint32_t speedup;
 
 int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
   uint8_t direction = (rand() % 2) ? 1 : -1; // ball starting direction may be left or right
@@ -33,9 +32,9 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
     return 1;
   }
 
-  wall = construct_wall(0, yResolution / 2 - 25, 10, 90 / difficulty);
+  wall = construct_wall(0, yResolution / 2 - 45 / difficulty, 10, 90 / difficulty);
   if (!wall) {
-    printf("%s: construct_wall(%d, %d, %d, %d) error\n", __func__, 0, yResolution / 2 - 25, 10, 90 / difficulty);
+    printf("%s: construct_wall(%d, %d, %d, %d) error\n", __func__, 0, yResolution / 2 - 45 / difficulty, 10, 90 / difficulty);
     return 1;
   }
 
@@ -47,13 +46,15 @@ int start_game(uint16_t xResolution, uint16_t yResolution, uint8_t difficulty) {
   x_max = xResolution;
   y_max = yResolution;
   score = 0;
-  multiplier = difficulty - 1;
+  multiplier = difficulty;
   counter = 0;
+  speedup = 600 * multiplier;
 
   return 0;
 }
 
 void timer_game_handler() {
+  counter++;
   int16_t y = ball->y + ball->sprite->height / 2; // ordenada do ponto mais à esquerda da bola
   if (ball->x <= wall->x + wall->w && y >= wall->y && y <= wall->y + wall->h) {
     // colisão da bola com a parede
@@ -61,8 +62,11 @@ void timer_game_handler() {
     move_ball_after_collision_with_wall(ball, wall);
   }
   move_ball(ball, x_max, y_max);
-  if (counter++ % TICKS == 0 && !speedup_ball(ball))
+  if (counter % speedup == 0 && !speedup_ball(ball)) {
     multiplier++;
+    speedup  = 600 * multiplier;
+    counter = 0;
+  }
 }
 
 void keyboard_game_handler() {
