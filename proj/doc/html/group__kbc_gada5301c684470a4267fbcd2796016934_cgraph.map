@@ -1,5 +1,5 @@
 <map id="kbc_read_output" name="kbc_read_output">
 <area shape="rect" id="node1" title="Reads the KBC output." alt="" coords="5,31,124,56"/>
 <area shape="rect" id="node2" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="172,5,291,31"/>
-<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="339,31,429,56"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Invokes sys_inb() system call but reads the value into a uint8_t variable." alt="" coords="339,31,429,56"/>
 </map>

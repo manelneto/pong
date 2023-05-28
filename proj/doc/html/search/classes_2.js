@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rgb_5f8_5f8_5f8_5ft_0',['rgb_8_8_8_t',['../structrgb__8__8__8__t.html',1,'']]]
+  ['lcf_5fctx_5finfo_5ft_0',['lcf_ctx_info_t',['../structlcf__ctx__info__t.html',1,'']]]
 ];

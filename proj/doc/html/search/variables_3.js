@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['five_0',['five',['../sprite_8c.html#aa9aaa4689cf85bf8458afa0e0305aa67',1,'five():&#160;sprite.c'],['../sprite__view_8c.html#aa9aaa4689cf85bf8458afa0e0305aa67',1,'five():&#160;sprite.c']]],
-  ['four_1',['four',['../sprite_8c.html#ab7846ca3ee9ac6ff0438ee13b3ae1426',1,'four():&#160;sprite.c'],['../sprite__view_8c.html#ab7846ca3ee9ac6ff0438ee13b3ae1426',1,'four():&#160;sprite.c']]]
+  ['easy_0',['easy',['../levels_8c.html#ac37eaabdf45c738708de3e8bce9fd63f',1,'easy():&#160;levels.c'],['../levels__view_8c.html#ac37eaabdf45c738708de3e8bce9fd63f',1,'easy():&#160;levels.c']]],
+  ['eight_1',['eight',['../sprite_8c.html#af1667ee92c30932269e42a128a988439',1,'eight():&#160;sprite.c'],['../sprite__view_8c.html#af1667ee92c30932269e42a128a988439',1,'eight():&#160;sprite.c']]]
 ];

@@ -1,0 +1,6 @@
+<map id="timer_status_field_val" name="timer_status_field_val">
+<area shape="rect" id="node1" title="Union for storing values of timer status fields, including the full status byte." alt="" coords="73,108,220,133"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,67,31"/>
+<area shape="rect" id="node3" title=" " alt="" coords="91,5,202,31"/>
+<area shape="rect" id="node4" title=" " alt="" coords="226,5,273,31"/>
+</map>

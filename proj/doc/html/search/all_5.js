@@ -7,5 +7,7 @@ var searchData=
   ['game_5fview_4',['game_view',['../group__game__view.html',1,'']]],
   ['game_5fview_2ec_5',['game_view.c',['../game__view_8c.html',1,'']]],
   ['game_5fview_2eh_6',['game_view.h',['../game__view_8h.html',1,'']]],
-  ['green_7',['green',['../structrgb__8__8__8__t.html#a90d21fa503b626c00cdc8d94863d5877',1,'rgb_8_8_8_t']]]
+  ['green_7',['green',['../structrgb__8__8__8__t.html#a90d21fa503b626c00cdc8d94863d5877',1,'rgb_8_8_8_t']]],
+  ['greenfieldposition_8',['GreenFieldPosition',['../structvbe__mode__info__t.html#a602b28f8e5da781eabfd736743a6ea09',1,'vbe_mode_info_t']]],
+  ['greenmasksize_9',['GreenMaskSize',['../structvbe__mode__info__t.html#ac7b4df72e505b74493e7d5144cbac743',1,'vbe_mode_info_t']]]
 ];

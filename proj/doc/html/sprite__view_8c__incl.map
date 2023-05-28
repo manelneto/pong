@@ -1,10 +1,40 @@
 <map id="view/sprite_view.c" name="view/sprite_view.c">
-<area shape="rect" id="node1" title=" " alt="" coords="95,5,219,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,84,104"/>
-<area shape="rect" id="node3" href="$sprite__view_8h.html" title=" " alt="" coords="109,79,205,104"/>
-<area shape="rect" id="node5" href="$video_8h.html" title=" " alt="" coords="134,225,265,251"/>
-<area shape="rect" id="node4" href="$sprite_8h.html" title=" " alt="" coords="93,152,209,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="67,299,142,324"/>
-<area shape="rect" id="node7" title=" " alt="" coords="167,299,232,324"/>
-<area shape="rect" id="node8" title=" " alt="" coords="256,299,340,324"/>
+<area shape="rect" id="node1" title=" " alt="" coords="2280,5,2404,31"/>
+<area shape="rect" id="node2" href="$lcf_8h.html" title=" " alt="" coords="1381,79,1460,104"/>
+<area shape="rect" id="node36" href="$sprite__view_8h.html" title=" " alt="" coords="2385,79,2481,104"/>
+<area shape="rect" id="node38" href="$video_8h.html" title=" " alt="" coords="2285,225,2415,251"/>
+<area shape="rect" id="node3" title=" " alt="" coords="2214,299,2289,324"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1971,152,2033,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="2057,152,2121,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="2145,152,2203,177"/>
+<area shape="rect" id="node7" title=" " alt="" coords="5,152,73,177"/>
+<area shape="rect" id="node8" title=" " alt="" coords="98,152,213,177"/>
+<area shape="rect" id="node9" title=" " alt="" coords="237,152,337,177"/>
+<area shape="rect" id="node10" title=" " alt="" coords="362,152,461,177"/>
+<area shape="rect" id="node11" title=" " alt="" coords="485,152,602,177"/>
+<area shape="rect" id="node12" title=" " alt="" coords="626,152,711,177"/>
+<area shape="rect" id="node13" title=" " alt="" coords="1143,225,1245,251"/>
+<area shape="rect" id="node14" title=" " alt="" coords="786,152,893,177"/>
+<area shape="rect" id="node15" title=" " alt="" coords="1502,372,1595,397"/>
+<area shape="rect" id="node16" title=" " alt="" coords="968,152,1052,177"/>
+<area shape="rect" id="node17" title=" " alt="" coords="1076,152,1171,177"/>
+<area shape="rect" id="node18" title=" " alt="" coords="1195,152,1278,177"/>
+<area shape="rect" id="node19" title=" " alt="" coords="1303,152,1413,177"/>
+<area shape="rect" id="node20" title=" " alt="" coords="1438,152,1529,177"/>
+<area shape="rect" id="node21" href="$liblm_8h.html" title=" " alt="" coords="1553,152,1645,177"/>
+<area shape="rect" id="node22" href="$lab2_8h.html" title=" " alt="" coords="2520,152,2577,177"/>
+<area shape="rect" id="node26" href="$lab3_8h.html" title=" " alt="" coords="2152,225,2209,251"/>
+<area shape="rect" id="node27" href="$lab4_8h.html" title=" " alt="" coords="2047,299,2104,324"/>
+<area shape="rect" id="node28" href="$lab5_8h.html" title=" " alt="" coords="1669,152,1727,177"/>
+<area shape="rect" id="node34" href="$proj_8h.html" title=" " alt="" coords="1803,152,1857,177"/>
+<area shape="rect" id="node35" href="$types_8h.html" title=" " alt="" coords="1881,152,1947,177"/>
+<area shape="rect" id="node23" title=" " alt="" coords="2144,372,2209,397"/>
+<area shape="rect" id="node24" href="$timer_8h.html" title=" " alt="" coords="2440,225,2503,251"/>
+<area shape="rect" id="node25" href="$utils_8h.html" title=" " alt="" coords="2479,299,2536,324"/>
+<area shape="rect" id="node29" href="$pixmap_8h.html" title=" " alt="" coords="1586,225,1661,251"/>
+<area shape="rect" id="node31" href="$xpm_8h.html" title=" " alt="" coords="1681,299,1739,324"/>
+<area shape="rect" id="node32" href="$_8minix-src_2include_2lcom_2_v_b_e_8h.html" title=" " alt="" coords="1800,299,1852,324"/>
+<area shape="rect" id="node33" href="$video__gr_8h.html" title=" " alt="" coords="1786,225,1866,251"/>
+<area shape="rect" id="node30" title=" " alt="" coords="1588,299,1656,324"/>
+<area shape="rect" id="node37" href="$sprite_8h.html" title=" " alt="" coords="2380,152,2496,177"/>
 </map>

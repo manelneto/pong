@@ -1,39 +1,41 @@
 <map id="start" name="start">
-<area shape="rect" id="node1" title="Configures the devices as needed and starts the project." alt="" coords="5,611,53,636"/>
-<area shape="rect" id="node2" href="$group__view.html#ga1265a5e2843f2b1c45ad05ae61de7000" title="Draws the current frame." alt="" coords="137,207,225,232"/>
-<area shape="rect" id="node18" href="$group__keyboard.html#ga178b1db0b319dccad2840cc3fd273132" title="Subscribes and enables keyboard interrupts." alt="" coords="101,487,260,512"/>
-<area shape="rect" id="node19" href="$group__mouse.html#ga5fa5e20a44e51994ceec5407699dd3ff" title="Enables or disables mouse data reporting." alt="" coords="105,536,256,561"/>
-<area shape="rect" id="node26" href="$group__mouse.html#ga20285aed4b3ef45812cd967532dd09db" title="Subscribes and enables mouse interrupts." alt="" coords="108,635,253,660"/>
-<area shape="rect" id="node27" href="$group__model.html#ga7eaccedbdd108ffb00a7b00eeb3132b8" title="Starts pong." alt="" coords="139,684,222,709"/>
-<area shape="rect" id="node32" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title=" " alt="" coords="111,585,250,611"/>
-<area shape="rect" id="node36" href="$timer_8c.html#ac57a7e1140a7e00ad95ac5488d2a671b" title=" " alt="" coords="113,733,248,759"/>
-<area shape="rect" id="node37" href="$video_8c.html#afa0e432c3ebeefc29a59abc4d22918df" title=" " alt="" coords="151,783,210,808"/>
-<area shape="rect" id="node3" href="$group__game__view.html#ga3cef68220fcc611902108d6f0159e50f" title="Draws the game (in the current state)" alt="" coords="343,207,431,232"/>
-<area shape="rect" id="node13" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="343,80,431,105"/>
-<area shape="rect" id="node16" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="343,31,431,56"/>
-<area shape="rect" id="node17" href="$group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="308,308,467,333"/>
-<area shape="rect" id="node4" href="$group__ball__view.html#gadcc4d15fbe25e840d9c5b5486e65853d" title="Ball drawer." alt="" coords="771,231,847,256"/>
-<area shape="rect" id="node7" href="$group__sprite__view.html#ga4d01b37496a4c1f3ebace73ea9071553" title="Digit [0&#45;9] drawer." alt="" coords="769,156,849,181"/>
-<area shape="rect" id="node8" href="$group__sprite__view.html#gad7f61052219664fd09baafa1683835d8" title="Number drawer." alt="" coords="536,156,635,181"/>
-<area shape="rect" id="node9" href="$group__sprite__view.html#gaeecb54ece606d3cfbcde3bdac5adc480" title="Times symbol (cross &#45; x) drawer." alt="" coords="765,107,853,132"/>
-<area shape="rect" id="node10" href="$group__wall__view.html#ga7c412e2fa676747dfab3c5eba9ee8329" title="Wall drawer." alt="" coords="546,308,625,333"/>
-<area shape="rect" id="node5" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="978,132,1066,157"/>
-<area shape="rect" id="node6" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="1129,195,1248,220"/>
-<area shape="rect" id="node11" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="737,308,882,333"/>
-<area shape="rect" id="node12" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="963,271,1081,296"/>
-<area shape="rect" id="node14" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="539,5,631,31"/>
+<area shape="rect" id="node1" title="Configures the devices as needed and starts the project." alt="" coords="5,481,53,507"/>
+<area shape="rect" id="node2" href="$group__view.html#ga1265a5e2843f2b1c45ad05ae61de7000" title="Draws the current frame." alt="" coords="137,104,225,129"/>
+<area shape="rect" id="node18" href="$group__keyboard.html#ga178b1db0b319dccad2840cc3fd273132" title="Subscribes and enables keyboard interrupts." alt="" coords="101,357,260,383"/>
+<area shape="rect" id="node19" href="$group__mouse.html#ga5fa5e20a44e51994ceec5407699dd3ff" title="Enables or disables mouse data reporting." alt="" coords="105,456,256,481"/>
+<area shape="rect" id="node26" href="$group__mouse.html#ga20285aed4b3ef45812cd967532dd09db" title="Subscribes and enables mouse interrupts." alt="" coords="108,505,253,531"/>
+<area shape="rect" id="node27" href="$group__model.html#ga7eaccedbdd108ffb00a7b00eeb3132b8" title="Starts pong." alt="" coords="139,555,222,580"/>
+<area shape="rect" id="node33" href="$group__timer.html#gaf2c04fa8e97ffa748fd3f612886a92a7" title="Changes the operating frequency of a timer." alt="" coords="111,407,250,432"/>
+<area shape="rect" id="node37" href="$group__timer.html#gac57a7e1140a7e00ad95ac5488d2a671b" title="Subscribes and enables Timer 0 interrupts." alt="" coords="113,604,248,629"/>
+<area shape="rect" id="node38" href="$group__video.html#ga27f9047879cee35f24ae69729e89c732" title="Initializes the video module in graphics mode." alt="" coords="143,655,218,680"/>
+<area shape="rect" id="node3" href="$group__game__view.html#ga3cef68220fcc611902108d6f0159e50f" title="Draws the game (in the current state)" alt="" coords="343,229,431,255"/>
+<area shape="rect" id="node13" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="343,104,431,129"/>
+<area shape="rect" id="node16" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="343,55,431,80"/>
+<area shape="rect" id="node17" href="$group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="308,5,467,31"/>
+<area shape="rect" id="node4" href="$group__ball__view.html#gadcc4d15fbe25e840d9c5b5486e65853d" title="Ball drawer." alt="" coords="771,204,847,229"/>
+<area shape="rect" id="node7" href="$group__sprite__view.html#ga4d01b37496a4c1f3ebace73ea9071553" title="Digit [0&#45;9] drawer." alt="" coords="769,255,849,280"/>
+<area shape="rect" id="node8" href="$group__sprite__view.html#gad7f61052219664fd09baafa1683835d8" title="Number drawer." alt="" coords="536,305,635,331"/>
+<area shape="rect" id="node9" href="$group__sprite__view.html#gaeecb54ece606d3cfbcde3bdac5adc480" title="Times symbol (cross &#45; x) drawer." alt="" coords="765,331,853,356"/>
+<area shape="rect" id="node10" href="$group__wall__view.html#ga7c412e2fa676747dfab3c5eba9ee8329" title="Wall drawer." alt="" coords="546,153,625,179"/>
+<area shape="rect" id="node5" href="$group__sprite__view.html#gace221668fa3cbf0dda0546324d75beae" title="Sprite drawer." alt="" coords="978,179,1066,204"/>
+<area shape="rect" id="node6" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="1129,129,1248,155"/>
+<area shape="rect" id="node11" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="737,52,882,77"/>
+<area shape="rect" id="node12" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="963,79,1081,104"/>
+<area shape="rect" id="node14" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="539,104,631,129"/>
 <area shape="rect" id="node15" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="539,55,631,80"/>
-<area shape="rect" id="node20" href="$group__mouse.html#ga38d52a9770ba9b635e98e4968ae7c330" title="Writes mouse command." alt="" coords="308,484,467,509"/>
-<area shape="rect" id="node21" href="$group__kbc.html#ga0981f295f50b227baf2b8cabc0c04b12" title="Reads the KBC acknowledgment byte from the output buffer." alt="" coords="704,509,915,535"/>
-<area shape="rect" id="node23" href="$group__kbc.html#ga89a84c86a8c4ad0158026675088cf290" title="Writes argument to KBC." alt="" coords="516,409,655,435"/>
-<area shape="rect" id="node25" href="$group__kbc.html#gaf25521ad95cbbd5d2965a8638186e377" title="Writes command to KBC." alt="" coords="515,459,656,484"/>
-<area shape="rect" id="node22" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="977,509,1067,535"/>
-<area shape="rect" id="node24" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="750,459,869,484"/>
-<area shape="rect" id="node28" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="344,709,431,735"/>
-<area shape="rect" id="node29" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="526,684,645,709"/>
-<area shape="rect" id="node31" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="526,733,645,759"/>
-<area shape="rect" id="node30" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="752,708,867,733"/>
-<area shape="rect" id="node33" href="$timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title=" " alt="" coords="756,559,863,584"/>
-<area shape="rect" id="node34" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title=" " alt="" coords="339,611,435,636"/>
-<area shape="rect" id="node35" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title=" " alt="" coords="337,660,437,685"/>
+<area shape="rect" id="node20" href="$group__mouse.html#ga38d52a9770ba9b635e98e4968ae7c330" title="Writes mouse command." alt="" coords="308,483,467,508"/>
+<area shape="rect" id="node21" href="$group__kbc.html#ga0981f295f50b227baf2b8cabc0c04b12" title="Reads the KBC acknowledgment byte from the output buffer." alt="" coords="704,457,915,483"/>
+<area shape="rect" id="node23" href="$group__kbc.html#ga89a84c86a8c4ad0158026675088cf290" title="Writes argument to KBC." alt="" coords="516,508,655,533"/>
+<area shape="rect" id="node25" href="$group__kbc.html#gaf25521ad95cbbd5d2965a8638186e377" title="Writes command to KBC." alt="" coords="515,557,656,583"/>
+<area shape="rect" id="node22" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Invokes sys_inb() system call but reads the value into a uint8_t variable." alt="" coords="977,457,1067,483"/>
+<area shape="rect" id="node24" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="750,508,869,533"/>
+<area shape="rect" id="node28" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="344,607,431,632"/>
+<area shape="rect" id="node29" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="526,607,645,632"/>
+<area shape="rect" id="node32" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="526,656,645,681"/>
+<area shape="rect" id="node30" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="752,631,867,656"/>
+<area shape="rect" id="node31" href="$group__xpm.html#gacd9df6bf462b68aa25f049232473155f" title=" " alt="" coords="983,631,1061,656"/>
+<area shape="rect" id="node34" href="$group__timer.html#ga703c60b40c8c49607d6ecb6fef82d27a" title="Reads the input timer configuration (status) via read&#45;back command." alt="" coords="756,407,863,432"/>
+<area shape="rect" id="node35" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title="Returns the LSB of a 2 byte integer." alt="" coords="339,356,435,381"/>
+<area shape="rect" id="node36" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title="Returns the MSB of a 2 byte integer." alt="" coords="337,307,437,332"/>
+<area shape="rect" id="node39" href="$group__vbe.html#ga8e5eaf385958ee7fa37af87bde93eeba" title="Returns information on the input VBE mode, including screen dimensions, color depth and VRAM physical..." alt="" coords="321,656,453,681"/>
 </map>

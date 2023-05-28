@@ -1,5 +1,5 @@
 <map id="kbc_write_argument" name="kbc_write_argument">
 <area shape="rect" id="node1" title="Writes argument to KBC." alt="" coords="5,5,144,31"/>
 <area shape="rect" id="node2" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="192,5,311,31"/>
-<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="359,5,449,31"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Invokes sys_inb() system call but reads the value into a uint8_t variable." alt="" coords="359,5,449,31"/>
 </map>

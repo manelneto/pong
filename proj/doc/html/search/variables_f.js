@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['v_5fres_0',['v_res',['../video_8c.html#a5bda1b499253a8fbf3cab646f8760391',1,'video.c']]],
-  ['video_5fmem_1',['video_mem',['../video_8c.html#a51ca412bef7e65e7fb0a170abe47b36b',1,'video.c']]],
-  ['vmi_5fp_2',['vmi_p',['../group__video.html#ga26081be7a771e5c611b33f15caaf831e',1,'vmi_p():&#160;video.h'],['../group__video.html#ga26081be7a771e5c611b33f15caaf831e',1,'vmi_p():&#160;video.h']]],
-  ['vram_5fsize_3',['vram_size',['../video_8c.html#aebc295ecf3b9bba454149f8c414b7ddf',1,'video.c']]],
-  ['vx_4',['vx',['../struct_ball.html#a7c34b595c63fcf1e6f7e0107919d0851',1,'Ball']]],
-  ['vy_5',['vy',['../struct_ball.html#a0d1322977426266744fc2c72548f246b',1,'Ball']]]
+  ['rb_0',['rb',['../structpacket.html#abbf74dbbb9f15eefcd8500a92e0d9385',1,'packet']]],
+  ['red_1',['red',['../structrgb__8__8__8__t.html#ad47d918910aaa51c73160ac85999d09c',1,'rgb_8_8_8_t']]],
+  ['redfieldposition_2',['RedFieldPosition',['../structvbe__mode__info__t.html#a20cb142b8c1b0a2b41244fef469a11f4',1,'vbe_mode_info_t']]],
+  ['redmasksize_3',['RedMaskSize',['../structvbe__mode__info__t.html#a5e25f6a8eedde631fff577bcf7d4f6f4',1,'vbe_mode_info_t']]],
+  ['reserved1_4',['Reserved1',['../structvbe__mode__info__t.html#a604037992fe7e5fd08e1bcc684a1b12d',1,'vbe_mode_info_t']]],
+  ['reserved2_5',['Reserved2',['../structvbe__mode__info__t.html#a09b5824ec5c67bee2a4b36c0ab5181bc',1,'vbe_mode_info_t']]],
+  ['reserved3_6',['Reserved3',['../structvbe__mode__info__t.html#a2455a82e0d8cc0e8d76e8cf77a68bd39',1,'vbe_mode_info_t']]],
+  ['reserved4_7',['Reserved4',['../structvbe__mode__info__t.html#a2e13c4795a00241b919aa3aab86560ce',1,'vbe_mode_info_t']]],
+  ['rsvdfieldposition_8',['RsvdFieldPosition',['../structvbe__mode__info__t.html#aa357b085181776f2918a6df25c88846b',1,'vbe_mode_info_t']]],
+  ['rsvdmasksize_9',['RsvdMaskSize',['../structvbe__mode__info__t.html#a87d544680f1132f30b038c0ebf0b829b',1,'vbe_mode_info_t']]]
 ];

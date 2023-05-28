@@ -1,7 +1,5 @@
 var video_8c =
 [
-    [ "swap_buffers", "group__video.html#ga32659541708692c0dda94dab8db36ae4", null ],
-    [ "vg_init", "video_8c.html#afa0e432c3ebeefc29a59abc4d22918df", null ],
     [ "video_clean", "group__video.html#gabc8708eff8556b5f0c66b6a045706a3f", null ],
     [ "video_draw_background", "group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb", null ],
     [ "video_draw_hline", "group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6", null ],
@@ -10,6 +8,8 @@ var video_8c =
     [ "video_draw_rectangle", "group__video.html#gab69808bba8202501311ca99afe05a84e", null ],
     [ "video_get_color", "group__video.html#ga8ab8130b22d939a5d388fcb9bf1b305e", null ],
     [ "video_get_colors", "group__video.html#gae7db14fbb97022dedcb7b962a94d365f", null ],
+    [ "video_init", "group__video.html#ga27f9047879cee35f24ae69729e89c732", null ],
+    [ "video_swap_buffers", "group__video.html#ga9db99ee1a1ea284bbbbb11637a9d7788", null ],
     [ "bits_per_pixel", "video_8c.html#a89fa3fb58e975d148fcb2413e24b78a1", null ],
     [ "buffer", "video_8c.html#a368f7094dc38acca20612bbb392552f4", null ],
     [ "bytes_per_pixel", "video_8c.html#a144d9a9cabab9de0142a6baee835ca6b", null ],

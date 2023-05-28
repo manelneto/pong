@@ -1,8 +1,9 @@
 <map id="view/sprite_view.h" name="view/sprite_view.h">
-<area shape="rect" id="node1" title=" " alt="" coords="75,5,199,31"/>
-<area shape="rect" id="node2" href="$sprite_8h.html" title=" " alt="" coords="79,79,195,104"/>
-<area shape="rect" id="node3" href="$video_8h.html" title=" " alt="" coords="72,152,203,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="55,5,179,31"/>
+<area shape="rect" id="node2" href="$sprite_8h.html" title=" " alt="" coords="59,79,175,104"/>
+<area shape="rect" id="node3" href="$video_8h.html" title=" " alt="" coords="52,152,183,177"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,225,80,251"/>
-<area shape="rect" id="node5" title=" " alt="" coords="105,225,170,251"/>
-<area shape="rect" id="node6" title=" " alt="" coords="194,225,278,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="85,299,150,324"/>
+<area shape="rect" id="node6" href="$_8minix-src_2include_2lcom_2_v_b_e_8h.html" title=" " alt="" coords="155,225,239,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="175,299,268,324"/>
 </map>

@@ -2,6 +2,7 @@
 <area shape="rect" id="node1" title="Starts pong." alt="" coords="5,31,88,56"/>
 <area shape="rect" id="node2" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="136,31,223,56"/>
 <area shape="rect" id="node3" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="271,5,389,31"/>
-<area shape="rect" id="node5" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="271,55,389,80"/>
+<area shape="rect" id="node6" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="271,55,389,80"/>
 <area shape="rect" id="node4" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="437,31,552,56"/>
+<area shape="rect" id="node5" href="$group__xpm.html#gacd9df6bf462b68aa25f049232473155f" title=" " alt="" coords="600,31,679,56"/>
 </map>

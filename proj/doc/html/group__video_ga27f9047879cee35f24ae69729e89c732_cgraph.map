@@ -1,0 +1,4 @@
+<map id="video_init" name="video_init">
+<area shape="rect" id="node1" title="Initializes the video module in graphics mode." alt="" coords="5,5,80,31"/>
+<area shape="rect" id="node2" href="$group__vbe.html#ga8e5eaf385958ee7fa37af87bde93eeba" title="Returns information on the input VBE mode, including screen dimensions, color depth and VRAM physical..." alt="" coords="128,5,260,31"/>
+</map>

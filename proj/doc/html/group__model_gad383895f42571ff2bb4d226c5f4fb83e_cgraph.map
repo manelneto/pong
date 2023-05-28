@@ -15,11 +15,11 @@
 <area shape="rect" id="node37" href="$group__menu.html#gabc694d3389743fa19a930e0d176934c3" title="Handles an interrupt from the keyboard when in the menu state." alt="" coords="183,653,345,679"/>
 <area shape="rect" id="node38" href="$group__keyboard.html#gaa954078900c8d827750dc4ad1e930a77" title="Restores keyboard (resets scancode)" alt="" coords="203,703,325,728"/>
 <area shape="rect" id="node39" href="$group__game.html#gafb5ec20a73ee79726b0c2d838eadfad3" title="Starts the game." alt="" coords="221,752,307,777"/>
-<area shape="rect" id="node44" href="$group__levels.html#gae00eca1f6cb677fde14a0daf395d2b69" title="Starts the levels." alt="" coords="221,851,307,876"/>
-<area shape="rect" id="node47" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="221,801,307,827"/>
+<area shape="rect" id="node45" href="$group__levels.html#gae00eca1f6cb677fde14a0daf395d2b69" title="Starts the levels." alt="" coords="221,851,307,876"/>
+<area shape="rect" id="node48" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="221,801,307,827"/>
 <area shape="rect" id="node8" href="$group__game__view.html#ga3cef68220fcc611902108d6f0159e50f" title="Draws the game (in the current state)" alt="" coords="416,207,504,232"/>
-<area shape="rect" id="node18" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="416,29,504,55"/>
-<area shape="rect" id="node21" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="416,79,504,104"/>
+<area shape="rect" id="node18" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="416,79,504,104"/>
+<area shape="rect" id="node21" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="416,29,504,55"/>
 <area shape="rect" id="node22" href="$group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="575,357,733,383"/>
 <area shape="rect" id="node9" href="$group__ball__view.html#gadcc4d15fbe25e840d9c5b5486e65853d" title="Ball drawer." alt="" coords="816,257,892,283"/>
 <area shape="rect" id="node12" href="$group__sprite__view.html#ga4d01b37496a4c1f3ebace73ea9071553" title="Digit [0&#45;9] drawer." alt="" coords="814,156,894,181"/>
@@ -30,8 +30,8 @@
 <area shape="rect" id="node11" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="1141,232,1260,257"/>
 <area shape="rect" id="node16" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="781,308,927,333"/>
 <area shape="rect" id="node17" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="975,256,1093,281"/>
-<area shape="rect" id="node19" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="608,55,700,80"/>
-<area shape="rect" id="node20" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="608,5,700,31"/>
+<area shape="rect" id="node19" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="608,5,700,31"/>
+<area shape="rect" id="node20" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="608,55,700,80"/>
 <area shape="rect" id="node24" href="$group__ball.html#gacd5f0ca3e76fbf07c860b847fc9c3c24" title="Ball destructor." alt="" coords="414,308,506,333"/>
 <area shape="rect" id="node25" href="$group__sprite.html#ga71ae7e6eb4898555616d90ae43cc1cc1" title="Numbers (and times symbol) destructor." alt="" coords="399,357,521,383"/>
 <area shape="rect" id="node27" href="$group__wall.html#ga524595dbe261c7e436c17dd50a2e58f7" title="Wall destructor." alt="" coords="413,407,507,432"/>
@@ -41,9 +41,10 @@
 <area shape="rect" id="node34" href="$group__wall.html#ga156dc0bbb050cfb0189bd1401d11a442" title="Moves wall down." alt="" coords="401,555,519,580"/>
 <area shape="rect" id="node35" href="$group__wall.html#gae2f8c11162ff392a7806b47040861360" title="Moves wall up." alt="" coords="409,604,511,629"/>
 <area shape="rect" id="node40" href="$group__ball.html#ga8f545cbd600ec6cc400c3483b51c8bcb" title="Ball constructor." alt="" coords="409,653,511,679"/>
-<area shape="rect" id="node42" href="$group__sprite.html#gab32e013b98922f4ec574d9848a8452c2" title="Numbers (and times symbol) constructor." alt="" coords="393,703,527,728"/>
-<area shape="rect" id="node43" href="$group__wall.html#ga474f6eddb247ac0f0002f9adba1bdcb5" title="Wall constructor." alt="" coords="407,752,513,777"/>
+<area shape="rect" id="node43" href="$group__sprite.html#gab32e013b98922f4ec574d9848a8452c2" title="Numbers (and times symbol) constructor." alt="" coords="393,703,527,728"/>
+<area shape="rect" id="node44" href="$group__wall.html#ga474f6eddb247ac0f0002f9adba1bdcb5" title="Wall constructor." alt="" coords="407,752,513,777"/>
 <area shape="rect" id="node41" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="597,752,711,777"/>
-<area shape="rect" id="node45" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="401,801,519,827"/>
-<area shape="rect" id="node46" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="401,851,519,876"/>
+<area shape="rect" id="node42" href="$group__xpm.html#gacd9df6bf462b68aa25f049232473155f" title=" " alt="" coords="815,752,893,777"/>
+<area shape="rect" id="node46" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="401,801,519,827"/>
+<area shape="rect" id="node47" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="401,851,519,876"/>
 </map>

@@ -1,6 +1,7 @@
 <map id="controller/video.h" name="controller/video.h">
-<area shape="rect" id="node1" title=" " alt="" coords="78,5,197,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="58,5,177,31"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,79,80,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="105,79,170,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="194,79,278,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="85,152,150,177"/>
+<area shape="rect" id="node4" href="$_8minix-src_2include_2lcom_2_v_b_e_8h.html" title=" " alt="" coords="155,79,239,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="175,152,268,177"/>
 </map>

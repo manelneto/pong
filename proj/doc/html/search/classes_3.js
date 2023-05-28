@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scancode_0',['scancode',['../structscancode.html',1,'']]],
-  ['sprite_1',['Sprite',['../struct_sprite.html',1,'']]]
+  ['mmap_5ft_0',['mmap_t',['../structmmap__t.html',1,'']]],
+  ['mouse_5fev_1',['mouse_ev',['../structmouse__ev.html',1,'']]]
 ];

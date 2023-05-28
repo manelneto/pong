@@ -105,16 +105,17 @@ $(document).ready(function(){initNavTree('video_8h.html',''); initResizable(); }
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;lcom/vbe.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="_8minix-src_2include_2lcom_2_v_b_e_8h_source.html">lcom/vbe.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for video.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="video_8h__incl.png" border="0" usemap="#acontroller_2video_8h" alt=""/></div>
 <map name="acontroller_2video_8h" id="acontroller_2video_8h">
-<area shape="rect" title=" " alt="" coords="78,5,197,31"/>
+<area shape="rect" title=" " alt="" coords="58,5,177,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,80,104"/>
-<area shape="rect" title=" " alt="" coords="105,79,170,104"/>
-<area shape="rect" title=" " alt="" coords="194,79,278,104"/>
+<area shape="rect" title=" " alt="" coords="85,152,150,177"/>
+<area shape="rect" href="_8minix-src_2include_2lcom_2_v_b_e_8h.html" title=" " alt="" coords="155,79,239,104"/>
+<area shape="rect" title=" " alt="" coords="175,152,268,177"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -166,9 +167,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga27f9047879cee35f24ae69729e89c732"><td class="memItemLeft" align="right" valign="top"><a class="el" href="keyboard_8c.html#a9601b65a5838f1622a33914a6a94e4f3">void</a> *()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#ga27f9047879cee35f24ae69729e89c732">video_init</a> (uint16_t mode)</td></tr>
 <tr class="memdesc:ga27f9047879cee35f24ae69729e89c732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the video module in graphics mode.  <a href="group__video.html#ga27f9047879cee35f24ae69729e89c732">More...</a><br /></td></tr>
 <tr class="separator:ga27f9047879cee35f24ae69729e89c732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32659541708692c0dda94dab8db36ae4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b">int</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#ga32659541708692c0dda94dab8db36ae4">swap_buffers</a> ()</td></tr>
-<tr class="memdesc:ga32659541708692c0dda94dab8db36ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the buffers (front buffer and back buffer)  <a href="group__video.html#ga32659541708692c0dda94dab8db36ae4">More...</a><br /></td></tr>
-<tr class="separator:ga32659541708692c0dda94dab8db36ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9db99ee1a1ea284bbbbb11637a9d7788"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b">int</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#ga9db99ee1a1ea284bbbbb11637a9d7788">video_swap_buffers</a> ()</td></tr>
+<tr class="memdesc:ga9db99ee1a1ea284bbbbb11637a9d7788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the buffers (front buffer and back buffer)  <a href="group__video.html#ga9db99ee1a1ea284bbbbb11637a9d7788">More...</a><br /></td></tr>
+<tr class="separator:ga9db99ee1a1ea284bbbbb11637a9d7788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae7db14fbb97022dedcb7b962a94d365f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrgb__8__8__8__t.html">rgb_8_8_8_t</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#gae7db14fbb97022dedcb7b962a94d365f">video_get_colors</a> (uint32_t color)</td></tr>
 <tr class="memdesc:gae7db14fbb97022dedcb7b962a94d365f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the RGB color components of a color.  <a href="group__video.html#gae7db14fbb97022dedcb7b962a94d365f">More...</a><br /></td></tr>
 <tr class="separator:gae7db14fbb97022dedcb7b962a94d365f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,7 +185,7 @@ Functions</h2></td></tr>
 <tr class="memitem:gab69808bba8202501311ca99afe05a84e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b">int</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#gab69808bba8202501311ca99afe05a84e">video_draw_rectangle</a> (uint16_t <a class="el" href="levels_8c.html#ae1c2d516777e6b42af0d281c9ecc7375">x</a>, uint16_t <a class="el" href="levels_8c.html#af77b1a54442f2443cf64a4766f916bcd">y</a>, uint16_t width, uint16_t height, uint32_t color)</td></tr>
 <tr class="memdesc:gab69808bba8202501311ca99afe05a84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a filled rectangle by changing the video RAM.  <a href="group__video.html#gab69808bba8202501311ca99afe05a84e">More...</a><br /></td></tr>
 <tr class="separator:gab69808bba8202501311ca99afe05a84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4c176e4c1b02cac6d2eec9fe64b53d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b">int</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#gaa4c176e4c1b02cac6d2eec9fe64b53d2">video_draw_pixmap</a> (uint16_t <a class="el" href="levels_8c.html#ae1c2d516777e6b42af0d281c9ecc7375">x</a>, uint16_t <a class="el" href="levels_8c.html#af77b1a54442f2443cf64a4766f916bcd">y</a>, xpm_image_t *image)</td></tr>
+<tr class="memitem:gaa4c176e4c1b02cac6d2eec9fe64b53d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b">int</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#gaa4c176e4c1b02cac6d2eec9fe64b53d2">video_draw_pixmap</a> (uint16_t <a class="el" href="levels_8c.html#ae1c2d516777e6b42af0d281c9ecc7375">x</a>, uint16_t <a class="el" href="levels_8c.html#af77b1a54442f2443cf64a4766f916bcd">y</a>, <a class="el" href="structxpm__image__t.html">xpm_image_t</a> *image)</td></tr>
 <tr class="memdesc:gaa4c176e4c1b02cac6d2eec9fe64b53d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a Pixmap on the screen at specified coordinates.  <a href="group__video.html#gaa4c176e4c1b02cac6d2eec9fe64b53d2">More...</a><br /></td></tr>
 <tr class="separator:gaa4c176e4c1b02cac6d2eec9fe64b53d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabc8708eff8556b5f0c66b6a045706a3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__keyboard.html#gace3d7d5d8e0e2bb8d334c61890ec465b">int</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#gabc8708eff8556b5f0c66b6a045706a3f">video_clean</a> (uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf)</td></tr>
@@ -196,7 +197,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga26081be7a771e5c611b33f15caaf831e"><td class="memItemLeft" align="right" valign="top">vbe_mode_info_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#ga26081be7a771e5c611b33f15caaf831e">vmi_p</a></td></tr>
+<tr class="memitem:ga26081be7a771e5c611b33f15caaf831e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvbe__mode__info__t.html">vbe_mode_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__video.html#ga26081be7a771e5c611b33f15caaf831e">vmi_p</a></td></tr>
 <tr class="separator:ga26081be7a771e5c611b33f15caaf831e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -204,7 +205,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d3bff1ab3a40b4e5d0775c67ace1b0da.html">controller</a></li><li class="navelem"><a class="el" href="video_8h.html">video.h</a></li>
+    <li class="navelem"><a class="el" href="dir_4e234a2dcc55f18a9a66550ef48bbb78.html">controller</a></li><li class="navelem"><a class="el" href="video_8h.html">video.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>

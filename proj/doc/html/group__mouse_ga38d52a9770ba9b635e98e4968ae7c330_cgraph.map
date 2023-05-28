@@ -3,6 +3,6 @@
 <area shape="rect" id="node2" href="$group__kbc.html#ga0981f295f50b227baf2b8cabc0c04b12" title="Reads the KBC acknowledgment byte from the output buffer." alt="" coords="401,5,612,31"/>
 <area shape="rect" id="node4" href="$group__kbc.html#ga89a84c86a8c4ad0158026675088cf290" title="Writes argument to KBC." alt="" coords="213,55,352,80"/>
 <area shape="rect" id="node6" href="$group__kbc.html#gaf25521ad95cbbd5d2965a8638186e377" title="Writes command to KBC." alt="" coords="212,104,353,129"/>
-<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="660,31,751,56"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Invokes sys_inb() system call but reads the value into a uint8_t variable." alt="" coords="660,31,751,56"/>
 <area shape="rect" id="node5" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="447,55,566,80"/>
 </map>

@@ -4,7 +4,7 @@
 <area shape="rect" id="node5" href="$group__keyboard.html#gadd787396a27a73fc1d4900852b95611a" title="Enables keyboard interrupts, by writing an appropriate KBC command byte." alt="" coords="92,55,273,80"/>
 <area shape="rect" id="node8" href="$group__keyboard.html#gaa954078900c8d827750dc4ad1e930a77" title="Restores keyboard (resets scancode)" alt="" coords="121,104,244,129"/>
 <area shape="rect" id="node3" href="$group__kbc.html#ga82999842ae6a8860abbc1e0829e17653" title="Reads the KBC status." alt="" coords="511,56,629,81"/>
-<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="677,31,768,56"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Invokes sys_inb() system call but reads the value into a uint8_t variable." alt="" coords="677,31,768,56"/>
 <area shape="rect" id="node6" href="$group__kbc.html#ga89a84c86a8c4ad0158026675088cf290" title="Writes argument to KBC." alt="" coords="323,55,461,80"/>
 <area shape="rect" id="node7" href="$group__kbc.html#gaf25521ad95cbbd5d2965a8638186e377" title="Writes command to KBC." alt="" coords="321,104,463,129"/>
 </map>

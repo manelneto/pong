@@ -24,5 +24,12 @@ var modules =
     [ "menu_view", "group__menu__view.html", "group__menu__view" ],
     [ "sprite_view", "group__sprite__view.html", "group__sprite__view" ],
     [ "view", "group__view.html", "group__view" ],
-    [ "wall_view", "group__wall__view.html", "group__wall__view" ]
+    [ "wall_view", "group__wall__view.html", "group__wall__view" ],
+    [ "lab3", "group__lab3.html", "group__lab3" ],
+    [ "lab5", "group__lab5.html", "group__lab5" ],
+    [ "liblm", "group__liblm.html", "group__liblm" ],
+    [ "xpm", "group__xpm.html", "group__xpm" ],
+    [ "timer", "group__timer.html", "group__timer" ],
+    [ "vbe", "group__vbe.html", "group__vbe" ],
+    [ "video_gr", "group__video__gr.html", "group__video__gr" ]
 ];

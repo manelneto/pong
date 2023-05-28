@@ -1,17 +1,17 @@
 <map id="timer_interrupt_handler" name="timer_interrupt_handler">
-<area shape="rect" id="node1" title="Handles an interrupt from the timer." alt="" coords="5,456,160,481"/>
+<area shape="rect" id="node1" title="Handles an interrupt from the timer." alt="" coords="5,469,160,495"/>
 <area shape="rect" id="node2" href="$group__game.html#ga5e3dbbd53b71c7e9756de519d268da5e" title="Checks for game over (the ball is out of the screen limits/bounds)" alt="" coords="214,183,341,208"/>
 <area shape="rect" id="node3" href="$group__view.html#ga1265a5e2843f2b1c45ad05ae61de7000" title="Draws the current frame." alt="" coords="233,232,321,257"/>
-<area shape="rect" id="node19" href="$group__game.html#ga4202fa5c5191c7e387d7570da6c8cd8c" title="Ends the game." alt="" coords="236,381,319,407"/>
-<area shape="rect" id="node24" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="234,456,321,481"/>
-<area shape="rect" id="node28" href="$group__video.html#ga32659541708692c0dda94dab8db36ae4" title="Swaps the buffers (front buffer and back buffer)" alt="" coords="229,505,326,531"/>
-<area shape="rect" id="node29" href="$group__game.html#ga48c243ef9f97bd6e54d0a99ba25b3266" title="Handles an interrupt from the timer when in the game state." alt="" coords="208,555,347,580"/>
-<area shape="rect" id="node33" href="$timer_8c.html#a91a2072306c68353712a6b771287dc2c" title=" " alt="" coords="217,604,338,629"/>
+<area shape="rect" id="node19" href="$group__game.html#ga4202fa5c5191c7e387d7570da6c8cd8c" title="Ends the game." alt="" coords="236,383,319,408"/>
+<area shape="rect" id="node24" href="$group__menu.html#ga5703b42fed0ec9d000f334c91cf44297" title="Starts the menu." alt="" coords="234,469,321,495"/>
+<area shape="rect" id="node29" href="$group__game.html#ga48c243ef9f97bd6e54d0a99ba25b3266" title="Handles an interrupt from the timer when in the game state." alt="" coords="208,543,347,568"/>
+<area shape="rect" id="node33" href="$group__timer.html#ga91a2072306c68353712a6b771287dc2c" title="Timer 0 interrupt handler." alt="" coords="217,592,338,617"/>
+<area shape="rect" id="node34" href="$group__video.html#ga9db99ee1a1ea284bbbbb11637a9d7788" title="Swaps the buffers (front buffer and back buffer)" alt="" coords="211,641,344,667"/>
 <area shape="rect" id="node4" href="$group__game__view.html#ga3cef68220fcc611902108d6f0159e50f" title="Draws the game (in the current state)" alt="" coords="433,207,521,232"/>
-<area shape="rect" id="node14" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="433,29,521,55"/>
-<area shape="rect" id="node17" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="433,79,521,104"/>
+<area shape="rect" id="node14" href="$group__levels__view.html#gaef72051cb85a40112ab605f351365a21" title="Draws the levels (in the current state)" alt="" coords="433,79,521,104"/>
+<area shape="rect" id="node17" href="$group__menu__view.html#ga7d771989b41395d6d703f523c6fc22eb" title="Draws the menu (in the current state)" alt="" coords="433,29,521,55"/>
 <area shape="rect" id="node18" href="$group__video.html#ga9c7bef222d97bc81a5f81abd20c06ffb" title="Draws (paints) all pixels of the buffer &#45; the background." alt="" coords="608,357,767,383"/>
-<area shape="rect" id="node5" href="$group__ball__view.html#gadcc4d15fbe25e840d9c5b5486e65853d" title="Ball drawer." alt="" coords="849,257,925,283"/>
+<area shape="rect" id="node5" href="$group__ball__view.html#gadcc4d15fbe25e840d9c5b5486e65853d" title="Ball drawer." alt="" coords="849,256,925,281"/>
 <area shape="rect" id="node8" href="$group__sprite__view.html#ga4d01b37496a4c1f3ebace73ea9071553" title="Digit [0&#45;9] drawer." alt="" coords="847,156,927,181"/>
 <area shape="rect" id="node9" href="$group__sprite__view.html#gad7f61052219664fd09baafa1683835d8" title="Number drawer." alt="" coords="638,156,737,181"/>
 <area shape="rect" id="node10" href="$group__sprite__view.html#gaeecb54ece606d3cfbcde3bdac5adc480" title="Times symbol (cross &#45; x) drawer." alt="" coords="843,207,931,232"/>
@@ -20,15 +20,16 @@
 <area shape="rect" id="node7" href="$group__video.html#gaab7e6116680ca792cf7e2613b823db78" title="Draws (paints) a pixel by changing the video RAM." alt="" coords="1175,232,1293,257"/>
 <area shape="rect" id="node12" href="$group__video.html#gab69808bba8202501311ca99afe05a84e" title="Draws a filled rectangle by changing the video RAM." alt="" coords="815,308,960,333"/>
 <area shape="rect" id="node13" href="$group__video.html#ga44b79c3df7462fb582523dd1ee3bf7a6" title="Draws a horizontal line by changing the video RAM." alt="" coords="1008,256,1127,281"/>
-<area shape="rect" id="node15" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="641,55,733,80"/>
-<area shape="rect" id="node16" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="641,5,733,31"/>
+<area shape="rect" id="node15" href="$group__button__view.html#ga49d6346f757dffcb8629a178acbae14a" title="Button drawer." alt="" coords="641,5,733,31"/>
+<area shape="rect" id="node16" href="$group__cursor__view.html#gadfe1ab28925727966515351112a666cf" title="Cursor drawer." alt="" coords="641,55,733,80"/>
 <area shape="rect" id="node20" href="$group__ball.html#gacd5f0ca3e76fbf07c860b847fc9c3c24" title="Ball destructor." alt="" coords="431,308,523,333"/>
 <area shape="rect" id="node21" href="$group__sprite.html#ga71ae7e6eb4898555616d90ae43cc1cc1" title="Numbers (and times symbol) destructor." alt="" coords="416,357,539,383"/>
 <area shape="rect" id="node23" href="$group__wall.html#ga524595dbe261c7e436c17dd50a2e58f7" title="Wall destructor." alt="" coords="430,407,525,432"/>
 <area shape="rect" id="node22" href="$group__sprite.html#ga607cfeb4f019a84c346eb3bce9da0420" title="Sprite destructor." alt="" coords="635,407,739,432"/>
 <area shape="rect" id="node25" href="$group__button.html#ga9e36667de45ad911f059419e53b6acda" title="Button constructor." alt="" coords="418,456,537,481"/>
-<area shape="rect" id="node27" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="418,505,537,531"/>
+<area shape="rect" id="node28" href="$group__cursor.html#gaae4b28d6d129f34632e65b7cdd6c6bdd" title="Cursor constructor." alt="" coords="418,505,537,531"/>
 <area shape="rect" id="node26" href="$group__sprite.html#ga07809139be0eece64c9b839b18d61d61" title="Sprite constructor." alt="" coords="630,480,745,505"/>
+<area shape="rect" id="node27" href="$group__xpm.html#gacd9df6bf462b68aa25f049232473155f" title=" " alt="" coords="848,480,927,505"/>
 <area shape="rect" id="node30" href="$group__ball.html#gaab4598aab3eb70fa3d21e6f09cda4b2a" title="Updates ball position and velocity." alt="" coords="438,555,517,580"/>
 <area shape="rect" id="node31" href="$group__ball.html#ga87104fc6eaa2ceaa4c5fafb7d511cf09" title="Updates ball position and velocity after collision with wall." alt="" coords="395,605,560,645"/>
 <area shape="rect" id="node32" href="$group__ball.html#ga86138e436b462d916fc4146f73fcfd65" title="Doubles ball velocity (in both directions, horizontal and vertical)" alt="" coords="428,669,527,695"/>
